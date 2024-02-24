@@ -153,10 +153,9 @@ async def broadcast_messages(user_id, message):
     try:
         m = await message.copy(chat_id=user_id)
         try:
-await m.pin(both_sides=True)
-except:
-pass
-return True, "Success"
+            await m.pin(both_sides=True)
+        except:
+            pass
         return True, "Success"
     except FloodWait as e:
         await asyncio.sleep(e.x)
