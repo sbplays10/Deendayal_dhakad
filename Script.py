@@ -9,7 +9,7 @@ class script(object):
 </b>"""
 
     ABOUT_TXT = """<b>╭────[ ʜɪɴᴀᴛᴀ ᴀᴜᴛᴏғɪʟᴛᴇʀ ʙᴏᴛ ]────⍟
-├⍟ Mʏ Nᴀᴍᴇ : <a href='https://t.me/Hinata_Autofilter_Bot'>ʜɪɴᴀᴛᴀ</a>
+├⍟ Mʏ Nᴀᴍᴇ : <a href='https://t.me/Autofilterka14_bot'>ʜɪɴᴀᴛᴀ</a>
 ├⍟ Dᴇᴠᴇʟᴏᴘᴇʀ : <a href='https://t.me/@Borutootsutsukii'>ᴀɴᴏɴʏᴍᴏᴜꜱ</a> 
 ├⍟ Lɪʙʀᴀʀʏ : <a href='https://docs.pyrogram.org/'>ᴘʏʀᴏɢʀᴀᴍ</a>
 ├⍟ Lᴀɴɢᴜᴀɢᴇ : <a href='https://www.python.org/download/releases/3.0/'>ᴘʏᴛʜᴏɴ 𝟹</a> 
