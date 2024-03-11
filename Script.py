@@ -8,8 +8,8 @@ class script(object):
 ᴡᴇ ʜᴀᴠᴇ ᴅᴇᴠɪᴅᴇᴅ ʙᴏᴛ ᴄᴏᴍᴍᴀɴᴅꜱ ꜰᴏʀ ɢʀᴏᴜᴘ ᴏᴡɴᴇʀꜱ ᴀɴᴅ ʙᴏᴛ ᴜꜱᴇʀꜱ.\nᴀɴᴅ ᴡᴇ ʜᴀᴠᴇ ꜱᴏᴍᴇ ᴇxᴛʀᴀ ꜰᴇᴀᴛᴜʀᴇꜱ
 </b>"""
 
-    ABOUT_TXT = """<b>╭────[ ʜɪɴᴀᴛᴀ ᴀᴜᴛᴏғɪʟᴛᴇʀ ʙᴏᴛ ]────⍟
-├⍟ Mʏ Nᴀᴍᴇ : <a href='https://t.me/Autofilterka14_bot'>ʜɪɴᴀᴛᴀ</a>
+    ABOUT_TXT = """<b>╭────[ MY ᴅᴇᴛᴀɪʟꜱ ]────⍟
+├⍟ Mʏ Nᴀᴍᴇ : <a href='https://t.me/Deendayal_dhakad'>ʜɪɴᴀᴛᴀ</a>
 ├⍟ Dᴇᴠᴇʟᴏᴘᴇʀ : <a href='https://t.me/@Borutootsutsukii'>ᴀɴᴏɴʏᴍᴏᴜꜱ</a> 
 ├⍟ Lɪʙʀᴀʀʏ : <a href='https://docs.pyrogram.org/'>ᴘʏʀᴏɢʀᴀᴍ</a>
 ├⍟ Lᴀɴɢᴜᴀɢᴇ : <a href='https://www.python.org/download/releases/3.0/'>ᴘʏᴛʜᴏɴ 𝟹</a> 
