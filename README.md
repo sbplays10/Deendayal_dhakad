@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://graph.org/file/ef043e0bfe76db3af15f9.jpg" alt="The Movie Provider Bot Logo">
+  <img src="https://graph.org/file/ef043e0bfe76db3af15f9.jpg" alt="Deendayal Dhakad Logo">
 </p>
 <h1 align="center">
   <a href="https://telegram.me/TheMovieProviderBot">THE MOVIE PROVIDER BOT</a>
