@@ -1613,16 +1613,16 @@ async def cb_handler(client: Client, query: CallbackQuery):
 
     elif query.data == "seeplans":
         btn = [[
-            InlineKeyboardButton('• ꜰʀᴇᴇ ᴛʀɪᴀʟ •', callback_data='free')
+            InlineKeyboardButton('🕯️ ꜰʀᴇᴇ ᴛʀɪᴀʟ 🕯️', callback_data='free')
         ],[
-            InlineKeyboardButton('• ʙʀᴏɴᴢᴇ •', callback_data='broze'),
-            InlineKeyboardButton('• ꜱɪʟᴠᴇʀ •', callback_data='silver')
+            InlineKeyboardButton('❤️ ʙʀᴏɴᴢᴇ ❤️', callback_data='broze'),
+            InlineKeyboardButton('☔ ꜱɪʟᴠᴇʀ ☔', callback_data='silver')
         ],[
-            InlineKeyboardButton('• ɢᴏʟᴅ •', callback_data='gold'),
-            InlineKeyboardButton('• ᴘʟᴀᴛɪɴᴜᴍ •', callback_data='platinum')
+            InlineKeyboardButton('👮 ɢᴏʟᴅ 👮', callback_data='gold'),
+            InlineKeyboardButton('💘 ᴘʟᴀᴛɪɴᴜᴍ 💘', callback_data='platinum')
         ],[
-            InlineKeyboardButton('• ᴅɪᴀᴍᴏɴᴅ •', callback_data='diamond'),
-            InlineKeyboardButton('• ᴏᴛʜᴇʀ •', callback_data='other')
+            InlineKeyboardButton('💎 ᴅɪᴀᴍᴏɴᴅ 💎', callback_data='diamond'),
+            InlineKeyboardButton('🤦 ᴏᴛʜᴇʀ 🤦', callback_data='other')
         ],[            
             InlineKeyboardButton('❌ ᴄʟᴏꜱᴇ ❌', callback_data='close_data')
         ]]
@@ -1646,16 +1646,16 @@ async def cb_handler(client: Client, query: CallbackQuery):
     
     elif query.data == "premium_info":
         buttons = [[
-            InlineKeyboardButton('• ꜰʀᴇᴇ ᴛʀɪᴀʟ •', callback_data='free')
+            InlineKeyboardButton('🕯️ ꜰʀᴇᴇ ᴛʀɪᴀʟ 🕯️', callback_data='free')
         ],[
-            InlineKeyboardButton('• ʙʀᴏɴᴢᴇ •', callback_data='broze'),
-            InlineKeyboardButton('• ꜱɪʟᴠᴇʀ •', callback_data='silver')
+            InlineKeyboardButton('❤️ ʙʀᴏɴᴢᴇ ❤️', callback_data='broze'),
+            InlineKeyboardButton('☔ ꜱɪʟᴠᴇʀ ☔', callback_data='silver')
         ],[
-            InlineKeyboardButton('• ɢᴏʟᴅ •', callback_data='gold'),
-            InlineKeyboardButton('• ᴘʟᴀᴛɪɴᴜᴍ •', callback_data='platinum')
+            InlineKeyboardButton('👮 ɢᴏʟᴅ 👮', callback_data='gold'),
+            InlineKeyboardButton('💘 ᴘʟᴀᴛɪɴᴜᴍ 💘', callback_data='platinum')
         ],[
-            InlineKeyboardButton('• ᴅɪᴀᴍᴏɴᴅ •', callback_data='diamond'),
-            InlineKeyboardButton('• ᴏᴛʜᴇʀ •', callback_data='other')
+            InlineKeyboardButton('💎 ᴅɪᴀᴍᴏɴᴅ 💎', callback_data='diamond'),
+            InlineKeyboardButton('🤦 ᴏᴛʜᴇʀ 🤦', callback_data='other')
         ],[            
             InlineKeyboardButton('⇋ ʙᴀᴄᴋ ᴛᴏ ʜᴏᴍᴇ ⇋', callback_data='start')
         ]]
