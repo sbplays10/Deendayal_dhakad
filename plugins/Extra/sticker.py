@@ -1,7 +1,3 @@
-#Made
-#by
-#Don_Sflix
-
 from pyrogram import Client, filters
 
 @Client.on_message(filters.command(["stickerid"]))
