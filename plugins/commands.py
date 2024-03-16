@@ -1058,45 +1058,30 @@ async def send_msg(bot, message):
         await message.reply_text("<b>ᴜꜱᴇ ᴛʜɪꜱ ᴄᴏᴍᴍᴀɴᴅ ᴀꜱ ᴀ ʀᴇᴘʟʏ ᴛᴏ ᴀɴʏ ᴍᴇꜱꜱᴀɢᴇ ᴜꜱɪɴɢ ᴛʜᴇ ᴛᴀʀɢᴇᴛ ᴄʜᴀᴛ ɪᴅ. ꜰᴏʀ ᴇɢ:  /send ᴜꜱᴇʀɪᴅ</b>")
 
 @Client.on_message(filters.command("deletefiles") & filters.user(ADMINS))
-
 async def deletemultiplefiles(bot, message):
-
     chat_type = message.chat.type
-
     if chat_type != enums.ChatType.PRIVATE:
-
-        return await message.reply_text(f"<b>ʜᴇʏ {message.from_user.mention},\nᴛʜɪꜱ ᴄᴏᴍᴍᴀɴᴅ ᴡᴏɴ'ᴛ ᴡᴏʀᴋ ɪɴ ɢʀᴏᴜᴘꜱ !\nɪᴛ ᴏɴʟʏ ᴡᴏʀᴋꜱ ɪɴ ᴍʏ ᴘᴍ.</b>")
-
+        return await message.reply_text(f"<b>Hey {message.from_user.mention}, This command won't work in groups. It only works on my PM !</b>")
     else:
-
         pass
-
     try:
-
         keyword = message.text.split(" ", 1)[1]
-
     except:
-
-        return await message.reply_text(f"<b>ʜᴇʏ {message.from_user.mention},\nɢɪᴠᴇ ᴍᴇ ᴀ ᴋᴇʏᴡᴏʀᴅ ᴀʟᴏɴɢ ᴡɪᴛʜ ᴛʜɪꜱ ᴄᴏᴍᴍᴀɴᴅ ᴛᴏ ᴅᴇʟᴇᴛᴇ ꜰɪʟᴇꜱ.</b>")
-
+        return await message.reply_text(f"<b>Hey {message.from_user.mention}, Give me a keyword along with the command to delete files.</b>")
+    k = await bot.send_message(chat_id=message.chat.id, text=f"<b>Fetching Files for your query {keyword} on DB... Please wait...</b>")
+    files, total = await get_bad_files(keyword)
+    await k.delete()
+    #await k.edit_text(f"<b>Found {total} files for your query {keyword} !\n\nFile deletion process will start in 5 seconds !</b>")
+    #await asyncio.sleep(5)
     btn = [[
-
-       InlineKeyboardButton("⚠️ ʏᴇꜱ, ᴄᴏɴᴛɪɴᴜᴇ ⚠️", callback_data=f"killfilesdq#{keyword}")
-
+       InlineKeyboardButton("Yes, Continue !", callback_data=f"killfilesdq#{keyword}")
        ],[
-
-       InlineKeyboardButton("❌ ɴᴏ, ᴀʙᴏʀᴛ ᴏᴘᴇʀᴀᴛɪᴏɴ ❌", callback_data="close_data")
-
+       InlineKeyboardButton("No, Abort operation !", callback_data="close_data")
     ]]
-
     await message.reply_text(
-
-        text="<b>ᴀʀᴇ ʏᴏᴜ ꜱᴜʀᴇ ʏᴏᴜ ᴡᴀɴᴛ ᴛᴏ ᴄᴏɴᴛɪɴᴜᴇ ?\nɴᴏᴛᴇ : ᴛʜɪꜱ ᴄᴏᴜʟᴅ ʙᴇ ᴀ ᴅᴇꜱᴛʀᴜᴄᴛɪᴠᴇ ᴅᴇꜱɪᴄɪᴏɴ.</b>",
-
+        text=f"<b>Found {total} files for your query {keyword} !\n\nDo you want to delete?</b>",
         reply_markup=InlineKeyboardMarkup(btn),
-
         parse_mode=enums.ParseMode.HTML
-
     )
 
 @Client.on_message(filters.command("shortlink"))
