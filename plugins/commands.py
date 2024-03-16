@@ -1074,9 +1074,9 @@ async def deletemultiplefiles(bot, message):
     #await k.edit_text(f"<b>Found {total} files for your query {keyword} !\n\nFile deletion process will start in 5 seconds !</b>")
     #await asyncio.sleep(5)
     btn = [[
-       InlineKeyboardButton("Yes, Continue !", callback_data=f"killfilesdq#{keyword}")
+       InlineKeyboardButton("⚠️ Yes, Continue ! ⚠️", callback_data=f"killfilesdq#{keyword}")
        ],[
-       InlineKeyboardButton("No, Abort operation !", callback_data="close_data")
+       InlineKeyboardButton("❌ No, Abort operation ! ❌", callback_data="close_data")
     ]]
     await message.reply_text(
         text=f"<b>Found {total} files for your query {keyword} !\n\nDo you want to delete?</b>",
