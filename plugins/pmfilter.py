@@ -1914,13 +1914,13 @@ async def cb_handler(client: Client, query: CallbackQuery):
         )
     elif query.data == "moref":
         buttons = [[
-            InlineKeyboardButton('ᴛᴇʟᴇɢʀᴀᴘʜ', callback_data='tele'),
-            InlineKeyboardButton('ꜰᴏɴᴛ', callback_data='font'),
-            InlineKeyboardButton('ꜰᴏɴᴛ', callback_data='')
+            InlineKeyboardButton('TELEGRAPH', callback_data='tele'),
+            InlineKeyboardButton('FONT', callback_data='font'),
+            InlineKeyboardButton('JSON', callback_data='json')
         ],[
-            InlineKeyboardButton('ꜱᴏɴɢ', callback_data='song'),
-            InlineKeyboardButton ('ꜱᴛɪᴄᴋᴇʀ ɪᴅ', callback_data='sticker'),
-            InlineKeyboardButton('ꜰᴏɴᴛ', callback_data='font')
+            InlineKeyboardButton('SONG', callback_data='song'),
+            InlineKeyboardButton ('STICKER ID', callback_data='sticker'),
+            InlineKeyboardButton('RENDERING STATUS', callback_data='rendr')
         ],[
             InlineKeyboardButton('⇋ ʙᴀᴄᴋ ᴛᴏ ʜᴏᴍᴇ ⇋', callback_data='start')
         ]]
