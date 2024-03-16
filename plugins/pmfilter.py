@@ -1970,7 +1970,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         )
     elif query.data == "sticker":
             btn = [[
-                    InlineKeyboardButton("⇋ ʙᴀᴄᴋ ⇋", callback_data="help")                    
+                    InlineKeyboardButton("⇋ ʙᴀᴄᴋ ⇋", callback_data="moref")                    
                   ]]
             await client.edit_message_media(
                 query.message.chat.id, 
@@ -1985,7 +1985,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             )
     elif query.data == "tele":
             btn = [[
-                    InlineKeyboardButton("⟸ Bᴀᴄᴋ", callback_data="help"),
+                    InlineKeyboardButton("⟸ Bᴀᴄᴋ", callback_data="moref"),
                     InlineKeyboardButton("Cᴏɴᴛᴀᴄᴛ", url="telegram.me/Deendayal_dhakad")
                   ]]
             await client.edit_message_media(
@@ -2001,7 +2001,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 )
     elif query.data == "font":
             btn = [[
-                    InlineKeyboardButton("⇋ ʙᴀᴄᴋ ⇋", callback_data="help")
+                    InlineKeyboardButton("⇋ ʙᴀᴄᴋ ⇋", callback_data="moref")
                   ]]
             await client.edit_message_media(
                 query.message.chat.id, 
@@ -2016,7 +2016,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             )
     elif query.data == "song":
             btn = [[
-                    InlineKeyboardButton("⇋ ʙᴀᴄᴋ ⇋", callback_data="help")
+                    InlineKeyboardButton("⇋ ʙᴀᴄᴋ ⇋", callback_data="moref")
                   ]]
             await client.edit_message_media(
                 query.message.chat.id, 
