@@ -126,6 +126,9 @@ if HAS_SSL:
 else:
     URL = "http://{}/".format(FQDN)
 
+#ADD_REACTION
+REACTIONS = ["❤️‍🔥", "⚡", "🔥"]
+
 # add premium logs channel id
 PREMIUM_LOGS = int(environ.get('PREMIUM_LOGS', '-1002066851846'))
 
