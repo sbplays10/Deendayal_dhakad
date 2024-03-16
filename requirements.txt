@@ -43,15 +43,3 @@ colorama
 
  #---ytdl----# 
  ffmpeg
-youtube_search
-youtube-search-python==1.4.6
-yt-dlp
-youtube-dl
-requests 
-ytthumb
-
-#---Other----#
-googletrans==3.1.0a0 
-telegraph==2.2.0 
-gTTS==2.3.1
-https://codeload.github.com/KurimuzonAkuma/pyrogram/zip/refs/heads/dev
