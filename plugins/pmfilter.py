@@ -1945,7 +1945,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         )
     elif query.data == "json":
         buttons = [[
-            InlineKeyboardButton('⇍ ʙᴀᴄᴋ ⇏', callback_data='help')
+            InlineKeyboardButton('⇍ ʙᴀᴄᴋ ⇏', callback_data='moref')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
