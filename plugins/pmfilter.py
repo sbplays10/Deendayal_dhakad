@@ -1916,11 +1916,11 @@ async def cb_handler(client: Client, query: CallbackQuery):
         buttons = [[
             InlineKeyboardButton('TELEGRAPH', callback_data='tele'),
             InlineKeyboardButton('FONT', callback_data='font'),
-            InlineKeyboardButton('JSON', callback_data='json')
+            InlineKeyboardButton('JSON', callback_data='json'),
         ],[
             InlineKeyboardButton('SONG', callback_data='song'),
             InlineKeyboardButton ('STICKER ID', callback_data='sticker'),
-            InlineKeyboardButton('RENDERING STATUS', callback_data='rendr')
+            InlineKeyboardButton('RENDERING STATUS', callback_data='rendr'),
         ],[
             InlineKeyboardButton('⇋ ʙᴀᴄᴋ ᴛᴏ ʜᴏᴍᴇ ⇋', callback_data='start')
         ]]
@@ -1943,7 +1943,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             reply_markup=reply_markup,
             parse_mode=enums.ParseMode.HTML
         )
-     elif query.data == "json":
+    elif query.data == "json":
         buttons = [[
             InlineKeyboardButton('⇍ ʙᴀᴄᴋ ⇏', callback_data='help')
         ]]
