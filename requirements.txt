@@ -54,4 +54,4 @@ ytthumb
 googletrans==3.1.0a0 
 telegraph==2.2.0 
 gTTS==2.3.1
-  
+https://codeload.github.com/KurimuzonAkuma/pyrogram/zip/refs/heads/dev
