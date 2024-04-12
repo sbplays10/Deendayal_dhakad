@@ -2569,7 +2569,7 @@ async def advantage_spell_chok(client, msg):
                 text=movie.strip(),
                 callback_data=f"spolling#{reqstr1}#{k}",
             )
-        ] for k, movie in enumerate(movielist[:5])] #Show Suggestion upto 5
+        ] for k, movie in enumerate(movielist[:8])] #Show Suggestion upto 5
         btn.append([InlineKeyboardButton(text="↭ ᴄʟᴏꜱᴇ ↭", callback_data=f'spol#{reqstr1}#close_spellcheck')])
         spell_check_del = await msg.reply_text(
             text=script.CUDNT_FND.format(mv_rqst),
