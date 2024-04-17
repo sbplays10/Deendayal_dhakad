@@ -1590,6 +1590,8 @@ async def cb_handler(client: Client, query: CallbackQuery):
                     InlineKeyboardButton('🦧 ʜᴇʟᴘ ', callback_data='help'),
                     InlineKeyboardButton('❤️ ᴀʙᴏᴜᴛ ', callback_data='about')
                 ],[
+                    InlineKeyboardButton('⚜️ Rᴇғᴇʀ & ɢᴇᴛ Pʀᴇᴍɪᴜᴍ ⚜️', callback_data='Dhakad')
+                ],[
                     InlineKeyboardButton('✨ ʙᴜʏ ꜱᴜʙꜱᴄʀɪᴘᴛɪᴏɴ : ʀᴇᴍᴏᴠᴇ ᴀᴅꜱ ✨', callback_data="premium_info")
                   ]]
         
@@ -1665,6 +1667,21 @@ async def cb_handler(client: Client, query: CallbackQuery):
             query.message.chat.id, 
             query.message.id, 
             InputMediaPhoto("https://telegra.ph/file/52c5a2a731171f4c94667.jpg")
+        )
+    elif query.data == "Dhakad":
+        buttons = [[
+            InlineKeyboardButton('⇚Back', callback_data='start')
+        ]]
+        reply_markup = InlineKeyboardMarkup(buttons)
+        await client.edit_message_media(
+            query.message.chat.id, 
+            query.message.id, 
+            InputMediaPhoto(random.choice(PICS))
+        )
+        await query.message.edit_text(
+            text=script.Deendayal_TXT.format(REFERAL_PREMEIUM_TIME, temp.U_NAME, query.from_user.id, REFERAL_COUNT),
+            reply_markup=reply_markup,
+            parse_mode=enums.ParseMode.HTML
         )
         await query.message.edit_text(
             text=script.QR_TXT.format(query.from_user.mention),
