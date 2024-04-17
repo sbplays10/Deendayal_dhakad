@@ -164,6 +164,9 @@ async def start(client, message):
     data = message.command[1]
     if data.split("-", 1)[0] == "Deendayal":
         user_id = int(data.split("-", 1)[1])
+        if user_id == message.from_user.id:
+          await message.reply("You cannot refer yourself.")
+           return
         Deendayal = await referal_add_user(user_id, message.from_user.id)
         if Deendayal:
             await message.reply(f"<b>You have joined using the referral link of user with ID {user_id}\n\nSend /start again to use the bot</b>")
@@ -172,7 +175,7 @@ async def start(client, message):
             if num_referrals == int(REFERAL_COUNT):
                 await add_premium(client, user_id)                 
                 return
-        
+
         
     if len(message.command) == 2 and message.command[1] in ["premium"]:
         buttons = [[
