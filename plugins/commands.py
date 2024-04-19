@@ -160,20 +160,20 @@ async def start(client, message):
             parse_mode=enums.ParseMode.HTML
         )
         return
-    data = message.command[1]
-    if data.split("-", 1)[0] == "Deendayal":
-        user_id = int(data.split("-", 1)[1])
-        if user_id == message.from_user.id:
-          await message.reply("❌ You cannot refer yourself. ❌")
-          return
-        Deendayal = await referal_add_user(user_id, message.from_user.id)
-        if Deendayal:
-            await message.reply(f"<b>You have joined using the referral link of user with ID {user_id}\n\nSend /start again to use the bot</b>")
-            num_referrals = await get_referal_users_count(user_id)
-            await client.send_message(chat_id = user_id, text = "<b>{} start the bot with your referral link\n\nTotal Referals - {}</b>".format(message.from_user.mention, num_referrals))
-            if num_referrals == int(REFERAL_COUNT):
-                await add_premium(client, user_id)                 
-                return
+    #data = message.command[1]
+    #if data.split("-", 1)[0] == "Deendayal":
+        #user_id = int(data.split("-", 1)[1])
+        #if user_id == message.from_user.id:
+          #await message.reply("❌ You cannot refer yourself. ❌")
+          #return
+        #Deendayal = await referal_add_user(user_id, message.from_user.id)
+        #if Deendayal:
+            #await message.reply(f"<b>You have joined using the referral link of user with ID {user_id}\n\nSend /start again to use the bot</b>")
+            #num_referrals = await get_referal_users_count(user_id)
+            #await client.send_message(chat_id = user_id, text = "<b>{} start the bot with your referral link\n\nTotal Referals - {}</b>".format(message.from_user.mention, num_referrals))
+            #if num_referrals == int(REFERAL_COUNT):
+                #await add_premium(client, user_id)                 
+                #return
 
         
     if len(message.command) == 2 and message.command[1] in ["premium"]:
@@ -412,8 +412,9 @@ async def start(client, message):
                     f_caption=f_caption
             if f_caption is None:
                 f_caption = f"{' '.join(filter(lambda x: not x.startswith('[') and not x.startswith('@'), files1.file_name.split()))}"
-            if not await check_verification(client, message.from_user.id) and VERIFY == True:
-                btn = [[
+            if not await db.has_premium_access(message.from_user.id):
+               if not await check_verification(client, message.from_user.id) and VERIFY == True:
+                  btn = [[
                     InlineKeyboardButton("✅ Cʟɪᴄᴋ ʜᴇʀᴇ ᴛᴏ ᴠᴇʀɪғʏ ✅", url=await get_token(client, message.from_user.id, f"https://telegram.me/{temp.U_NAME}?start="))
                 ],[
                     InlineKeyboardButton("⚡ Hᴏᴡ ᴛᴏ ᴠᴇʀɪғʏ ⚡", url=HOW_TO_VERIFY)
@@ -492,8 +493,9 @@ async def start(client, message):
     if not files_:
         pre, file_id = ((base64.urlsafe_b64decode(data + "=" * (-len(data) % 4))).decode("ascii")).split("_", 1)
         try:
-            if not await check_verification(client, message.from_user.id) and VERIFY == True:
-                btn = [[
+            if not await db.has_premium_access(message.from_user.id):
+               if not await check_verification(client, message.from_user.id) and VERIFY == True:
+                  btn = [[
                     InlineKeyboardButton("✅ Cʟɪᴄᴋ ʜᴇʀᴇ ᴛᴏ ᴠᴇʀɪғʏ ✅", url=await get_token(client, message.from_user.id, f"https://telegram.me/{temp.U_NAME}?start="))
                 ],[
                     InlineKeyboardButton("⚡ Hᴏᴡ ᴛᴏ ᴠᴇʀɪғʏ ⚡", url=HOW_TO_VERIFY)
@@ -555,8 +557,9 @@ async def start(client, message):
             f_caption=f_caption
     if f_caption is None:
         f_caption = f" {' '.join(filter(lambda x: not x.startswith('[') and not x.startswith('@'), files.file_name.split()))}"
-    if not await check_verification(client, message.from_user.id) and VERIFY == True:
-        btn = [[
+    if not await db.has_premium_access(message.from_user.id):
+       if not await check_verification(client, message.from_user.id) and VERIFY == True:
+          btn = [[
             InlineKeyboardButton("✅ Cʟɪᴄᴋ ʜᴇʀᴇ ᴛᴏ ᴠᴇʀɪғʏ ✅", url=await get_token(client, message.from_user.id, f"https://telegram.me/{temp.U_NAME}?start="))
         ],[
             InlineKeyboardButton("⚡ Hᴏᴡ ᴛᴏ ᴠᴇʀɪғʏ ⚡", url=HOW_TO_VERIFY)
