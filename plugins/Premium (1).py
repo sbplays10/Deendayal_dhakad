@@ -1,5 +1,3 @@
-# SPECIAL THANKS TO [Rishikesh Sharma] @Rk_botowner FOR THESE AMAZING CODES
-# SPECIAL THANKS TO @DeletedFromEarth FOR MODIFYING THESE AMAZING CODES
 
 from datetime import timedelta
 import pytz
