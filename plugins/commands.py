@@ -3,6 +3,7 @@ import logging
 import random
 import asyncio
 import pytz
+from plugins.Premium import add_premium
 from Script import script
 from datetime import datetime
 from pyrogram import Client, filters, enums
@@ -160,20 +161,25 @@ async def start(client, message):
             parse_mode=enums.ParseMode.HTML
         )
         return
-    #data = message.command[1]
-    #if data.split("-", 1)[0] == "Deendayal":
-        #user_id = int(data.split("-", 1)[1])
-        #if user_id == message.from_user.id:
-          #await message.reply("❌ You cannot refer yourself. ❌")
-          #return
-        #Deendayal = await referal_add_user(user_id, message.from_user.id)
-        #if Deendayal:
-            #await message.reply(f"<b>You have joined using the referral link of user with ID {user_id}\n\nSend /start again to use the bot</b>")
-            #num_referrals = await get_referal_users_count(user_id)
-            #await client.send_message(chat_id = user_id, text = "<b>{} start the bot with your referral link\n\nTotal Referals - {}</b>".format(message.from_user.mention, num_referrals))
-            #if num_referrals == int(REFERAL_COUNT):
-                #await add_premium(client, user_id)                 
-                #return
+    data = message.command[1]
+    if data.split("-", 1)[0] == "Deendayal":
+        user_id = int(data.split("-", 1)[1])
+        if user_id == message.from_user.id:
+          await message.reply("❌ You cannot refer yourself. ❌")
+          return
+        Deendayal = await referal_add_user(user_id, message.from_user.id)
+        if Deendayal:
+            await message.reply(f"<b>You have joined using the referral link of user with ID {user_id}\n\nSend /start again to use the bot</b>")
+            num_referrals = await get_referal_users_count(user_id)
+            await client.send_message(chat_id = user_id, text = "<b>{} start the bot with your referral link\n\nTotal Referals - {}</b>".format(message.from_user.mention, num_referrals))
+            if num_referrals == int(REFERAL_COUNT):
+                await add_premium(client, user_id)                 
+                return
+    else:
+        l = await message.reply_text("ʏᴏᴜ ʜᴀᴠᴇ ʙᴇᴇɴ ᴀʟʀᴇᴀᴅʏ ʀᴇғᴇʀʀᴇᴅ ʙʏ sᴏᴍᴇᴏɴᴇ ✓")
+        await asyncio.sleep(300)
+        await l.delete()
+        return
 
         
     if len(message.command) == 2 and message.command[1] in ["premium"]:
