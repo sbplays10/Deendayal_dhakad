@@ -31,6 +31,14 @@ async def get_referal_users_count(user_id):
 async def delete_all_referal_users(user_id):
     user_db = mydb[str(user_id)]
     user_db.delete_many({})
+
+async def check_invited_or_joined(referrer_id, user_id):
+    """Checks if a user is already referred by the given referrer."""
+    referrals = await get_referal_all_users(referrer_id)
+    for referral in referrals:
+        if referral['_id'] == user_id:
+            return True
+    return False
     
 
 class Database:
