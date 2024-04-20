@@ -175,11 +175,6 @@ async def start(client, message):
             if num_referrals == int(REFERAL_COUNT):
                 await add_premium(client, user_id)                 
                 return
-    else:
-        l = await message.reply_text("ʏᴏᴜ ʜᴀᴠᴇ ʙᴇᴇɴ ᴀʟʀᴇᴀᴅʏ ʀᴇғᴇʀʀᴇᴅ ʙʏ sᴏᴍᴇᴏɴᴇ ✓")
-        await asyncio.sleep(300)
-        await l.delete()
-        return
 
         
     if len(message.command) == 2 and message.command[1] in ["premium"]:
