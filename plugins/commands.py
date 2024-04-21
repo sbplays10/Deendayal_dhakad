@@ -165,10 +165,14 @@ async def start(client, message):
     if data.split("-", 1)[0] == "Deendayal":
         user_id = int(data.split("-", 1)[1])
         if user_id == message.from_user.id:
-          await message.reply("♨️ Yᴏᴜ ᴄᴀɴɴᴏᴛ ʀᴇғᴇʀ ʏᴏᴜʀsᴇʟғ ♨️")
+          l = await message.reply("♨️ Yᴏᴜ ᴄᴀɴɴᴏᴛ ʀᴇғᴇʀ ʏᴏᴜʀsᴇʟғ ♨️")
+          await asyncio.sleep(20)
+          await l.delete()
           return
         if await db.is_user_exist(message.from_user.id):
-          await message.reply_text("🔻Yᴏᴜ ʜᴀᴠᴇ ʙᴇᴇɴ ᴀʟʀᴇᴀᴅʏ ɪɴᴠɪᴛᴇᴅ ᴏʀ ᴊᴏɪɴᴇᴅ🔻")
+          m = await message.reply_text("🔻Yᴏᴜ ʜᴀᴠᴇ ʙᴇᴇɴ ᴀʟʀᴇᴀᴅʏ ɪɴᴠɪᴛᴇᴅ ᴏʀ ᴊᴏɪɴᴇᴅ🔻")
+          await asyncio.sleep(20)
+          await m.delete()
           return
         Deendayal = await referal_add_user(user_id, message.from_user.id)
         if Deendayal:
