@@ -1675,13 +1675,14 @@ async def cb_handler(client: Client, query: CallbackQuery):
         )    
     elif query.data == "Dhakad":
         buttons = [[
+            InlineKeyboardButton('Invite', url=f'https://t.me/share/url?url=https://telegram.me/{temp.U_NAME}?start=Deendayal-{query.from_user.id}'),
             InlineKeyboardButton('⇚Back', callback_data='start')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await client.edit_message_media(
             query.message.chat.id, 
             query.message.id, 
-            InputMediaPhoto(random.choice(PICS))
+            InputMediaPhoto('https://graph.org/file/43729dd1e563f2595882f.jpg')
         )
         await query.message.edit_text(
             text=script.Deendayal_TXT.format(REFERAL_PREMEIUM_TIME, temp.U_NAME, query.from_user.id, REFERAL_COUNT),
