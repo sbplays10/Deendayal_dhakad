@@ -55,7 +55,7 @@ DATABASE_NAME = environ.get('DATABASE_NAME', "cluster")
 COLLECTION_NAME = environ.get('COLLECTION_NAME', 'Telegram_files')
 
 #REFERAL
-REFERAL_COUNT = int(environ.get('REFERAL_COUNT', '1')) # number of referal count
+REFERAL_COUNT = int(environ.get('REFERAL_COUNT', '15')) # number of referal count
 REFERAL_PREMEIUM_TIME = environ.get('REFERAL_PREMEIUM_TIME', '1month')
 
 # Verify
