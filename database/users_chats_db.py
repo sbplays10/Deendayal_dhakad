@@ -49,7 +49,7 @@ class Database:
         
     async def add_ref_user(self, id):
         await self.ref_user.insert_one({'id': id})
-        
+  
         
     async def find_join_req(self, id):
         return bool(await self.req.find_one({'id': id}))
