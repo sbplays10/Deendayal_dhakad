@@ -163,7 +163,7 @@ async def start(client, message):
         return
     data = message.command[1]
     if data.split("-", 1)[0] == "Deendayal":
-        user_id = int(data.split("-", 1)[1])
+        Deendayal = int(data.split("-", 1)[1])
         if user_id == message.from_user.id:
           await message.reply("♨️ You cannot refer yourself ♨️")
           return
