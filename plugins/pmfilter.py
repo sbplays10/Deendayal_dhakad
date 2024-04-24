@@ -1590,8 +1590,6 @@ async def cb_handler(client: Client, query: CallbackQuery):
                     InlineKeyboardButton('🦧 ʜᴇʟᴘ ', callback_data='help'),
                     InlineKeyboardButton('❤️ ᴀʙᴏᴜᴛ ', callback_data='about')
                 ],[
-                    InlineKeyboardButton('⚜️ Rᴇғᴇʀ & ɢᴇᴛ Pʀᴇᴍɪᴜᴍ ⚜️', callback_data='Dhakad')
-                ],[
                     InlineKeyboardButton('✨ ʙᴜʏ ꜱᴜʙꜱᴄʀɪᴘᴛɪᴏɴ : ʀᴇᴍᴏᴠᴇ ᴀᴅꜱ ✨', callback_data="premium_info")
                   ]]
         
@@ -1670,22 +1668,6 @@ async def cb_handler(client: Client, query: CallbackQuery):
         )
         await query.message.edit_text(
             text=script.QR_TXT.format(query.from_user.mention),
-            reply_markup=reply_markup,
-            parse_mode=enums.ParseMode.HTML
-        )    
-    elif query.data == "Dhakad":
-        buttons = [[
-            InlineKeyboardButton('Invite', url=f'https://t.me/share/url?url=https://telegram.me/{temp.U_NAME}?start=Deendayal-{query.from_user.id}'),
-            InlineKeyboardButton('⇚Back', callback_data='start')
-        ]]
-        reply_markup = InlineKeyboardMarkup(buttons)
-        await client.edit_message_media(
-            query.message.chat.id, 
-            query.message.id, 
-            InputMediaPhoto('https://graph.org/file/43729dd1e563f2595882f.jpg')
-        )
-        await query.message.edit_text(
-            text=script.Deendayal_TXT.format(REFERAL_PREMEIUM_TIME, temp.U_NAME, query.from_user.id, REFERAL_COUNT),
             reply_markup=reply_markup,
             parse_mode=enums.ParseMode.HTML
         )
@@ -1911,7 +1893,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('⚜️ Movie Group ⚜️', url="https://t.me/Deendayal_Movies_Group"),
             InlineKeyboardButton('☔ Contact ☔', url="https://t.me/Contact_Deendayal_bot")
         ],[
-            InlineKeyboardButton('🔥 Chat Gpt Bot 🔥', url="https://t.me/Deendayal_Chat_Gpt_Bot"),
+            InlineKeyboardButton('🔥 File Store Bot 🔥', url="https://t.me/Deendayal_File_Store_bot"),
             InlineKeyboardButton('👮 Update Channel 👮', url="https://t.me/Deendayal_dhakad")
         ],[
             InlineKeyboardButton('⇍ ʙᴀᴄᴋ ⇏', callback_data='start')
