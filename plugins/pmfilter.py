@@ -74,7 +74,7 @@ async def get_shortlink(url):
     loop = asyncio.get_event_loop()
     return await loop.run_in_executor(None, get_shortlink_sync, url)
 
-@Client.on_message(filters.group | filters.private & filters.text & filters.incoming)
+@Client.on_message(filters.group & filters.text & filters.incoming)
 async def give_filter(client, message):
     await message.react(emoji=random.choice(REACTIONS))
     k = await manual_filters(client, message)
