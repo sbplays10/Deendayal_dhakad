@@ -3,9 +3,9 @@ from datetime import timedelta
 import pytz
 import datetime, time
 from Script import script 
-from info import ADMINS, PREMIUM_LOGS, REFERAL_COUNT, REFERAL_PREMEIUM_TIME
+from info import ADMINS, PREMIUM_LOGS
 from utils import get_seconds
-from database.users_chats_db import db, delete_all_referal_users
+from database.users_chats_db import db
 from pyrogram import Client, filters 
 from pyrogram.errors.exceptions.bad_request_400 import MessageTooLong
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
