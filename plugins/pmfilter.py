@@ -2006,7 +2006,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('FONT', callback_data='font'),
             InlineKeyboardButton('JSON', callback_data='json'),
         ],[
-            InlineKeyboardButton('SONG', callback_data='song'),
+            InlineKeyboardButton('SONG', callback_data='SONG'),
             InlineKeyboardButton ('STICKER ID', callback_data='sticker'),
             InlineKeyboardButton('RENDERING STATUS', callback_data='rendr'),
         ],[
@@ -2057,6 +2057,32 @@ async def cb_handler(client: Client, query: CallbackQuery):
             reply_markup=reply_markup,
             parse_mode=enums.ParseMode.HTML
         )
+
+    elif query.data == "SONG":
+        buttons = [[
+            InlineKeyboardButton('⇍ ʙᴀᴄᴋ ⇏', callback_data='special')
+        ]]
+        reply_markup = InlineKeyboardMarkup(buttons)
+        await query.message.edit_text(
+            text="● ◌ ◌"
+        )
+        await query.message.edit_text(
+            text="● ● ◌"
+        )
+        await query.message.edit_text(
+            text="● ● ●"
+        )
+        reply_markup = InlineKeyboardMarkup(buttons)
+        await client.edit_message_media(
+            query.message.chat.id, 
+            query.message.id, 
+            InputMediaPhoto('https://graph.org/file/2c78e7cbef60281832fa6.jpg')
+        )
+        await query.message.edit_text(
+            text=script.SONG_TXT,
+            reply_markup=reply_markup,
+            parse_mode=enums.ParseMode.HTML
+    )
 
     elif query.data == "YOUTUBE":
         buttons = [[
@@ -2154,22 +2180,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 text=(script.FONT_TXT),
                 reply_markup=reply_markup,
                 parse_mode=enums.ParseMode.HTML
-            )
-    elif query.data == "song":
-            btn = [[
-                    InlineKeyboardButton("⇋ ʙᴀᴄᴋ ⇋", callback_data="moref")
-                  ]]
-            await client.edit_message_media(
-                query.message.chat.id, 
-                query.message.id, 
-                InputMediaPhoto(random.choice(PICS))
-            )
-            reply_markup = InlineKeyboardMarkup(btn)
-            await query.message.edit_text(
-                text=(script.SONG_TXT),
-                reply_markup=reply_markup,
-                parse_mode=enums.ParseMode.HTML
-            )
+        )
     elif query.data == "stats":
         buttons = [[
             InlineKeyboardButton('⇇ ʙᴀᴄᴋ', callback_data='about'),
