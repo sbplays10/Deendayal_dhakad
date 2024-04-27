@@ -1599,10 +1599,6 @@ async def cb_handler(client: Client, query: CallbackQuery):
 
     elif query.data == "start":
         buttons = [[
-                    InlineKeyboardButton('❣️ Iɴsᴛᴀɢʀᴀᴍ ❣️', callback_data="INSTAGRAM"),
-                    InlineKeyboardButton('🎵', callback_data="SONG"),
-                    InlineKeyboardButton('🩸 YᴏᴜTᴜʙᴇ 🩸', callback_data='YOUTUBE')
-                ],[
                     InlineKeyboardButton('🔰 ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ 🔰', url=f'http://telegram.me/{temp.U_NAME}?startgroup=true')
                 ],[
                     InlineKeyboardButton('💸 ᴇᴀʀɴ ᴍᴏɴᴇʏ 💸', callback_data="shortlink_info"),
@@ -1610,6 +1606,10 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 ],[
                     InlineKeyboardButton('🦧 ʜᴇʟᴘ ', callback_data='help'),
                     InlineKeyboardButton('❤️ ᴀʙᴏᴜᴛ ', callback_data='about')
+                ],[
+                    InlineKeyboardButton('❣️Iɴsᴛᴀɢʀᴀᴍ', callback_data="INSTAGRAM"),
+                    InlineKeyboardButton('🎶', callback_data="SONG"),
+                    InlineKeyboardButton('🩸YᴏᴜTᴜʙᴇ', callback_data='YOUTUBE')
                 ],[
                     InlineKeyboardButton('✨ ʙᴜʏ ꜱᴜʙꜱᴄʀɪᴘᴛɪᴏɴ : ʀᴇᴍᴏᴠᴇ ᴀᴅꜱ ✨', callback_data="premium_info")
                   ]]
