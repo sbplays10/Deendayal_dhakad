@@ -43,10 +43,6 @@ async def start(client, message):
         await client.send_message(LOG_CHANNEL, script.LOG_TEXT_P.format(message.from_user.id, message.from_user.mention))
     if len(message.command) != 2:
         buttons = [[
-                    InlineKeyboardButton('❣️ Iɴsᴛᴀɢʀᴀᴍ', callback_data="INSTAGRAM"),
-                    InlineKeyboardButton('🎵', callback_data="SONG"),
-                    InlineKeyboardButton('🩸 YᴏᴜTᴜʙᴇ', callback_data='YOUTUBE')
-                ],[
                     InlineKeyboardButton('🔰 ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ 🔰', url=f'http://telegram.me/{temp.U_NAME}?startgroup=true')
                 ],[
                     InlineKeyboardButton('💸 ᴇᴀʀɴ ᴍᴏɴᴇʏ 💸', callback_data="shortlink_info"),
@@ -54,6 +50,10 @@ async def start(client, message):
                 ],[
                     InlineKeyboardButton('🦧 ʜᴇʟᴘ', callback_data='help'),
                     InlineKeyboardButton('❤️ ᴀʙᴏᴜᴛ ', callback_data='about')
+                ],[
+                    InlineKeyboardButton('❣️Iɴsᴛᴀɢʀᴀᴍ', callback_data="INSTAGRAM"),
+                    InlineKeyboardButton('🎶', callback_data="SONG"),
+                    InlineKeyboardButton('🩸YᴏᴜTᴜʙᴇ', callback_data='YOUTUBE')
                 ],[
                     InlineKeyboardButton('✨ ʙᴜʏ ꜱᴜʙꜱᴄʀɪᴘᴛɪᴏɴ : ʀᴇᴍᴏᴠᴇ ᴀᴅꜱ ✨', callback_data="premium_info")
                   ]]
@@ -120,10 +120,6 @@ async def start(client, message):
         return
     if len(message.command) == 2 and message.command[1] in ["subscribe", "error", "okay", "help"]:
         buttons = [[
-                    InlineKeyboardButton('❣️ Iɴsᴛᴀɢʀᴀᴍ', callback_data="INSTAGRAM"),
-                    InlineKeyboardButton('🎵', callback_data="SONG"),
-                    InlineKeyboardButton('🩸 YᴏᴜTᴜʙᴇ', callback_data='YOUTUBE')
-                ],[
                     InlineKeyboardButton('🔰 ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ 🔰', url=f'http://telegram.me/{temp.U_NAME}?startgroup=true')
                 ],[
                     InlineKeyboardButton('💸 ᴇᴀʀɴ ᴍᴏɴᴇʏ 💸', callback_data="shortlink_info"),
@@ -131,6 +127,10 @@ async def start(client, message):
                 ],[
                     InlineKeyboardButton('🦧 ʜᴇʟᴘ ', callback_data='help'),
                     InlineKeyboardButton('❤️ ᴀʙᴏᴜᴛ ', callback_data='about')
+                ],[
+                    InlineKeyboardButton('❣️Iɴsᴛᴀɢʀᴀᴍ', callback_data="INSTAGRAM"),
+                    InlineKeyboardButton('🎶', callback_data="SONG"),
+                    InlineKeyboardButton('🩸YᴏᴜTᴜʙᴇ', callback_data='YOUTUBE')
                 ],[
                     InlineKeyboardButton('✨ ʙᴜʏ ꜱᴜʙꜱᴄʀɪᴘᴛɪᴏɴ : ʀᴇᴍᴏᴠᴇ ᴀᴅꜱ ✨', callback_data="premium_info")
                   ]]
