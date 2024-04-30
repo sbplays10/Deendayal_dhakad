@@ -1610,11 +1610,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                     InlineKeyboardButton('🦧 ʜᴇʟᴘ ', callback_data='help'),
                     InlineKeyboardButton('❤️ ᴀʙᴏᴜᴛ ', callback_data='about')
                 ],[
-                    InlineKeyboardButton('❣️Iɴsᴛᴀɢʀᴀᴍ', callback_data="INSTAGRAM"),
-                    InlineKeyboardButton('🎵SONG', callback_data="SONG"),
-                    InlineKeyboardButton('🩸YᴏᴜTᴜʙᴇ', callback_data='YOUTUBE')
-                ],[
-                    InlineKeyboardButton('✨ ʙᴜʏ ꜱᴜʙꜱᴄʀɪᴘᴛɪᴏɴ : ʀᴇᴍᴏᴠᴇ ᴀᴅꜱ ✨', callback_data="premium_info")
+                    InlineKeyboardButton('🔥 ʙᴜʏ ꜱᴜʙꜱᴄʀɪᴘᴛɪᴏɴ : ʀᴇᴍᴏᴠᴇ ᴀᴅꜱ 🔥', callback_data="premium_info")
                   ]]
         
         reply_markup = InlineKeyboardMarkup(buttons)
@@ -1977,12 +1973,18 @@ async def cb_handler(client: Client, query: CallbackQuery):
 
     elif query.data == "help":
         buttons = [[
-            InlineKeyboardButton('• ʙᴏᴛ ᴀᴅᴍɪɴ ᴄᴏᴍᴍᴀɴᴅꜱ •', callback_data='admic')
+            InlineKeyboardButton('🔻Instagram', callback_data='INSTAGRAM')
         ], [
-            InlineKeyboardButton('• ᴜꜱᴇʀ •', callback_data='users'),
-            InlineKeyboardButton('• ɢʀᴏᴜᴘ •', callback_data='group')
+            InlineKeyboardButton('🩸YouTube', callback_data='YOUTUBE'),
+            InlineKeyboardButton('🎵SONG', callback_data='SONG'),
         ], [
-            InlineKeyboardButton("🎁 ᴇxᴛʀᴀ ꜰᴇᴀᴛᴜʀᴇꜱ 🎁", callback_data="moref")
+            InlineKeyboardButton('FONT', callback_data='font'),
+            InlineKeyboardButton('JSON', callback_data='json'),
+        ],[
+            InlineKeyboardButton ('STICKER ID', callback_data='sticker'),
+            InlineKeyboardButton('RENDERING STATUS', callback_data='rendr'),
+        ],[
+            InlineKeyboardButton("♨️Telegraph", callback_data="tele")
         ],[
             InlineKeyboardButton('⇋ ʙᴀᴄᴋ ᴛᴏ ʜᴏᴍᴇ ⇋', callback_data='start')
         ]]
@@ -2004,24 +2006,6 @@ async def cb_handler(client: Client, query: CallbackQuery):
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
             text=script.ABOUT_TXT.format(temp.B_NAME),
-            reply_markup=reply_markup,
-            parse_mode=enums.ParseMode.HTML
-        )
-    elif query.data == "moref":
-        buttons = [[
-            InlineKeyboardButton('TELEGRAPH', callback_data='tele'),
-            InlineKeyboardButton('FONT', callback_data='font'),
-            InlineKeyboardButton('JSON', callback_data='json'),
-        ],[
-            InlineKeyboardButton('SONG', callback_data='SONG'),
-            InlineKeyboardButton ('STICKER ID', callback_data='sticker'),
-            InlineKeyboardButton('RENDERING STATUS', callback_data='rendr'),
-        ],[
-            InlineKeyboardButton('⇋ ʙᴀᴄᴋ ᴛᴏ ʜᴏᴍᴇ ⇋', callback_data='start')
-        ]]
-        reply_markup = InlineKeyboardMarkup(buttons)
-        await query.message.edit_text(
-            text=script.EXTRAF_TXT.format(temp.B_NAME),
             reply_markup=reply_markup,
             parse_mode=enums.ParseMode.HTML
         )
