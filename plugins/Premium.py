@@ -144,20 +144,20 @@ async def plan(client, message):
     user_id = message.from_user.id 
     users = message.from_user.mention 
     btn = [[
-	    InlineKeyboardButton('• ꜰʀᴇᴇ ᴛʀɪᴀʟ •', callback_data='free')
+	    InlineKeyboardButton('🔥 ꜰʀᴇᴇ ᴛʀɪᴀʟ 🔥', callback_data='free')
         ],[
-            InlineKeyboardButton('• ʙʀᴏɴᴢᴇ •', callback_data='broze'),
-            InlineKeyboardButton('• ꜱɪʟᴠᴇʀ •', callback_data='silver')
+            InlineKeyboardButton('❤️ ʙʀᴏɴᴢᴇ', callback_data='broze'),
+            InlineKeyboardButton('☂️ ꜱɪʟᴠᴇʀ', callback_data='silver')
         ],[
-            InlineKeyboardButton('• ɢᴏʟᴅ •', callback_data='gold'),
-            InlineKeyboardButton('• ᴘʟᴀᴛɪɴᴜᴍ •', callback_data='platinum')
+            InlineKeyboardButton('👮 ɢᴏʟᴅ', callback_data='gold'),
+            InlineKeyboardButton('💘 ᴘʟᴀᴛɪɴᴜᴍ', callback_data='platinum')
         ],[
-            InlineKeyboardButton('• ᴅɪᴀᴍᴏɴᴅ •', callback_data='diamond'),
-            InlineKeyboardButton('• ᴏᴛʜᴇʀ •', callback_data='other')
+            InlineKeyboardButton('💎 ᴅɪᴀᴍᴏɴᴅ', callback_data='diamond'),
+            InlineKeyboardButton('🤦 ᴏᴛʜᴇʀ', callback_data='other')
         ],[            
             InlineKeyboardButton('⇋ ʙᴀᴄᴋ ᴛᴏ ʜᴏᴍᴇ ⇋', callback_data='start')
     ]]
-    await message.reply_photo(photo="https://graph.org/file/565192f583c3f97ef4c9c.jpg", caption=script.PREMIUM_TEXT.format(message.from_user.mention), reply_markup=InlineKeyboardMarkup(btn))
+    await message.reply_photo(photo="https://graph.org/file/5dc29e42b56dc626c24ef.jpg", caption=script.PREMIUM_TEXT.format(message.from_user.mention), reply_markup=InlineKeyboardMarkup(btn))
 
 
 #async def add_premium(client, userid): 
