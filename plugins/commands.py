@@ -407,7 +407,7 @@ async def start(client, message):
                    protect_content=False,
                    reply_markup=InlineKeyboardMarkup(btn)
                    )
-                   await asyncio.sleep(120)
+                   await asyncio.sleep(300)
                    await l.delete()
                    return
             msg = await client.send_cached_media(
@@ -490,7 +490,7 @@ async def start(client, message):
                        protect_content=False,
                        reply_markup=InlineKeyboardMarkup(btn)
                    )
-                   await asyncio.sleep(120)
+                   await asyncio.sleep(300)
                    await l.delete()
                    return
             msg = await client.send_cached_media(
@@ -556,7 +556,7 @@ async def start(client, message):
             protect_content=False,
             reply_markup=InlineKeyboardMarkup(btn)
            )
-           await asyncio.sleep(120)
+           await asyncio.sleep(300)
            await l.delete()
            return
     msg = await client.send_cached_media(
