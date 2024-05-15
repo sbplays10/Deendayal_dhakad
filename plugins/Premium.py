@@ -170,5 +170,7 @@ async def add_premium(client, userid):
         await db.update_user(user_data)  # Use the update_user method to update or insert user data
         await delete_all_referal_users(user_id)
         await client.send_message(chat_id = user_id, text = "<b>You Have Successfully Completed Total Referal.\n\nYou Added In Premium For {}</b>".format(REFERAL_PREMEIUM_TIME))
+    else: 
+	await query.answer("You don't have enough points to perform this action.", show_alert=True)
         return 
     
