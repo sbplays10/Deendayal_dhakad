@@ -35,8 +35,7 @@ STREAMHTO = (environ.get('STREAMHTO', ''))
 
 # Referal Settings
 REFERAL_COUNT = int(environ.get('REFERAL_COUNT', '1')) # number of referal count
-REFERAL_PREMEIUM_TIME = environ.get('REFERAL_PREMEIUM_TIME', '1 week')
-OWNER_USERNAME = environ.get('OWNER_USERNAME', 'Sorry_Sorry_Galti_Ho_Gai') # owner username without @
+REFERAL_PREMEIUM_TIME = environ.get('REFERAL_PREMEIUM_TIME', '1month')
 
 # Admins, Channels & Users
 ADMINS = [int(admin) if id_pattern.search(admin) else admin for admin in environ.get('ADMINS', '6646028262').split()]
