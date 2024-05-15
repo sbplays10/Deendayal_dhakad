@@ -191,9 +191,7 @@ async def start(client, message):
             if num_referrals == REFERAL_COUNT:
                 await add_premium(client, user_id)                 
                 return
-                else:
-                    await query.answer("You don't have enough points to perform this action.", show_alert=True)
-                    return    
+                    
         else:
             await message.reply("‼️ Yᴏᴜ ʜᴀᴠᴇ ʙᴇᴇɴ ᴀʟʀᴇᴀᴅʏ ɪɴᴠɪᴛᴇᴅ ᴏʀ ᴊᴏɪɴᴇᴅ")
             return
