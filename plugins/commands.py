@@ -3,7 +3,7 @@ import logging
 import random
 import asyncio
 import pytz
-from plugins.Premium import add_premium
+#from plugins.Premium import add_premium
 from Script import script
 from datetime import datetime
 from pyrogram import Client, filters, enums
