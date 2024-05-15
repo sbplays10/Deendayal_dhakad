@@ -1681,16 +1681,17 @@ async def cb_handler(client: Client, query: CallbackQuery):
             parse_mode=enums.ParseMode.HTML
         )
 
+    elif query.data == "show_referral_count":
         actual_referral_count = await get_referal_users_count(query.from_user.id)
-        await query.answer(f"Yᴏᴜʀ Pᴏɪɴᴛs : {actual_referral_count}", show_alert=True)  
-
+        await query.answer(f"🌹𝒀𝒐𝒖𝒓 𝒓𝒆𝒇𝒆𝒓𝒓𝒂𝒍 : {actual_referral_count}", show_alert=True)  
+        
     elif query.data == "Dhakad":
         actual_referral_count = await get_referal_users_count(query.from_user.id)
         buttons = [
             [
-                InlineKeyboardButton('Iɴᴠɪᴛᴇ Lɪɴᴋ', url=f"https://t.me/share/url?url=https://t.me/{temp.U_NAME}?start=reff-{query.from_user.id}"),
-                InlineKeyboardButton(f'⏳{actual_referral_count}', callback_data='show_referral_count'),
-                InlineKeyboardButton('Bᴀᴄᴋ', callback_data='start'),
+                InlineKeyboardButton('𝑰𝒏𝒗𝒊𝒕𝒆 𝑳𝒊𝒏𝒌', url=f"https://t.me/share/url?url=https://t.me/{temp.U_NAME}?start=reff-{query.from_user.id}"),
+                InlineKeyboardButton(f'⏳ {actual_referral_count}', callback_data='show_referral_count'),
+                InlineKeyboardButton('𝑩𝒂𝒄𝒌', callback_data='start'),
             ]
         ]
         await query.message.edit_text(
