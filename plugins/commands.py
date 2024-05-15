@@ -3,14 +3,15 @@ import logging
 import random
 import asyncio
 import pytz
+from plugins.Premium import add_premium
 from Script import script
 from datetime import datetime
 from pyrogram import Client, filters, enums
 from pyrogram.errors import ChatAdminRequired, FloodWait
 from pyrogram.types import *
 from database.ia_filterdb import Media, get_file_details, unpack_new_file_id, get_bad_files
-from database.users_chats_db import db
-from info import CHANNELS, ADMINS, AUTH_CHANNEL, LOG_CHANNEL, PICS, BATCH_FILE_CAPTION, CUSTOM_FILE_CAPTION, PROTECT_CONTENT, CHNL_LNK, GRP_LNK, REQST_CHANNEL, SUPPORT_CHAT_ID, SUPPORT_CHAT, MAX_B_TN, VERIFY, HOW_TO_VERIFY, SHORTLINK_API, SHORTLINK_URL, TUTORIAL, IS_TUTORIAL, PREMIUM_USER, PICS, SUBSCRIPTION
+from database.users_chats_db import db, referal_add_user, get_referal_all_users, get_referal_users_count, get_seconds, delete_all_referal_users
+from info import CHANNELS, ADMINS, AUTH_CHANNEL, REFERAL_COUNT, REFERAL_PREMEIUM_TIME, LOG_CHANNEL, PICS, BATCH_FILE_CAPTION, CUSTOM_FILE_CAPTION, PROTECT_CONTENT, CHNL_LNK, GRP_LNK, REQST_CHANNEL, SUPPORT_CHAT_ID, SUPPORT_CHAT, MAX_B_TN, VERIFY, HOWTOVERIFY, SHORTLINK_API, SHORTLINK_URL, TUTORIAL, IS_TUTORIAL, PREMIUM_USER, PICS, SUBSCRIPTION
 from utils import get_settings, get_size, is_req_subscribed, save_group_settings, temp, verify_user, check_token, check_verification, get_token, get_shortlink, get_tutorial
 from database.connections_mdb import active_connection
 # from plugins.pm_filter import ENABLE_SHORTLINK
@@ -50,6 +51,8 @@ async def start(client, message):
                 ],[
                     InlineKeyboardButton('🦧 ʜᴇʟᴘ', callback_data='help'),
                     InlineKeyboardButton('❤️ ᴀʙᴏᴜᴛ ', callback_data='about')
+                ],[
+                    InlineKeyboardButton('⚜️ Rᴇғᴇʀ & Gᴇᴛ Pʀᴇᴍɪᴜᴍ ⚜️', callback_data='Dhakad')
                 ],[
                     InlineKeyboardButton('✨ ʙᴜʏ ꜱᴜʙꜱᴄʀɪᴘᴛɪᴏɴ : ʀᴇᴍᴏᴠᴇ ᴀᴅꜱ ✨', callback_data="premium_info")
                   ]]
@@ -124,6 +127,8 @@ async def start(client, message):
                     InlineKeyboardButton('🦧 ʜᴇʟᴘ ', callback_data='help'),
                     InlineKeyboardButton('❤️ ᴀʙᴏᴜᴛ ', callback_data='about')
                 ],[
+                    InlineKeyboardButton('⚜️ Rᴇғᴇʀ & Gᴇᴛ Pʀᴇᴍɪᴜᴍ ⚜️', callback_data='Dhakad')
+                ],[
                     InlineKeyboardButton('✨ ʙᴜʏ ꜱᴜʙꜱᴄʀɪᴘᴛɪᴏɴ : ʀᴇᴍᴏᴠᴇ ᴀᴅꜱ ✨', callback_data="premium_info")
                   ]]
         reply_markup = InlineKeyboardMarkup(buttons)
@@ -172,6 +177,26 @@ async def start(client, message):
         )
         return  
     data = message.command[1]
+    if data.split("-", 1)[0] == "Deendayal":
+        user_id = int(data.split("-", 1)[1])
+        # Check if the referred user ID is the same as the ID of the user who sent the message
+        if user_id == message.from_user.id:
+            await message.reply("♨️ You cannot refer yourself ♨️")
+            return
+        deendayal = await referal_add_user(user_id, message.from_user.id)
+        if deendayal:
+            await message.reply(f"<b>You have joined using the referral link of user with ID {user_id}\n\nSend /start again to use the bot</b>")
+            num_referrals = await get_referal_users_count(user_id)
+            await client.send_message(chat_id = user_id, text = "<b>{} start the bot with your referral link\n\nTotal Referals - {}</b>".format(message.from_user.mention, num_referrals))
+            if num_referrals == REFERAL_COUNT:
+                await add_premium(client, user_id)                 
+                return
+                else:
+                    await query.answer("You don't have enough points to perform this action.", show_alert=True)
+                    return    
+        else:
+            await message.reply("‼️ Yᴏᴜ ʜᴀᴠᴇ ʙᴇᴇɴ ᴀʟʀᴇᴀᴅʏ ɪɴᴠɪᴛᴇᴅ ᴏʀ ᴊᴏɪɴᴇᴅ")
+            return
     try:
         pre, file_id = data.split('_', 1)
     except:
