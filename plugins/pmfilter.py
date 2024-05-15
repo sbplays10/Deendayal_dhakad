@@ -1615,6 +1615,8 @@ async def cb_handler(client: Client, query: CallbackQuery):
                     InlineKeyboardButton('🦧 ʜᴇʟᴘ ', callback_data='help'),
                     InlineKeyboardButton('❤️ ᴀʙᴏᴜᴛ ', callback_data='about')
                 ],[
+                    InlineKeyboardButton('⚜️ Rᴇғᴇʀ & Gᴇᴛ Pʀᴇᴍɪᴜᴍ ⚜️', callback_data='Dhakad')
+                ],[
                     InlineKeyboardButton('🔥 ʙᴜʏ ꜱᴜʙꜱᴄʀɪᴘᴛɪᴏɴ : ʀᴇᴍᴏᴠᴇ ᴀᴅꜱ 🔥', callback_data="premium_info")
                   ]]
         
@@ -1678,6 +1680,40 @@ async def cb_handler(client: Client, query: CallbackQuery):
             reply_markup=reply_markup,
             parse_mode=enums.ParseMode.HTML
         )
+
+        actual_referral_count = await get_referal_users_count(query.from_user.id)
+        await query.answer(f"Yᴏᴜʀ Pᴏɪɴᴛs : {actual_referral_count}", show_alert=True)  
+
+    elif query.data == "Dhakad":
+        actual_referral_count = await get_referal_users_count(query.from_user.id)
+        buttons = [
+            [
+                InlineKeyboardButton('Iɴᴠɪᴛᴇ Lɪɴᴋ', url=f"https://t.me/share/url?url=https://t.me/{temp.U_NAME}?start=reff-{query.from_user.id}"),
+                InlineKeyboardButton(f'⏳{actual_referral_count}', callback_data='show_referral_count'),
+                InlineKeyboardButton('Bᴀᴄᴋ', callback_data='start'),
+            ]
+        ]
+        await query.message.edit_text(
+            text="● ◌ ◌"
+        )
+        await query.message.edit_text(
+            text="● ● ◌"
+        )
+        await query.message.edit_text(
+            text="● ● ●"
+        )
+        reply_markup = InlineKeyboardMarkup(buttons)
+        await client.edit_message_media(
+            query.message.chat.id, 
+            query.message.id, 
+            InputMediaPhoto('https://graph.org/file/5cdb4c0e29c5286db556a.jpg')
+        )
+        await query.message.edit_text(
+            text=script.DEENDAYAL_TXT.format(REFERAL_PREMEIUM_TIME, temp.U_NAME, query.from_user.id, REFERAL_COUNT),
+            reply_markup=reply_markup,
+            parse_mode=enums.ParseMode.HTML
+        )
+        
 
     elif query.data == "qr_info":
         buttons = [[
