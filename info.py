@@ -34,7 +34,7 @@ STREAM_API = (environ.get('STREAM_API', ''))
 STREAMHTO = (environ.get('STREAMHTO', ''))
 
 # Referal Settings
-REFERAL_COUNT = int(environ.get('REFERAL_COUNT', '1')) # number of referal count
+REFERAL_COUNT = int(environ.get('REFERAL_COUNT', '10')) # number of referal count
 REFERAL_PREMEIUM_TIME = environ.get('REFERAL_PREMEIUM_TIME', '1month')
 
 # Admins, Channels & Users
