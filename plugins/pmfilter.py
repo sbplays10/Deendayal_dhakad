@@ -1689,7 +1689,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         actual_referral_count = await get_referal_users_count(query.from_user.id)
         buttons = [
             [
-                InlineKeyboardButton('𝑰𝒏𝒗𝒊𝒕𝒆 𝑳𝒊𝒏𝒌', url=f"https://t.me/share/url?url=https://t.me/{temp.U_NAME}?start=reff-{query.from_user.id}"),
+                InlineKeyboardButton('𝑰𝒏𝒗𝒊𝒕𝒆 𝑳𝒊𝒏𝒌', url=f"https://t.me/share/url?url=https://t.me/{temp.U_NAME}?start=Deendayal-{query.from_user.id}"),
                 InlineKeyboardButton(f'⏳ {actual_referral_count}', callback_data='show_referral_count'),
                 InlineKeyboardButton('𝑩𝒂𝒄𝒌', callback_data='start'),
             ]
