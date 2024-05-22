@@ -3,7 +3,7 @@ from datetime import timedelta
 import pytz
 import datetime, time
 from Script import script 
-from info import ADMINS, PREMIUM_LOGS, REFERAL_COUNT, REFERAL_PREMEIUM_TIME
+from info import ADMINS, PREMIUM_LOGS
 from utils import get_seconds
 from database.users_chats_db import db, delete_all_referal_users
 from pyrogram import Client, filters 
@@ -159,16 +159,3 @@ async def plan(client, message):
     ]]
     await message.reply_photo(photo="https://graph.org/file/5dc29e42b56dc626c24ef.jpg", caption=script.PREMIUM_TEXT.format(message.from_user.mention), reply_markup=InlineKeyboardMarkup(btn))
 
-async def add_premium(client, userid): 
-    user_id = int(userid) 
-    time = REFERAL_PREMEIUM_TIME
-    seconds = await get_seconds(time)
-    if seconds > 0:
-        expiry_time = datetime.datetime.now() + datetime.timedelta(seconds=seconds)
-        user_data = {"id": user_id, "expiry_time": expiry_time} 
-        await db.update_user(user_data)  # Use the update_user method to update or insert user data
-        await delete_all_referal_users(user_id)
-        await client.send_message(chat_id = user_id, text = "<b>You Have Successfully Completed Total Referal.\n\nYou Added In Premium For {}</b>".format(REFERAL_PREMEIUM_TIME))
-    else:
-        await query.answer("You don't have enough points to perform this action.", show_alert=True)
-        return
