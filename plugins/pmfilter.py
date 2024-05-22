@@ -1956,7 +1956,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('⚜️ Movie Group ⚜️', url="https://t.me/Deendayal_Movies_Group"),
             InlineKeyboardButton('☔ Contact ☔', url="https://t.me/Contact_Deendayal_bot")
         ],[
-            InlineKeyboardButton('🔥 File Store Bot 🔥', url="https://t.me/Deendayal_File_Store_bot"),
+            #InlineKeyboardButton('🔥 File Store Bot 🔥', url="https://t.me/Deendayal_File_Store_bot"),
             InlineKeyboardButton('👮 Update Channel 👮', url="https://t.me/Deendayal_dhakad")
         ],[
             InlineKeyboardButton('⇍ ʙᴀᴄᴋ ⇏', callback_data='start')
@@ -2033,7 +2033,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
 
     elif query.data == "donate":
         buttons = [[
-            InlineKeyboardButton('🌹 Send donate screenshot here 🌹', user_id=int(6646028262))
+            InlineKeyboardButton('🌹 Send donate screenshot here 🌹', url="https://t.me/Sorry_Sorry_Galti_Ho_Gai"),
             InlineKeyboardButton('Back', callback_data='about')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
