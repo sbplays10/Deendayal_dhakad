@@ -1685,6 +1685,10 @@ async def cb_handler(client: Client, query: CallbackQuery):
             parse_mode=enums.ParseMode.HTML
         )
 
+    elif query.data == "ref_point":
+       await query.answer(f'You Have: {referdb.get_refer_points(query.from_user.id)} Refferal points.', show_alert=True)
+    
+
     elif query.data == "upi_info":
         buttons = [[
             InlineKeyboardButton('📲 ꜱᴇɴᴅ ᴘᴀʏᴍᴇɴᴛ ꜱᴄʀᴇᴇɴꜱʜᴏᴛ ʜᴇʀᴇ', user_id=int(6646028262))
@@ -1985,35 +1989,23 @@ async def cb_handler(client: Client, query: CallbackQuery):
             reply_markup=reply_markup,
             parse_mode=enums.ParseMode.HTML
         )
-
-    elif query.data == "admic":
-        if query.from_user.id not in ADMINS:
-            return await query.answer("⚠️ ʏᴏᴜ'ʀᴇ ɴᴏᴛ ᴀ ʙᴏᴛ ᴀᴅᴍɪɴ !", show_alert=True)        
-        buttons = [[
-            InlineKeyboardButton('⇋ ʙᴀᴄᴋ ⇋', callback_data='help')
-        ]]
-        reply_markup = InlineKeyboardMarkup(buttons)
-        await query.message.edit_text(
-            text=script.ADMIC_TXT.format(query.from_user.mention),
-            reply_markup=reply_markup,
-            parse_mode=enums.ParseMode.HTML
-        )
     
 
     elif query.data == "help":
         buttons = [[
-            InlineKeyboardButton('🔻Instagram', callback_data='INSTAGRAM')
+            InlineKeyboardButton('🤼 ᴜꜱᴇʀ •', callback_data='users'),
+            InlineKeyboardButton('💔 ɢʀᴏᴜᴘ •', callback_data='group')
         ], [
             InlineKeyboardButton('🩸YouTube', callback_data='YOUTUBE'),
             InlineKeyboardButton('🎵SONG', callback_data='SONG'),
         ], [
-            InlineKeyboardButton('FONT', callback_data='font'),
-            InlineKeyboardButton('JSON', callback_data='json'),
+            InlineKeyboardButton('🔻Instagram', callback_data='INSTAGRAM')
+        ], [
+            InlineKeyboardButton('📃FONT', callback_data='font'),
+            InlineKeyboardButton('📌JSON', callback_data='json'),
         ],[
-            InlineKeyboardButton ('STICKER ID', callback_data='sticker'),
-            InlineKeyboardButton('RENDERING STATUS', callback_data='rendr'),
-        ],[
-            InlineKeyboardButton("♨️Telegraph", callback_data="tele")
+            InlineKeyboardButton ('🔖STICKER ID', callback_data='sticker'),
+            InlineKeyboardButton('♨️Telegraph', callback_data='tele'),
         ],[
             InlineKeyboardButton('⇋ ʙᴀᴄᴋ ᴛᴏ ʜᴏᴍᴇ ⇋', callback_data='start')
         ]]
@@ -2025,10 +2017,10 @@ async def cb_handler(client: Client, query: CallbackQuery):
         )
     elif query.data == "about":
         buttons = [[
-            InlineKeyboardButton('🖊️ ᴀɴʏ ǫᴜᴇʀʏ ', user_id=int(6646028262))
+            InlineKeyboardButton('Dᴏɴᴀᴛɪᴏɴ 🎉', callback_data='donate'),
         ],[
             InlineKeyboardButton('‼️ ᴅɪꜱᴄʟᴀɪᴍᴇʀ ‼️', callback_data='disclaimer'),
-            InlineKeyboardButton ('🪔 sᴏᴜʀᴄᴇ ', callback_data='source'),
+            InlineKeyboardButton ('🪔 sᴏᴜʀᴄᴇ', callback_data='source'),
         ],[
             InlineKeyboardButton('⇋ ʙᴀᴄᴋ ᴛᴏ ʜᴏᴍᴇ ⇋', callback_data='start')
         ]]
@@ -2038,9 +2030,24 @@ async def cb_handler(client: Client, query: CallbackQuery):
             reply_markup=reply_markup,
             parse_mode=enums.ParseMode.HTML
         )
-    elif query.data == "rendr":
-        await query.answer("⚡️ ʟɪᴠᴇ sʏsᴛᴇᴍ sᴛᴀᴛᴜs ⚡️\n\n❂ ʀᴀᴍ ●●●●●●●◌◌◌\n✇ ᴄᴘᴜ ●●●●●●●◌◌◌\n✪ ᴅᴀᴛᴀ ᴛʀᴀꜰɪᴄs ●●●●◌◌◌◌◌◌ 🛰\n\nᴠ4.2 [sᴛᴀʙʟᴇ] """, show_alert=True)
 
+    elif query.data == "donate":
+        buttons = [[
+            InlineKeyboardButton('🌹 Send donate screenshot here 🌹', user_id=int(6646028262))
+            InlineKeyboardButton('Back', callback_data='about')
+        ]]
+        reply_markup = InlineKeyboardMarkup(buttons)
+        await client.edit_message_media(
+            query.message.chat.id, 
+            query.message.id, 
+            InputMediaPhoto('https://graph.org/file/99eebf5dbe8a134f548e0.jpg')
+        )
+        await query.message.edit_text(
+            text=script.DONATE,
+            reply_markup=reply_markup,
+            parse_mode=enums.ParseMode.HTML
+        )
+    
     elif query.data == "source":
         buttons = [[
             InlineKeyboardButton('⇋ ʙᴀᴄᴋ ⇋', callback_data='about')
