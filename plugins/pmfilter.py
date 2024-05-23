@@ -1993,18 +1993,18 @@ async def cb_handler(client: Client, query: CallbackQuery):
 
     elif query.data == "help":
         buttons = [[
-            InlineKeyboardButton('🤼 ᴜꜱᴇʀ •', callback_data='users'),
-            InlineKeyboardButton('💔 ɢʀᴏᴜᴘ •', callback_data='group')
+            InlineKeyboardButton('🤼ᴜꜱᴇʀ', callback_data='users'),
+            InlineKeyboardButton('💔ɢʀᴏᴜᴘ', callback_data='group')
         ], [
             InlineKeyboardButton('🩸YouTube', callback_data='YOUTUBE'),
             InlineKeyboardButton('🎵SONG', callback_data='SONG'),
         ], [
             InlineKeyboardButton('🔻Instagram', callback_data='INSTAGRAM')
         ], [
-            InlineKeyboardButton('📃FONT', callback_data='font'),
+            InlineKeyboardButton('🌷FONT', callback_data='font'),
             InlineKeyboardButton('📌JSON', callback_data='json'),
         ],[
-            InlineKeyboardButton ('🔖STICKER ID', callback_data='sticker'),
+            InlineKeyboardButton ('💃STICKER ID', callback_data='sticker'),
             InlineKeyboardButton('♨️Telegraph', callback_data='tele'),
         ],[
             InlineKeyboardButton('⇋ ʙᴀᴄᴋ ᴛᴏ ʜᴏᴍᴇ ⇋', callback_data='start')
@@ -2033,7 +2033,8 @@ async def cb_handler(client: Client, query: CallbackQuery):
 
     elif query.data == "donate":
         buttons = [[
-            InlineKeyboardButton('🌹 Send donate screenshot here 🌹', url="https://t.me/Sorry_Sorry_Galti_Ho_Gai"),
+            InlineKeyboardButton('🌹 Send donate screenshot here 🌹', url="https://t.me/Sorry_Sorry_Galti_Ho_Gai")
+        ],[
             InlineKeyboardButton('Back', callback_data='about')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
