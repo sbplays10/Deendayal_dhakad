@@ -2017,7 +2017,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         )
     elif query.data == "about":
         buttons = [[
-            InlineKeyboardButton('Dᴏɴᴀᴛɪᴏɴ 🎉', callback_data='Donate'),
+            InlineKeyboardButton('Dᴏɴᴀᴛɪᴏɴ 🎉', callback_data='Donate')
         ],[
             InlineKeyboardButton('‼️ ᴅɪꜱᴄʟᴀɪᴍᴇʀ ‼️', callback_data='disclaimer'),
             InlineKeyboardButton ('🪔 sᴏᴜʀᴄᴇ', callback_data='source'),
@@ -2051,10 +2051,10 @@ async def cb_handler(client: Client, query: CallbackQuery):
         await client.edit_message_media(
             query.message.chat.id, 
             query.message.id, 
-            InputMediaPhoto('https://graph.org/file/07308743602842181902a.jpg')
+            InputMediaPhoto('https://graph.org/file/99eebf5dbe8a134f548e0.jpg')
         )
         await query.message.edit_text(
-            text=script.INSTAGRAM_TXT,
+            text=script.DONATE,
             reply_markup=reply_markup,
             parse_mode=enums.ParseMode.HTML
         )
