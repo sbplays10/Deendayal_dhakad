@@ -2033,7 +2033,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
 
     elif query.data == "donate":
         buttons = [[
-            InlineKeyboardButtoon('🩸 Sᴇɴᴅ Dᴏɴᴀᴛᴇ Sᴄʀᴇᴇɴsʜᴏᴛ Hᴇʀᴇ 🩸', url="https://t.me/Sorry_Sorry_Galti_Ho_Gai")
+            InlineKeyboardButtoon('🌴Sᴇɴᴅ Dᴏɴᴀᴛᴇ Sᴄʀᴇᴇɴsʜᴏᴛ Hᴇʀᴇ', url="https://t.me/Sorry_Sorry_Galti_Ho_Gai")
         ],[
             InlineKeyboardButton('Back', callback_data='start')
         ]]
