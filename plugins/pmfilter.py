@@ -2017,7 +2017,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         )
     elif query.data == "about":
         buttons = [[
-            InlineKeyboardButton('Dᴏɴᴀᴛɪᴏɴ 🎉', callback_data='donate'),
+            InlineKeyboardButton('Dᴏɴᴀᴛɪᴏɴ 🎉', callback_data='Donate'),
         ],[
             InlineKeyboardButton('‼️ ᴅɪꜱᴄʟᴀɪᴍᴇʀ ‼️', callback_data='disclaimer'),
             InlineKeyboardButton ('🪔 sᴏᴜʀᴄᴇ', callback_data='source'),
@@ -2030,15 +2030,15 @@ async def cb_handler(client: Client, query: CallbackQuery):
             reply_markup=reply_markup,
             parse_mode=enums.ParseMode.HTML
         )
-
-    elif query.data == "donate":
-        buttons = [[
-            InlineKeyboardButtoon('🌴Sᴇɴᴅ Dᴏɴᴀᴛᴇ Sᴄʀᴇᴇɴsʜᴏᴛ Hᴇʀᴇ', url="https://t.me/Sorry_Sorry_Galti_Ho_Gai")
-        ],[
-            InlineKeyboardButton('Back', callback_data='start')
-        ]]
-        reply_markup = InlineKeyboardMarkup(buttons)
-        await client.edit_message_media(
+        
+    elif query.data == "Donate":
+            btn = [[
+                    InlineKeyboardButton("🌲 Sᴇɴᴅ Dᴏɴᴀᴛᴇ Sᴄʀᴇᴇɴsʜᴏᴛ Hᴇʀᴇ", user_id=int(6646028262))
+               ],[
+                    InlineKeyboardButton("⇋ ʙᴀᴄᴋ ⇋", callback_data="about")
+                  ]]
+            reply_markup = InlineKeyboardMarkup(btn)
+            await client.edit_message_media(
             query.message.chat.id, 
             query.message.id, 
             InputMediaPhoto('https://graph.org/file/99eebf5dbe8a134f548e0.jpg')
