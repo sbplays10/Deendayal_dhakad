@@ -1629,7 +1629,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
 
     elif query.data == "start":
         buttons = [[
-                    InlineKeyboardButton('🧑‍🤝‍🧑 Dᴏɴᴀᴛɪᴏɴ 👭', callback_data='donate'),
+                    InlineKeyboardButton('🧑‍🤝‍🧑 Dᴏɴᴀᴛɪᴏɴ 👭', callback_data='donate')
                 ],[
                     InlineKeyboardButton('💸 ᴇᴀʀɴ ᴍᴏɴᴇʏ 💸', callback_data="shortlink_info"),
                     InlineKeyboardButton(' ⚜️ sᴜᴘᴘᴏʀᴛ ', callback_data='channels')
