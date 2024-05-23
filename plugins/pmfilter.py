@@ -2031,27 +2031,16 @@ async def cb_handler(client: Client, query: CallbackQuery):
             parse_mode=enums.ParseMode.HTML
         )
         
-    elif query.data == "Donate":
-        btn = [[
-                InlineKeyboardButton("🌲 Sᴇɴᴅ Dᴏɴᴀᴛᴇ Sᴄʀᴇᴇɴsʜᴏᴛ Hᴇʀᴇ", user_id=int(6646028262))
-            ],[
-                InlineKeyboardButton("⇋ ʙᴀᴄᴋ ⇋", callback_data="about")
+    elif query.data == "donate":
+        buttons = [[
+            InlineKeyboardButton('ʙᴀᴄᴋ', callback_data='help'),
+            InlineKeyboardButton('sᴜᴘᴘᴏʀᴛ', callback_data='group_info')
         ]]
-        reply_markup = InlineKeyboardMarkup(buttons)
-        await query.message.edit_text(
-            text="● ◌ ◌"
-        )
-        await query.message.edit_text(
-            text="● ● ◌"
-        )
-        await query.message.edit_text(
-            text="● ● ●"
-        )
         reply_markup = InlineKeyboardMarkup(buttons)
         await client.edit_message_media(
             query.message.chat.id, 
             query.message.id, 
-            InputMediaPhoto('https://graph.org/file/99eebf5dbe8a134f548e0.jpg')
+            InputMediaPhoto(random.choice(PICS))
         )
         await query.message.edit_text(
             text=script.DONATE,
