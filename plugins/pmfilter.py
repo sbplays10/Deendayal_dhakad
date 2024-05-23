@@ -1629,7 +1629,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
 
     elif query.data == "start":
         buttons = [[
-                    InlineKeyboardButton('🔰 ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ 🔰', url=f'http://telegram.me/{temp.U_NAME}?startgroup=true')
+                    InlineKeyboardButton('🧑‍🤝‍🧑 Dᴏɴᴀᴛɪᴏɴ 👭', callback_data='donate'),
                 ],[
                     InlineKeyboardButton('💸 ᴇᴀʀɴ ᴍᴏɴᴇʏ 💸', callback_data="shortlink_info"),
                     InlineKeyboardButton(' ⚜️ sᴜᴘᴘᴏʀᴛ ', callback_data='channels')
@@ -2017,7 +2017,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         )
     elif query.data == "about":
         buttons = [[
-            InlineKeyboardButton('Dᴏɴᴀᴛɪᴏɴ 🎉', callback_data='donate'),
+            #InlineKeyboardButton('Dᴏɴᴀᴛɪᴏɴ 🎉', callback_data='donate'),
         ],[
             InlineKeyboardButton('‼️ ᴅɪꜱᴄʟᴀɪᴍᴇʀ ‼️', callback_data='disclaimer'),
             InlineKeyboardButton ('🪔 sᴏᴜʀᴄᴇ', callback_data='source'),
@@ -2033,9 +2033,9 @@ async def cb_handler(client: Client, query: CallbackQuery):
 
     elif query.data == "donate":
         buttons = [[
-            InlineKeyboardButton('🌹 Send donate screenshot here 🌹', url="https://t.me/Sorry_Sorry_Galti_Ho_Gai")
+            InlineKeyboardButtoon('🩸 Sᴇɴᴅ Dᴏɴᴀᴛᴇ Sᴄʀᴇᴇɴsʜᴏᴛ Hᴇʀᴇ 🩸', url="https://t.me/Sorry_Sorry_Galti_Ho_Gai")
         ],[
-            InlineKeyboardButton('Back', callback_data='about')
+            InlineKeyboardButton('Back', callback_data='start')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await client.edit_message_media(
