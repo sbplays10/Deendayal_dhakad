@@ -1708,8 +1708,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             query.message.id, 
             InputMediaPhoto('https://graph.org/file/99eebf5dbe8a134f548e0.jpg')
         )
-        await query.message.edit_text(
-            text=(script.DHAKAD_DONATION),
+        await query.message.edit_text(caption=script.DHAKAD_DONATION.format(query.from_user.mention),
             reply_markup=reply_markup,
             parse_mode=enums.ParseMode.HTML
         )
