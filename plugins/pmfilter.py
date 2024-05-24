@@ -1665,6 +1665,23 @@ async def cb_handler(client: Client, query: CallbackQuery):
         )
         await query.answer(MSG_ALRT)
 
+    elif query.data == "donate":
+        buttons = [[
+            InlineKeyboardButton('ʙᴀᴄᴋ', callback_data='help'),
+            InlineKeyboardButton('sᴜᴘᴘᴏʀᴛ', callback_data='start')
+        ]]
+        reply_markup = InlineKeyboardMarkup(buttons)
+        await client.edit_message_media(
+            query.message.chat.id, 
+            query.message.id, 
+            InputMediaPhoto(random.choice(PICS))
+        )
+        await query.message.edit_text(
+            text=script.DONATE,
+            reply_markup=reply_markup,
+            parse_mode=enums.ParseMode.HTML
+        )
+
     elif query.data == "purchase":
         buttons = [[
             InlineKeyboardButton('💵 ᴘᴀʏ ᴠɪᴀ ᴜᴘɪ ɪᴅ 💵', callback_data='upi_info')
