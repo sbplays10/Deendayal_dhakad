@@ -157,11 +157,11 @@ async def re_enable_chat(bot, message):
 async def get_ststs(bot, message):
     if message.from_user.id not in ADMINS:  # You need to define ADMINS
         m=await message.reply_sticker("CAACAgUAAxkBAAECCUlmUw0D3fo3zav79KLASGhruhZHqwACcwAD_lPRFGwDdnXy1J3vHgQ") 
-        await asyncio.sleep(5)
+        await asyncio.sleep(2)
         await m.delete()
         sticker_file_id = "CAACAgUAAxkBAAECCU9mUw1TwWwtSeWwRXjhzse2Yc4QBAACCwYAAlEqeVVU5eFtZaqT2h4E"  # Replace with your sticker file ID
         d = await message.reply_sticker(sticker=sticker_file_id)
-        await asyncio.sleep(30)
+        await asyncio.sleep(15)
         await d.delete()
     else:
         rju = await message.reply('Fetching stats..')
