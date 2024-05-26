@@ -333,7 +333,7 @@ async def advantage_spoll_choker(bot, query):
                 if NO_RESULTS_MSG:
                    await bot.send_message(chat_id=LOG_CHANNEL, text=(script.NORSLTS.format(reqstr.id, reqstr.mention, movie)))
                 k = await query.message.edit(text=script.MVE_NT_FND, reply_markup=InlineKeyboardMarkup(button))
-                await asyncio.sleep(7)
+                await asyncio.sleep(4)
                 await k.delete()
 #Qualities 
 @Client.on_callback_query(filters.regex(r"^qualities#"))
@@ -2652,7 +2652,7 @@ async def advantage_spell_chok(client, msg):
                 caption=script.I_CUDNT.format(mv_rqst),
                 reply_markup=InlineKeyboardMarkup(button)
             )
-            await asyncio.sleep(30)
+            await asyncio.sleep(10)
             await k.delete()
             return
         regex = re.compile(r".*(imdb|wikipedia).*", re.IGNORECASE)  # look for imdb / wiki results
@@ -2690,7 +2690,7 @@ async def advantage_spell_chok(client, msg):
                 caption=script.I_CUDNT.format(mv_rqst),
                 reply_markup=InlineKeyboardMarkup(button)
             )
-            await asyncio.sleep(30)
+            await asyncio.sleep(10)
             await k.delete()
             return
         SPELL_CHECK[mv_id] = movielist
@@ -2709,14 +2709,14 @@ async def advantage_spell_chok(client, msg):
         )
         try:
             if settings['auto_delete']:
-                await asyncio.sleep(60)
+                await asyncio.sleep(10)
                 await spell_check_del.delete()
         except KeyError:
                 grpid = await active_connection(str(message.from_user.id))
                 await save_group_settings(grpid, 'auto_delete', True)
                 settings = await get_settings(message.chat.id)
                 if settings['auto_delete']:
-                    await asyncio.sleep(60)
+                    await asyncio.sleep(10)
                     await spell_check_del.delete()
     except:
         try:
@@ -2734,7 +2734,7 @@ async def advantage_spell_chok(client, msg):
                 caption=script.I_CUDNT.format(mv_rqst),
                 reply_markup=InlineKeyboardMarkup(button)
             )
-            await asyncio.sleep(30)
+            await asyncio.sleep(10)
             await k.delete()
             return
         movielist = []
@@ -2750,7 +2750,7 @@ async def advantage_spell_chok(client, msg):
                 caption=script.I_CUDNT.format(mv_rqst),
                 reply_markup=InlineKeyboardMarkup(button)
             )
-            await asyncio.sleep(30)
+            await asyncio.sleep(10)
             await k.delete()
             return
         movielist += [movie.get('title') for movie in movies]
@@ -2773,14 +2773,14 @@ async def advantage_spell_chok(client, msg):
         )
         try:
             if settings['auto_delete']:
-                await asyncio.sleep(600)
+                await asyncio.sleep(10)
                 await spell_check_del.delete()
         except KeyError:
                 grpid = await active_connection(str(msg.from_user.id))
                 await save_group_settings(grpid, 'auto_delete', True)
                 settings = await get_settings(msg.chat.id)
                 if settings['auto_delete']:
-                    await asyncio.sleep(600)
+                    await asyncio.sleep(10)
                     await spell_check_del.delete()
 
 
