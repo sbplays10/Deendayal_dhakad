@@ -1634,7 +1634,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                     #InlineKeyboardButton('🔰 ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ 🔰', url=f'http://telegram.me/{temp.U_NAME}?startgroup=true')
                     InlineKeyboardButton('Dᴏɴᴀᴛɪᴏɴ 🎉', callback_data='donation')
                 ],[
-                    InlineKeyboardButton('💸 ᴇᴀʀɴ ᴍᴏɴᴇʏ 💸', callback_data="shortlink_info"),
+                    InlineKeyboardButton('🌳 Tᴏᴘ Sᴇᴀʀᴄʜɪɴɢ', callback_data="topsearch"),
                     InlineKeyboardButton(' ⚜️ sᴜᴘᴘᴏʀᴛ ', callback_data='channels')
                 ],[
                     InlineKeyboardButton('🦧 ʜᴇʟᴘ ', callback_data='help'),
@@ -1984,7 +1984,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
   
     elif query.data == "channels":
         buttons = [[           
-            InlineKeyboardButton('⚜️ Movie Group ⚜️', url="https://t.me/Deendayal_Movies_Group"),
+            InlineKeyboardButton('⚜️ Movie Group ⚜️', url="https://t.me/Dhakad_Movie_Group"),
             InlineKeyboardButton('☔ Contact ☔', url="https://t.me/Contact_Deendayal_bot")
         ],[
             #InlineKeyboardButton('🔥 File Store Bot 🔥', url="https://t.me/Deendayal_File_Store_bot"),
