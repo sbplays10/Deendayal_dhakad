@@ -6,6 +6,7 @@ import pytz
 from Script import script
 from datetime import datetime
 from database.refer import referdb
+from database.config_db import mdb
 from pyrogram import Client, filters, enums
 from pyrogram.errors import ChatAdminRequired, FloodWait
 from pyrogram.types import *
@@ -47,7 +48,7 @@ async def start(client, message):
                     #InlineKeyboardButton('🔰 ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ 🔰', url=f'http://telegram.me/{temp.U_NAME}?startgroup=true')
                     InlineKeyboardButton('Dᴏɴᴀᴛɪᴏɴ 🎉', callback_data='donation')
                 ],[
-                    InlineKeyboardButton('💸 ᴇᴀʀɴ ᴍᴏɴᴇʏ 💸', callback_data="shortlink_info"),
+                    InlineKeyboardButton('🌳 Tᴏᴘ Sᴇᴀʀᴄʜɪɴɢ', callback_data="topsearch"),
                     InlineKeyboardButton('⚜️ sᴜᴘᴘᴏʀᴛ', callback_data='channels')
                 ],[
                     InlineKeyboardButton('🦧 ʜᴇʟᴘ', callback_data='help'),
@@ -123,7 +124,7 @@ async def start(client, message):
                     #InlineKeyboardButton('🔰 ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ 🔰', url=f'http://telegram.me/{temp.U_NAME}?startgroup=true')
                     InlineKeyboardButton('Dᴏɴᴀᴛɪᴏɴ 🎉', callback_data='donation')
                 ],[
-                    InlineKeyboardButton('💸 ᴇᴀʀɴ ᴍᴏɴᴇʏ 💸', callback_data="shortlink_info"),
+                    InlineKeyboardButton('🌳 Tᴏᴘ Sᴇᴀʀᴄʜɪɴɢ', callback_data="topsearch"),
                     InlineKeyboardButton('⚜️ sᴜᴘᴘᴏʀᴛ ', callback_data='channels')
                 ],[
                     InlineKeyboardButton('🦧 ʜᴇʟᴘ ', callback_data='help'),
