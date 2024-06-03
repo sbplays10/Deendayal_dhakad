@@ -8,6 +8,7 @@ from datetime import datetime, timedelta, date, time
 lock = asyncio.Lock()
 from database.users_chats_db import db
 from database.refer import referdb
+from database.config_db import mdb
 from pyrogram.errors.exceptions.bad_request_400 import MediaEmpty, PhotoInvalidDimensions, WebpageMediaEmpty
 from Script import script
 import pyrogram
@@ -85,6 +86,7 @@ async def give_filter(client, message):
             try:
                 if settings['auto_ffilter']:
                     await auto_filter(client, message)
+                    await mdb.update_top_messages(message.from_user.id, message.text)
             except KeyError:
                 grpid = await active_connection(str(message.from_user.id))
                 await save_group_settings(grpid, 'auto_ffilter', True)
