@@ -144,7 +144,7 @@ async def plan(client, message):
     user_id = message.from_user.id 
     users = message.from_user.mention 
     btn = [[
-	    InlineKeyboardButton('🔥 ꜰʀᴇᴇ ᴛʀɪᴀʟ 🔥, callback_data='free')
+	    InlineKeyboardButton('🔥 ꜰʀᴇᴇ ᴛʀɪᴀʟ 🔥', callback_data='free')
         ],[
             InlineKeyboardButton('❤️ ʙʀᴏɴᴢᴇ', callback_data='broze'),
             InlineKeyboardButton('☔ ꜱɪʟᴠᴇʀ', callback_data='silver')
