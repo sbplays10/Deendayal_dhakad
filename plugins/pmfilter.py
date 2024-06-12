@@ -1862,7 +1862,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         await client.edit_message_media(
             query.message.chat.id, 
             query.message.id, 
-            InputMediaPhoto("https://telegra.ph/file/52c5a2a731171f4c94667.jpg")
+            InputMediaPhoto("https://graph.org/file/670f6df9f755dc2c9a00a.jpg")
         )
         await query.message.edit_text(
             text=script.BRONZE_TXT.format(query.from_user.mention),
@@ -1884,7 +1884,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         await client.edit_message_media(
             query.message.chat.id, 
             query.message.id, 
-            InputMediaPhoto("https://telegra.ph/file/52c5a2a731171f4c94667.jpg")
+            InputMediaPhoto("https://graph.org/file/670f6df9f755dc2c9a00a.jpg")
         )
         await query.message.edit_text(
             text=script.SILVER_TXT.format(query.from_user.mention),
@@ -1906,7 +1906,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         await client.edit_message_media(
             query.message.chat.id, 
             query.message.id, 
-            InputMediaPhoto("https://telegra.ph/file/52c5a2a731171f4c94667.jpg")
+            InputMediaPhoto("https://graph.org/file/670f6df9f755dc2c9a00a.jpg")
         )
         await query.message.edit_text(
             text=script.GOLD_TXT.format(query.from_user.mention),
@@ -1928,7 +1928,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         await client.edit_message_media(
             query.message.chat.id, 
             query.message.id, 
-            InputMediaPhoto("https://telegra.ph/file/52c5a2a731171f4c94667.jpg")
+            InputMediaPhoto("https://graph.org/file/670f6df9f755dc2c9a00a.jpg")
         )
         await query.message.edit_text(
             text=script.PLATINUM_TXT.format(query.from_user.mention),
@@ -1951,7 +1951,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         await client.edit_message_media(
             query.message.chat.id, 
             query.message.id, 
-            InputMediaPhoto("https://telegra.ph/file/52c5a2a731171f4c94667.jpg")
+            InputMediaPhoto("https://graph.org/file/670f6df9f755dc2c9a00a.jpg")
         )
         await query.message.edit_text(
             text=script.DIAMOND_TXT.format(query.from_user.mention),
@@ -1973,7 +1973,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         await client.edit_message_media(
             query.message.chat.id, 
             query.message.id, 
-            InputMediaPhoto("https://telegra.ph/file/52c5a2a731171f4c94667.jpg")
+            InputMediaPhoto("https://graph.org/file/670f6df9f755dc2c9a00a.jpg")
         )
         await query.message.edit_text(
             text=script.OTHER_TXT.format(query.from_user.mention),
