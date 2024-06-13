@@ -2676,7 +2676,7 @@ async def advantage_spell_chok(client, msg):
                 callback_data=f"spol#{reqstr1}#{k}",
             )
         ]
-        for k, movie_name in enumerate(movielist)
+        for k, movie_name in enumerate(movielist[:7])] #show Suggestion up to 7
     ]
     btn.append([InlineKeyboardButton(text="Close", callback_data=f'spol#{reqstr1}#close_spellcheck')])
     spell_check_del = await msg.reply_photo(
