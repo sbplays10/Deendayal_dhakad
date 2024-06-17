@@ -32,7 +32,7 @@ from Script import script
 from datetime import date, datetime 
 import pytz
 from aiohttp import web
-from plugins import web_server
+from plugins import web_server, check_expired_premium
 
 import asyncio
 from pyrogram import idle
@@ -49,7 +49,7 @@ loop = asyncio.get_event_loop()
 
 async def Lazy_start():
     print('\n')
-    print('Initalizing Deendayal Dhakad')
+    print('Initalizing Deendayal Dhakad ')
     bot_info = await LazyPrincessBot.get_me()
     LazyPrincessBot.username = bot_info.username
     await initialize_clients()
@@ -63,7 +63,7 @@ async def Lazy_start():
             load = importlib.util.module_from_spec(spec)
             spec.loader.exec_module(load)
             sys.modules["plugins." + plugin_name] = load
-            print("Deendayal Dhakad Imported => " + plugin_name)
+            print("Deendayal Dhakad  => " + plugin_name)
     if ON_HEROKU:
         asyncio.create_task(ping_server())
     b_users, b_chats = await db.get_banned()
@@ -75,6 +75,7 @@ async def Lazy_start():
     temp.U_NAME = me.username
     temp.B_NAME = me.first_name
     LazyPrincessBot.username = '@' + me.username
+    LazyPrincessBot.loop.create_task(check_expired_premium(LazyPrincessBot))
     logging.info(f"{me.first_name} with for Pyrogram v{__version__} (Layer {layer}) started on {me.username}.")
     logging.info(LOG_STR)
     logging.info(script.LOGO)
