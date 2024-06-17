@@ -1,5 +1,5 @@
 import os
-from plugins.Extra.fotnt_string import Fonts
+from plugins.Deendayal.fotnt_string import Fonts
 from pyrogram import Client, filters
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 
