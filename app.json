@@ -1,5 +1,5 @@
 {
-    "name": "All_Movies_Studio",
+    "name": "Deendayal_dhakad",
     "description": "When you going to send file on telegram channel this bot will save that in database, So you can search that easily in inline mode",
     "stack": "container",
     "keywords": [
@@ -15,8 +15,8 @@
       "index",
       "inline"
     ],
-    "website": "https://github.com/HarshalPurohitEdits/TheMovieProviderBot",
-    "repository": "https://github.com/HarshalPurohitEdits/TheMovieProviderBot",
+    "website": "https://github.com/Deendayal423/Deendayal_dhakad",
+    "repository": "https://github.com/Deendayal423/Deendayal_dhakad",
     "env": {
         "BOT_TOKEN": {
             "description": "Your bot token.",
