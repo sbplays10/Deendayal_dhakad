@@ -54,6 +54,9 @@ DATABASE_URI = environ.get('DATABASE_URI', "mongodb+srv://deendayaldhaked46:vzT8
 DATABASE_NAME = environ.get('DATABASE_NAME', "cluster")
 COLLECTION_NAME = environ.get('COLLECTION_NAME', 'Telegram_files')
 
+#Files Update Notification Channel 
+FILE_UPDATE_CHANNEL = int(environ.get('FILE_UPDATE_CHANNEL', '1002249063730'))
+
 # Verify
 VERIFY = bool(environ.get('VERIFY', True)) # Verification On ( True ) / Off ( False )
 HOW_TO_VERIFY = environ.get('HOW_TO_VERIFY', 'https://t.me/Deenu_dhakad') # How to open tutorial link for verification
