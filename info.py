@@ -55,7 +55,7 @@ DATABASE_NAME = environ.get('DATABASE_NAME', "cluster")
 COLLECTION_NAME = environ.get('COLLECTION_NAME', 'Telegram_files')
 
 #Files Update Notification Channel 
-FILE_UPDATE_CHANNEL = int(environ.get('FILE_UPDATE_CHANNEL', '1002249063730'))
+FILE_UPDATE_CHANNEL = int(environ.get('FILE_UPDATE_CHANNEL', '-1002249063730'))
 
 # Verify
 VERIFY = bool(environ.get('VERIFY', True)) # Verification On ( True ) / Off ( False )
