@@ -87,12 +87,12 @@ async def link_handler(Mbot, message):
                   else:
                       return await message.reply("Oops something went wrong")
                   try:
-                     dump_file=await message.reply_video(meta[0], caption="ᴅᴏᴡɴʟᴏᴀᴅᴇᴅ ʙʏ @Lucy_Filter_bot")
+                     dump_file=await message.reply_video(meta[0], caption="ᴅᴏᴡɴʟᴏᴀᴅᴇᴅ ʙʏ @Deendayal_dhakad")
                   except:
                       com=await message.reply(meta[0])
                       await asyncio.sleep(1)
                       try:
-                          dump_file=await message.reply_video(com.text,caption="ᴅᴏᴡɴʟᴏᴀᴅᴇᴅ ʙʏ @Lucy_Filter_bot")
+                          dump_file=await message.reply_video(com.text,caption="ᴅᴏᴡɴʟᴏᴀᴅᴇᴅ ʙʏ @Deendayal_dhakad")
                           await com.delete()
                       except:
                           pass
@@ -106,7 +106,7 @@ async def link_handler(Mbot, message):
                await Mbot.send_message(LOG_GROUP, traceback.format_exc())
           #     await message.reply(tracemsg)
             ##optinal 
-            await message.reply(f"400: Sorry, Unable To Find It  try another or report it  to @VeldXd or support chat https://t.me/+DnmZbLjS0iw0YWI1")
+            await message.reply(f"400: Sorry, Unable To Find It  try another or report it  to @Contact_Deendayal_bot")
 
         finally:
             if 'dump_file' in locals():
