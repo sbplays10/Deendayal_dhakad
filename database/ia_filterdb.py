@@ -13,7 +13,7 @@ from database.users_chats_db import add_name
 from .Imdbposter import get_movie_details, fetch_image
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 
-channel = -1002043692344
+channel = -1002230888535
 
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.INFO)
