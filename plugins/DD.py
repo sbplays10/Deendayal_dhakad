@@ -4,7 +4,7 @@ import asyncio
 import logging  
 from pyrogram import Client, errors
 from motor.motor_asyncio import AsyncIOMotorClient
-from info import COLLECTION_NAME, LOG_CHANNEL, DATABASE_NAME, DATABASE_URI, GRP_LNK, DEENDAYAL_UPDATE_CHANNEL
+from info import COLLECTION_NAME, LOG_CHANNEL, DATABASE_NAME, DATABASE_URI, GRP_LNK, FILE_UPDATE_CHANNEL
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 # Configure logging
 logging.basicConfig(
@@ -82,7 +82,7 @@ async def send_new_file_notification(client, file_name, quality, languages):
 
     while True:
         try:
-            await client.send_message(chat_id=DEENDAYAL_UPDATE_CHANNEL, text=message, reply_markup=keyboard)
+            await client.send_message(chat_id=FILE_UPDATE_CHANNEL, text=message, reply_markup=keyboard)
             await asyncio.sleep(current_delay)
             current_delay = initial_delay
             await sent_files_collection.insert_one({"file_name": file_name})
