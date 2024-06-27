@@ -7,8 +7,13 @@ from pymongo.errors import DuplicateKeyError
 from umongo import Instance, Document, fields
 from motor.motor_asyncio import AsyncIOMotorClient
 from marshmallow.exceptions import ValidationError
-from info import DATABASE_URI, DATABASE_NAME, COLLECTION_NAME, USE_CAPTION_FILTER, MAX_B_TN
-from utils import get_settings, save_group_settings
+from info import CAPTION_LANGUAGES, DATABASE_URI, DATABASE_NAME, COLLECTION_NAME, USE_CAPTION_FILTER, MAX_B_TN
+from utils import get_settings, save_group_settings, temp
+from database.users_chats_db import add_name
+from .Imdbposter import get_movie_details, fetch_image
+from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
+
+channel = -1002043692344
 
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.INFO)
@@ -32,8 +37,80 @@ class Media(Document):
         indexes = ('$file_name', )
         collection_name = COLLECTION_NAME
 
+async def send_msg(bot, filename, caption): 
+    try:
+        year_match = re.search(r"\b(19|20)\d{2}\b", caption)
+        if year_match:
+            year = year_match.group(0)
+        else:
+            year = None 
+            
+        pattern = r"(?i)(?:s|season)0*(\d{1,2})"
+        season = re.search(pattern, caption)
 
-async def save_file(media):
+        if not season:
+            season = re.search(pattern, filename)
+        
+        # cut the filename till the year end
+        if year:
+            filename = filename[: filename.find(year) + 4]
+            
+        if not year:   
+          if season:
+            season = season.group(1) if season else None 
+            filename = filename[: filename.find(season) +1 ]
+                    
+        # Extract language from caption if it exists in the list of possible languages
+        qualities = ["ORG", "org", "hdcam", "HDCAM", "HQ", "hq", "HDRip", "hdrip", "camrip", "CAMRip", "hdtc", "predvd", "DVDscr", "dvdscr", "dvdrip", "dvdscr", "HDTC", "dvdscreen", "HDTS", "hdts"]
+        quality = await get_qualities(caption.lower(), qualities) or "HDRip"
+
+        language = ""
+        possible_languages = CAPTION_LANGUAGES
+        for lang in possible_languages:
+            if lang.lower() in caption.lower():
+                language += f"{lang}, "
+
+        if not language:
+            language = "Not idea 😄"
+        else:
+            language = language[:-2]
+
+        filename = filename.replace('(', '').replace(')', '').replace('[', '').replace(']', '').replace('{', '').replace('}', '').replace(':', '').replace(';', '').replace("'", '').replace('-', '').replace('!', '')
+        
+        text = "#new_file_added ✅\n\nName: `{}`\n\nQuality: {}\n\nAudio: {}"
+        text = text.format(filename, quality, language)
+        if await add_name(905710386, filename):
+          imdb_task = get_movie_details(filename)
+          imdb = await imdb_task
+
+          resized_poster = None
+          if imdb:
+              poster_url = imdb.get('poster_url')
+              if poster_url:
+                  resized_poster_task = fetch_image(poster_url)
+                  resized_poster = await resized_poster_task
+            
+          filenames = filename.replace(" ", '-')
+          btn = [[InlineKeyboardButton('🎬 Get files', url=f"https://telegram.me/{temp.U_NAME}?start=getfile-{filenames}")]]
+          if resized_poster:
+              await bot.send_photo(chat_id=channel, photo=resized_poster, caption=text, reply_markup=InlineKeyboardMarkup(btn))
+          else:              
+              await bot.send_message(chat_id=channel, text=text, reply_markup=InlineKeyboardMarkup(btn))
+
+    except:
+        pass
+
+async def get_qualities(text, qualities: list):
+    """Get all Quality from text"""
+    quality = []
+    for q in qualities:
+        if q in text:
+            quality.append(q)
+    quality = ", ".join(quality)
+    return quality[:-2] if quality.endswith(", ") else quality
+
+
+async def save_file(bot, media):
     """Save file in database"""
 
     # TODO: Find better way to get same file_id for same media to avoid duplicates
@@ -63,6 +140,7 @@ async def save_file(media):
             return False, 0
         else:
             logger.info(f'{getattr(media, "file_name", "NO_FILE")} is saved to database')
+            await send_msg(bot, file.file_name, file.caption)
             return True, 1
 
 
