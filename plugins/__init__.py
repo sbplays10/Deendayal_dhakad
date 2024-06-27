@@ -36,7 +36,7 @@ import asyncio
 import logging  
 from pyrogram import Client, errors
 from motor.motor_asyncio import AsyncIOMotorClient
-from info import COLLECTION_NAME, LOG_CHANNEL, DATABASE_NAME, DATABASE_URI, GRP_LNK
+from info import COLLECTION_NAME, LOG_CHANNEL, DATABASE_NAME, DATABASE_URI, GRP_LNK, FILE_UPDATE_CHANNEL
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 # Configure logging
 logging.basicConfig(
@@ -84,7 +84,7 @@ def process_message(msg):
 def extract_quality_and_language(file_name):
     quality_patterns = [
         r'\b(WEBRip|HDRip|HEVC|HDR|WEB[-_]?DL|BluRay|PreDVD|HDTVRip|HDCAM|CAMRip|BRRip|DVDRip|BDRip|DVDScr)\b',
-        r'\b(2160p|1440p|1080p|720p|480p|360p|240p)\b'
+        #r'\b(2160p|1440p|1080p|720p|480p|360p|240p)\b'
     ]
     language_patterns = [
         r'\b(Hindi|English|Tamil|Telugu|Malayalam|Punjabi|Korean)\b'
@@ -103,18 +103,18 @@ async def send_new_file_notification(client, file_name, quality, languages):
     language_message = f"Audio: {', '.join(languages)}" if languages else "Audio: No idea 😄"
 
     message = (
-        "Nᴇᴡ Fɪʟᴇ Uᴘʟᴏᴀᴅᴇᴅ ✅\n\n"
+        "#Nᴇᴡ_Fɪʟᴇ_Uᴘʟᴏᴀᴅᴇᴅ ✅\n\n"
         f"Name: <code>{file_name}</code>\n\n"
         f"{quality_message}\n\n"
         f"{language_message}"
     )
 
     # Create inline keyboard with a button
-    keyboard = InlineKeyboardMarkup([[InlineKeyboardButton("⚡️ Sᴇᴀʀᴄʜ Fɪʟᴇ Hᴇʀᴇ", url=GRP_LNK)]])
+    keyboard = InlineKeyboardMarkup([[InlineKeyboardButton("🌳 Sᴇᴀʀᴄʜ Fɪʟᴇ Hᴇʀᴇ 🌳", url=GRP_LNK)]])
 
     while True:
         try:
-            await client.send_message(chat_id=LOG_CHANNEL, text=message, reply_markup=keyboard)
+            await client.send_message(chat_id=FILE_UPDATE_CHANNEL, text=message, reply_markup=keyboard)
             await asyncio.sleep(current_delay)
             current_delay = initial_delay
             await sent_files_collection.insert_one({"file_name": file_name})
