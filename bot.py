@@ -33,12 +33,14 @@ from datetime import date, datetime
 import pytz
 from aiohttp import web
 from plugins import web_server, check_expired_premium
+from plugins.DD import watch_collection
 
 import asyncio
 from pyrogram import idle
 from lazybot import LazyPrincessBot
 from util.keepalive import ping_server
 from lazybot.clients import initialize_clients
+
 
 
 
