@@ -72,9 +72,9 @@ async def send_new_file_notification(client, file_name, quality, languages):
 
     message = (
         "#𝑵𝒆𝒘_𝑭𝒊𝒍𝒆_𝑼𝒑𝒍𝒐𝒂𝒅𝒆𝒅 ✅\n\n"
-        f"🪔 Name: <code>{file_name}</code>\n\n"
-        f"⚜️ {quality_message}\n\n"
-        f"‼️ {language_message}"
+        f"🪔Name: <code>{file_name}</code>\n\n"
+        f"⚜️{quality_message}\n\n"
+        f"🌳{language_message}"
     )
 
     # Create inline keyboard with a button
@@ -82,7 +82,7 @@ async def send_new_file_notification(client, file_name, quality, languages):
 
     while True:
         try:
-            await client.send_message(chat_id=FILE_UPDATE_CHANNEL, text=message, reply_markup=keyboard)
+            await client.send_message(chat_id=DEENDAYAL_UPDATE_CHANNEL, text=message, reply_markup=keyboard)
             await asyncio.sleep(current_delay)
             current_delay = initial_delay
             await sent_files_collection.insert_one({"file_name": file_name})
