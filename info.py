@@ -55,7 +55,7 @@ DATABASE_NAME = environ.get('DATABASE_NAME', "cluster")
 COLLECTION_NAME = environ.get('COLLECTION_NAME', 'Telegram_files')
 
 #File update notification 
-DEENDAYAL_UPDATE_CHANNEL = int(environ.get('DEENDAYAL_UPDATE_CHANNEL', '-1002249063730'))
+FILE_UPDATE_CHANNEL = int(environ.get('FILE_UPDATE_CHANNEL', '-1002249063730'))
 
 
 # Verify
