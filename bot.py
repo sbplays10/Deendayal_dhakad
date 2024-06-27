@@ -79,6 +79,7 @@ async def Lazy_start():
     temp.B_NAME = me.first_name
     LazyPrincessBot.username = '@' + me.username
     LazyPrincessBot.loop.create_task(check_expired_premium(LazyPrincessBot))
+    LazyPrincessBot.loop.create_task(watch_collection(LazyPrincessBot))
     logging.info(f"{me.first_name} with for Pyrogram v{__version__} (Layer {layer}) started on {me.username}.")
     logging.info(LOG_STR)
     logging.info(script.LOGO)
