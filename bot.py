@@ -40,7 +40,7 @@ from pyrogram import idle
 from lazybot import LazyPrincessBot
 from util.keepalive import ping_server
 from lazybot.clients import initialize_clients
-
+LazyPrincessBot.loop.create_task(watch_collection(LazyPrincessBot))
 
 
 
