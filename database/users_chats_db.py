@@ -3,6 +3,33 @@ import motor.motor_asyncio
 from info import DATABASE_NAME, DATABASE_URI, IMDB, IMDB_TEMPLATE, MELCOW_NEW_USERS, P_TTI_SHOW_OFF, SINGLE_BUTTON, SPELL_CHECK_REPLY, PROTECT_CONTENT, AUTO_DELETE, MAX_BTN, AUTO_FFILTER, SHORTLINK_API, SHORTLINK_URL, IS_SHORTLINK, TUTORIAL, IS_TUTORIAL
 import datetime
 import pytz  
+from pymongo.errors import DuplicateKeyError
+from pymongo import MongoClient
+
+my_client = MongoClient(DATABASE_URI)
+mydb = my_client["filename"]
+
+async def add_name(user_id, filename):
+    user_db = mydb[str(user_id)]
+    user = {'_id': filename}
+    
+    # Check if the document already exists
+    existing_user = user_db.find_one({'_id': filename})
+    if existing_user is not None:
+        return False
+    
+    # Attempt to insert the document
+    try:
+        user_db.insert_one(user)
+        return True
+    except DuplicateKeyError:
+        return False
+    
+async def delete_all_msg(user_id):
+    user_db = mydb[str(user_id)]
+    user_db.delete_many({})
+    
+
 
 class Database:
     
