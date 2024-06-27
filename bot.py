@@ -32,8 +32,8 @@ from Script import script
 from datetime import date, datetime 
 import pytz
 from aiohttp import web
-from plugins import web_server, check_expired_premium
 from plugins.DD import watch_collection
+from plugins import web_server, check_expired_premium
 
 import asyncio
 from pyrogram import idle
