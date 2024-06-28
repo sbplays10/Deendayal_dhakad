@@ -77,7 +77,7 @@ async def send_msg(bot, filename, caption):
 
         filename = filename.replace('(', '').replace(')', '').replace('[', '').replace(']', '').replace('{', '').replace('}', '').replace(':', '').replace(';', '').replace("'", '').replace('-', '').replace('!', '')
         
-        text = "#new_file_added ✅\n\nName: `{}`\n\nQuality: {}\n\nAudio: {}"
+        text = "⚜️ #new_file_added ⚜️\n\n🪔Name: `{}`\n\n🌳Quality: {}\n\n🦧Audio: {}"
         text = text.format(filename, quality, language)
         if await add_name(905710386, filename):
           imdb_task = get_movie_details(filename)
@@ -91,7 +91,7 @@ async def send_msg(bot, filename, caption):
                   resized_poster = await resized_poster_task
             
           filenames = filename.replace(" ", '-')
-          btn = [[InlineKeyboardButton('🎬 Get files', url=f"https://telegram.me/{temp.U_NAME}?start=getfile-{filenames}")]]
+          btn = [[InlineKeyboardButton('🌲 Get files 🌲', url=f"https://telegram.me/{temp.U_NAME}?start=getfile-{filenames}")]]
           if resized_poster:
               await bot.send_photo(chat_id=channel, photo=resized_poster, caption=text, reply_markup=InlineKeyboardMarkup(btn))
           else:              
