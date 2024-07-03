@@ -61,7 +61,7 @@ async def send_msg(bot, filename, caption):
             filename = filename[: filename.find(season) +1 ]
                     
         # Extract language from caption if it exists in the list of possible languages
-        qualities = ["ORG", "org", "hdcam", "HDCAM", "HQ", "hq", "HDRip", "hdrip", "camrip", "CAMRip", "hdtc", "predvd", "DVDscr", "dvdscr", "dvdrip", "dvdscr", "HDTC", "dvdscreen", "HDTS", "hdts"]
+        qualities = ["ORG", "org", "hdcam", "HDCAM", "HQ", "hq", "WebRip", "WEB-DL", "HDRip", "hdrip", "camrip", "CAMRip", "hdtc", "predvd", "DVDscr", "dvdscr", "dvdrip", "dvdscr", "HDTC", "dvdscreen", "HDTS", "hdts"]
         quality = await get_qualities(caption.lower(), qualities) or "HDRip"
 
         language = ""
@@ -77,7 +77,7 @@ async def send_msg(bot, filename, caption):
 
         filename = filename.replace('(', '').replace(')', '').replace('[', '').replace(']', '').replace('{', '').replace('}', '').replace(':', '').replace(';', '').replace("'", '').replace('-', '').replace('!', '')
         
-        text = "#new_file_added ✅\n\n📍Name: `{}`\n\n🌳Quality: {}\n\n🦧Audio: {}"
+        text = "#new_file_added ✅\n\n🔥Name: `{}`\n\n🌳Quality: {}\n\n🍁Audio: {}"
         text = text.format(filename, quality, language)
         if await add_name(905710386, filename):
           imdb_task = get_movie_details(filename)
@@ -91,7 +91,7 @@ async def send_msg(bot, filename, caption):
                   resized_poster = await resized_poster_task
             
           filenames = filename.replace(" ", '-')
-          btn = [[InlineKeyboardButton('🌲 Get files 🌲', url=f"https://telegram.me/{temp.U_NAME}?start=getfile-{filenames}")]]
+          btn = [[InlineKeyboardButton('🌲 𝑺𝒆𝒂𝒓𝒄𝒉 𝑯𝒆𝒓𝒆 🌲', url=f"https://t.me/Dhakad_Movie_Group")]]
           if resized_poster:
               await bot.send_photo(chat_id=channel, photo=resized_poster, caption=text, reply_markup=InlineKeyboardMarkup(btn))
           else:              
