@@ -1582,12 +1582,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             # Check if user is premium
             is_premium = await db.has_premium_access(user_id)
             if not is_premium:
-                await query.answer("🚸 ɴᴏᴛᴇ :\nᴀᴅ-ꜰʀᴇᴇ ꜱᴇʀᴠɪᴄᴇ ɪꜱ ᴏɴʟʏ ꜰᴏʀ ᴘʀᴇᴍɪᴜᴍ ᴜꜱᴇʀꜱ.\n\nᴛᴏ ᴋɴᴏᴡ ᴍᴏʀᴇ ᴄʜᴇᴄᴋ ᴘʟᴀɴꜱ.", show_alert=True)
-                await query.message.reply_text(
-                    text="<b>‼️ ᴡᴀɴᴛ ᴛᴏ ʀᴇᴍᴏᴠᴇ ᴀᴅꜱ ?\n\n✅ ᴘᴜʀᴄʜᴀꜱᴇ ᴘʀᴇᴍɪᴜᴍ ᴀɴᴅ ᴇɴᴊᴏʏ ᴀᴅ-ꜰʀᴇᴇ ᴇxᴘᴇʀɪᴇɴᴄᴇ.</b>",
-                    quote=True,
-                    disable_web_page_preview=True,                  
-                    reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("💸 ᴄʜᴇᴄᴋᴏᴜᴛ ᴘʀᴇᴍɪᴜᴍ ᴘʟᴀɴꜱ 💸", callback_data='seeplans')]]))
+                await query.answer("⚠️ यह सर्विस केवल प्रीमियम उपयोगकर्ताओं के लिए है। आपके पास प्रीमियम एक्सेस नहीं है।", show_alert=True)
                 return  # Stop further execution if not premium
 
             # If premium, proceed with link generation
