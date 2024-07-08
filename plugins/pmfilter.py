@@ -1582,7 +1582,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             # Check if user is premium
             is_premium = await db.has_premium_access(user_id)
             if not is_premium:
-                await query.answer("<b>𝑇ℎ𝑖𝑠 𝑠𝑒𝑟𝑣𝑖𝑐𝑒 𝑖𝑠 𝑜𝑛𝑙𝑦 𝑓𝑜𝑟 𝑃𝑟𝑒𝑚𝑖𝑢𝑚 𝑈𝑠𝑒𝑟𝑠. 𝐼𝑓 𝑦𝑜𝑢 𝑑𝑜 𝑛𝑜𝑡 ℎ𝑎𝑣𝑒 𝑃𝑟𝑒𝑚𝑖𝑢𝑚 𝐴𝑐𝑐𝑒𝑠𝑠 𝑡ℎ𝑒𝑛 𝑦𝑜𝑢 𝑐𝑎𝑛𝑛𝑜𝑡 𝑢𝑠𝑒 𝑡ℎ𝑖𝑠 𝑠𝑒𝑟𝑣𝑖𝑐𝑒.\n\nयह 𝑆𝑒𝑟𝑣𝑖𝑐𝑒 केवल 𝑃𝑟𝑒𝑚𝑖𝑢𝑚 𝑈𝑠𝑒𝑟𝑠 के लिए है आपके पास 𝑃𝑟𝑒𝑚𝑖𝑢𝑚 𝐴𝑐𝑐𝑒𝑠𝑠 नहीं है इसलिए आप इस 𝑆𝑒𝑟𝑣𝑖𝑐𝑒 का उपयोग नहीं कर सकते।</b>", show_alert=True)
+                await query.answer("<b>‼️Nᴏᴛᴇ\n\n𝑇ℎ𝑖𝑠 𝑠𝑒𝑟𝑣𝑖𝑐𝑒 𝑖𝑠 𝑜𝑛𝑙𝑦 𝑓𝑜𝑟 𝑃𝑟𝑒𝑚𝑖𝑢𝑚 𝑈𝑠𝑒𝑟𝑠. 𝐼𝑓 𝑦𝑜𝑢 𝑑𝑜 𝑛𝑜𝑡 ℎ𝑎𝑣𝑒 𝑃𝑟𝑒𝑚𝑖𝑢𝑚 𝐴𝑐𝑐𝑒𝑠𝑠 𝑡ℎ𝑒𝑛 𝑦𝑜𝑢 𝑐𝑎𝑛𝑛𝑜𝑡 𝑢𝑠𝑒 𝑡ℎ𝑖𝑠 𝑠𝑒𝑟𝑣𝑖𝑐𝑒.\n\n<blockquote>यह 𝑆𝑒𝑟𝑣𝑖𝑐𝑒 केवल 𝑃𝑟𝑒𝑚𝑖𝑢𝑚 𝑈𝑠𝑒𝑟𝑠 के लिए है आपके पास 𝑃𝑟𝑒𝑚𝑖𝑢𝑚 𝐴𝑐𝑐𝑒𝑠𝑠 नहीं है इसलिए आप इस 𝑆𝑒𝑟𝑣𝑖𝑐𝑒 का उपयोग नहीं कर सकते।</blockquote></b>", show_alert=True)
                 return  # Stop further execution if not premium
 
             # If premium, proceed with link generation
