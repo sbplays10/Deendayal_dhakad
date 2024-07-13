@@ -2673,7 +2673,7 @@ async def advantage_spell_chok(client, name, msg, reply_msg, ai_search):
     
     if AI_SPELL_CHECK == True and ai_search == True:
         ai_search_new = False
-        await reply_msg.edit_text("⚡️𝘼𝙘𝙩𝙞𝙫𝙚 𝘼𝙙𝙫𝙖𝙣𝙘𝙚 𝙎𝙥𝙚𝙡𝙡 𝘾𝙝𝙚𝙘𝙠⚡️")
+        await reply_msg.edit_text("⚡️𝘼𝙘𝙩𝙞𝙫𝙚 𝘿𝙚𝙚𝙣𝙙𝙖𝙮𝙖𝙡 𝙨𝙥𝙚𝙡𝙡 𝙘𝙝𝙚𝙘𝙠⚡️")
         movienamelist = []
         movienamelist += [movie.get('title') for movie in movies]
         
@@ -2697,7 +2697,7 @@ async def advantage_spell_chok(client, name, msg, reply_msg, ai_search):
     else:
         btn = [
             [InlineKeyboardButton(text=movie_name.strip(), callback_data=f"spol#{reqstr1}#{k}")]
-            for k, movie_name in enumerate(movielist[:7]) #Show Suggestion upto 5
+            for k, movie_name in enumerate(movielist[:7]) #Show Suggestion upto 7
         ]
         btn.append([InlineKeyboardButton(text="Close", callback_data=f'spol#{reqstr1}#close_spellcheck')])
         
