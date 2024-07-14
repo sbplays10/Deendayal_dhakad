@@ -2636,47 +2636,44 @@ async def advantage_spell_chok(client, name, msg, reply_msg, ai_search):
     reqstr1 = msg.from_user.id if msg.from_user else 0
     reqstr = await client.get_users(reqstr1)
     settings = await get_settings(msg.chat.id)
-
     query = re.sub(
         r"\b(pl(i|e)*?(s|z+|ease|se|ese|(e+)s(e)?)|((send|snd|giv(e)?|gib)(\sme)?)|movie(s)?|new|latest|br((o|u)h?)*|^h(e|a)?(l)*(o)*|mal(ayalam)?|t(h)?amil|file|that|find|und(o)*|kit(t(i|y)?)?o(w)?|thar(u)?(o)*w?|kittum(o)*|aya(k)*(um(o)*)?|full\smovie|any(one)|with\ssubtitle(s)?)",
-        "", msg.text, flags=re.IGNORECASE
-    )  # plis contribute some common words
+        "", msg.text, flags=re.IGNORECASE)  # plis contribute some common words
     query = query.strip() + " movie"
-    
     try:
         movies = await get_poster(mv_rqst, bulk=True)
     except Exception as e:
         logger.exception(e)
         reqst_gle = mv_rqst.replace(" ", "+")
-        button = [[InlineKeyboardButton("Gᴏᴏɢʟᴇ", url=f"https://www.google.com/search?q={reqst_gle}")]]
+        button = [[
+            InlineKeyboardButton("Gᴏᴏɢʟᴇ", url=f"https://www.google.com/search?q={reqst_gle}")
+        ]]
         if NO_RESULTS_MSG:
             await client.send_message(chat_id=LOG_CHANNEL, text=(script.NORSLTS.format(reqstr.id, reqstr.mention, mv_rqst)))
         k = await reply_msg.edit_text(text=script.I_CUDNT.format(mv_rqst), reply_markup=InlineKeyboardMarkup(button))
         await asyncio.sleep(30)
         await k.delete()
         return
-    
     movielist = []
     if not movies:
         reqst_gle = mv_rqst.replace(" ", "+")
-        button = [[InlineKeyboardButton("Gᴏᴏɢʟᴇ", url=f"https://www.google.com/search?q={reqst_gle}")]]
+        button = [[
+            InlineKeyboardButton("Gᴏᴏɢʟᴇ", url=f"https://www.google.com/search?q={reqst_gle}")
+        ]]
         if NO_RESULTS_MSG:
             await client.send_message(chat_id=LOG_CHANNEL, text=(script.NORSLTS.format(reqstr.id, reqstr.mention, mv_rqst)))
         k = await reply_msg.edit_text(text=script.I_CUDNT.format(mv_rqst), reply_markup=InlineKeyboardMarkup(button))
         await asyncio.sleep(30)
         await k.delete()
         return
-
     movielist += [movie.get('title') for movie in movies]
     movielist += [f"{movie.get('title')} {movie.get('year')}" for movie in movies]
     SPELL_CHECK[mv_id] = movielist
-    
     if AI_SPELL_CHECK == True and ai_search == True:
         ai_search_new = False
-        await reply_msg.edit_text("⚡️𝘼𝙘𝙩𝙞𝙫𝙚 𝘿𝙚𝙚𝙣𝙙𝙖𝙮𝙖𝙡 𝙨𝙥𝙚𝙡𝙡 𝙘𝙝𝙚𝙘𝙠⚡️")
+        await reply_msg.edit_text("<b>Advance Ai Try To Find Your Movie With Your Wrong Spelling.</b>")
         movienamelist = []
         movienamelist += [movie.get('title') for movie in movies]
-        
         for techai in movienamelist:
             try:
                 mv_rqst = mv_rqst.capitalize()
@@ -2685,27 +2682,31 @@ async def advantage_spell_chok(client, name, msg, reply_msg, ai_search):
             if mv_rqst.startswith(techai[0]):
                 await auto_filter(client, techai, msg, reply_msg, ai_search_new)
                 break
-        
         reqst_gle = mv_rqst.replace(" ", "+")
-        button = [[InlineKeyboardButton("Gᴏᴏɢʟᴇ", url=f"https://www.google.com/search?q={reqst_gle}")]]
+        button = [[
+            InlineKeyboardButton("Gᴏᴏɢʟᴇ", url=f"https://www.google.com/search?q={reqst_gle}")
+        ]]
         if NO_RESULTS_MSG:
             await client.send_message(chat_id=LOG_CHANNEL, text=(script.NORSLTS.format(reqstr.id, reqstr.mention, mv_rqst)))
         k = await reply_msg.edit_text(text=script.I_CUDNT.format(mv_rqst), reply_markup=InlineKeyboardMarkup(button))
-        await asyncio.sleep(30)
+        await asyncio.sleep(10)
         await k.delete()
         return
     else:
         btn = [
-            [InlineKeyboardButton(text=movie_name.strip(), callback_data=f"spol#{reqstr1}#{k}")]
-            for k, movie_name in enumerate(movielist[:7]) #Show Suggestion upto 7
+            [
+                InlineKeyboardButton(
+                    text=movie_name.strip(),
+                    callback_data=f"spol#{reqstr1}#{k}",
+                )
+            ]
+            for k, movie_name in enumerate(movielist[:7])
         ]
         btn.append([InlineKeyboardButton(text="Close", callback_data=f'spol#{reqstr1}#close_spellcheck')])
-        
         spell_check_del = await reply_msg.edit_text(
             text=script.CUDNT_FND.format(mv_rqst),
             reply_markup=InlineKeyboardMarkup(btn)
         )
-        
         try:
             if settings['auto_delete']:
                 await asyncio.sleep(600)
@@ -2717,7 +2718,7 @@ async def advantage_spell_chok(client, name, msg, reply_msg, ai_search):
             if settings['auto_delete']:
                 await asyncio.sleep(600)
                 await spell_check_del.delete()
-   
+
 
 async def manual_filters(client, message, text=False):
     settings = await get_settings(message.chat.id)
