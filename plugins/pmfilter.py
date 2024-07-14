@@ -138,9 +138,9 @@ async def pm_text(bot, message):
 @Client.on_callback_query(filters.regex(r"^reffff"))
 async def refercall(bot, query):
     btn = [[
-        InlineKeyboardButton('invite link', url=f'https://telegram.me/share/url?url=https://t.me/{bot.me.username}?start=reff_{query.from_user.id}&text=Hello%21%20Experience%20a%20bot%20that%20offers%20a%20vast%20library%20of%20unlimited%20movies%20and%20series.%20%F0%9F%98%83'),
+        InlineKeyboardButton('𝐼𝑛𝑣𝑖𝑡𝑒 𝐿𝑖𝑛𝑘..💃', url=f'https://telegram.me/share/url?url=https://t.me/{bot.me.username}?start=reff_{query.from_user.id}&text=Hello%21%20Experience%20a%20bot%20that%20offers%20a%20vast%20library%20of%20unlimited%20movies%20and%20series.%20%F0%9F%98%83'),
         InlineKeyboardButton(f'⏳ {referdb.get_refer_points(query.from_user.id)}', callback_data='ref_point'),
-        InlineKeyboardButton('Back', callback_data='start')
+        InlineKeyboardButton('𝐵𝑎𝑐𝑘', callback_data='start')
     ]]
     reply_markup = InlineKeyboardMarkup(btn)
     await bot.edit_message_media(
@@ -149,7 +149,7 @@ async def refercall(bot, query):
             InputMediaPhoto("https://graph.org/file/1a2e64aee3d4d10edd930.jpg")
         )
     await query.message.edit_text(
-        text=f'Hay Your refer link:\n\nhttps://t.me/{bot.me.username}?start=reff_{query.from_user.id}\n\n𝑆ℎ𝑎𝑟𝑒 𝑡ℎ𝑖𝑠 𝑙𝑖𝑛𝑘 𝑤𝑖𝑡ℎ 𝑦𝑜𝑢𝑟 𝑓𝑟𝑖𝑒𝑛𝑑𝑠, 𝐸𝑎𝑐ℎ 𝑡𝑖𝑚𝑒 𝑡ℎ𝑒𝑦 𝑗𝑜𝑖𝑛,  𝑦𝑜𝑢 𝑤𝑖𝑙𝑙 𝑔𝑒𝑡 10 𝑟𝑒𝑓𝑓𝑒𝑟𝑎𝑙 𝑝𝑜𝑖𝑛𝑡𝑠 𝑎𝑛𝑑 𝑎𝑓𝑡𝑒𝑟 100 𝑝𝑜𝑖𝑛𝑡𝑠 𝑦𝑜𝑢 𝑤𝑖𝑙𝑙 𝑔𝑒𝑡 1 𝑚𝑜𝑛𝑡ℎ 𝑝𝑟𝑒𝑚𝑖𝑢𝑚 𝑠𝑢𝑏𝑠𝑐𝑟𝑖𝑝𝑡𝑖𝑜𝑛.\n\n',
+        text=f'<b>𝐻𝑎𝑦 𝑌𝑜𝑢𝑟 𝑟𝑒𝑓𝑒𝑟 𝑙𝑖𝑛𝑘:\n\nhttps://t.me/{bot.me.username}?start=reff_{query.from_user.id}\n\n𝑆ℎ𝑎𝑟𝑒 𝑡ℎ𝑖𝑠 𝑙𝑖𝑛𝑘 𝑤𝑖𝑡ℎ 𝑦𝑜𝑢𝑟 𝑓𝑟𝑖𝑒𝑛𝑑𝑠, 𝐸𝑎𝑐ℎ 𝑡𝑖𝑚𝑒 𝑡ℎ𝑒𝑦 𝑗𝑜𝑖𝑛,  𝑦𝑜𝑢 𝑤𝑖𝑙𝑙 𝑔𝑒𝑡 10 𝑟𝑒𝑓𝑓𝑒𝑟𝑎𝑙 𝑝𝑜𝑖𝑛𝑡𝑠 𝑎𝑛𝑑 𝑎𝑓𝑡𝑒𝑟 100 𝑝𝑜𝑖𝑛𝑡𝑠 𝑦𝑜𝑢 𝑤𝑖𝑙𝑙 𝑔𝑒𝑡 1 𝑚𝑜𝑛𝑡ℎ 𝑝𝑟𝑒𝑚𝑖𝑢𝑚 𝑠𝑢𝑏𝑠𝑐𝑟𝑖𝑝𝑡𝑖𝑜𝑛.\n\n<blockquote>इस 𝐿𝑖𝑛𝑘 को अपने दोस्तों के साथ 𝑆ℎ𝑎𝑟𝑒 करें, हर बार जब वे शामिल होंगे, तो आपको 10 𝑅𝑒𝑓𝑓𝑒𝑟𝑎𝑙 अंक मिलेंगे और 100 अंक के बाद आपको 1 𝑀𝑜𝑛𝑡ℎ की 𝑃𝑟𝑒𝑚𝑖𝑢𝑚 सदस्यता मिलेगी।</blockquote><b>',
         reply_markup=reply_markup,
         parse_mode=enums.ParseMode.HTML
         )
