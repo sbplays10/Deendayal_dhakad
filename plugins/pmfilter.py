@@ -315,6 +315,7 @@ async def next_page(bot, query):
             pass
     await query.answer()
 
+
 @Client.on_callback_query(filters.regex(r"^spol"))
 async def advantage_spoll_choker(bot, query):
     _, user, movie_ = query.data.split('#')
@@ -338,18 +339,18 @@ async def advantage_spoll_choker(bot, query):
                 k = (movie, files, offset, total_results)
                 ai_search = True
                 reply_msg = await query.message.edit_text(f"<b><i>Searching For {movie} 🔎</i></b>")
-                await auto_filter(bot, movie, query, reply_msg, ai_search, k)
+                await auto_filter(bot, query, ai_search, k)
             else:
                 reqstr1 = query.from_user.id if query.from_user else 0
                 reqstr = await bot.get_users(reqstr1)
-                #button = [[
-                    #InlineKeyboardButton("🩸Cʟɪᴄᴋ ʜᴇʀᴇ & ʀᴇǫᴜᴇsᴛ ᴛᴏ ᴀᴅᴍɪɴ", url="https://t.me/Deendayal_dhakad_Group")
-                #]]
                 if NO_RESULTS_MSG:
-                   await bot.send_message(chat_id=LOG_CHANNEL, text=(script.NORSLTS.format(reqstr.id, reqstr.mention, movie)))
-                k = await query.message.edit(text=script.MVE_NT_FND, reply_markup=InlineKeyboardMarkup(button))
-                await asyncio.sleep(4)
+                    await bot.send_message(chat_id=LOG_CHANNEL, text=(script.NORSLTS.format(reqstr.id, reqstr.mention, movie)))
+                k = await query.message.edit(script.MVE_NT_FND)
+                await asyncio.sleep(10)
                 await k.delete()
+        
+
+
 #Qualities 
 @Client.on_callback_query(filters.regex(r"^qualities#"))
 async def qualities_cb_handler(client: Client, query: CallbackQuery):
@@ -2678,6 +2679,7 @@ async def auto_filter(client, name, msg, reply_msg, ai_search, spoll=False):
             await message.delete()
 
 
+
 async def advantage_spell_chok(client, name, msg, reply_msg, ai_search):
     mv_id = msg.id
     mv_rqst = name
@@ -2719,7 +2721,7 @@ async def advantage_spell_chok(client, name, msg, reply_msg, ai_search):
     SPELL_CHECK[mv_id] = movielist
     if AI_SPELL_CHECK == True and ai_search == True:
         ai_search_new = False
-        await reply_msg.edit_text("<b>Advance Ai Try To Find Your Movie With Your Wrong Spelling.</b>")
+        await reply_msg.edit_text("<b>Deendayal Advance Spell Check</b>")
         movienamelist = []
         movienamelist += [movie.get('title') for movie in movies]
         for techai in movienamelist:
@@ -2766,6 +2768,7 @@ async def advantage_spell_chok(client, name, msg, reply_msg, ai_search):
             if settings['auto_delete']:
                 await asyncio.sleep(600)
                 await spell_check_del.delete()
+                
 
 
 async def manual_filters(client, message, text=False):
