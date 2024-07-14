@@ -2625,6 +2625,7 @@ async def auto_filter(client, msg, spoll=False):
             await fuk.delete()
             await message.delete()
 
+
 async def advantage_spell_chok(client, msg):
     mv_id = msg.id
     mv_rqst = msg.text
@@ -2648,7 +2649,7 @@ async def advantage_spell_chok(client, msg):
         if not g_s:
             reqst_gle = query.replace(" ", "+")
             button = [[
-                       InlineKeyboardButton("Gᴏᴏɢʟᴇ", url=f"https://www.google.com/search?q={reqst_gle}")
+                       InlineKeyboardButton("📝 ʀᴇǫᴜᴇꜱᴛ ʜᴇʀᴇ", url=f"https://t.me/diversity_movies_request")
             ]]
             if NO_RESULTS_MSG:
                 await client.send_message(chat_id=LOG_CHANNEL, text=(script.NORSLTS.format(reqstr.id, reqstr.mention, mv_rqst)))
@@ -2702,7 +2703,7 @@ async def advantage_spell_chok(client, msg):
                 text=movie.strip(),
                 callback_data=f"spolling#{reqstr1}#{k}",
             )
-        ] for k, movie in enumerate(movielist[:8])] #Show Suggestion upto 5
+        ] for k, movie in enumerate(movielist[:5])] #Show Suggestion upto 5
         btn.append([InlineKeyboardButton(text="↭ ᴄʟᴏꜱᴇ ↭", callback_data=f'spol#{reqstr1}#close_spellcheck')])
         spell_check_del = await msg.reply_text(
             text=script.CUDNT_FND.format(mv_rqst),
@@ -2781,6 +2782,8 @@ async def advantage_spell_chok(client, msg):
                 if settings['auto_delete']:
                     await asyncio.sleep(600)
                     await spell_check_del.delete()
+
+
 
 
 async def manual_filters(client, message, text=False):
