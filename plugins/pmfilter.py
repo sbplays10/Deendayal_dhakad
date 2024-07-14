@@ -149,7 +149,7 @@ async def refercall(bot, query):
             InputMediaPhoto("https://graph.org/file/1a2e64aee3d4d10edd930.jpg")
         )
     await query.message.edit_text(
-        text=f'Hay Your refer link:\n\nhttps://t.me/{bot.me.username}?start=reff_{query.from_user.id}\n\nShare this link with your friends, Each time they join,  you will get 10 refferal points and after 100 points you will get 1 month premium subscription.',
+        text=f'Hay Your refer link:\n\nhttps://t.me/{bot.me.username}?start=reff_{query.from_user.id}\n\n𝑆ℎ𝑎𝑟𝑒 𝑡ℎ𝑖𝑠 𝑙𝑖𝑛𝑘 𝑤𝑖𝑡ℎ 𝑦𝑜𝑢𝑟 𝑓𝑟𝑖𝑒𝑛𝑑𝑠, 𝐸𝑎𝑐ℎ 𝑡𝑖𝑚𝑒 𝑡ℎ𝑒𝑦 𝑗𝑜𝑖𝑛,  𝑦𝑜𝑢 𝑤𝑖𝑙𝑙 𝑔𝑒𝑡 10 𝑟𝑒𝑓𝑓𝑒𝑟𝑎𝑙 𝑝𝑜𝑖𝑛𝑡𝑠 𝑎𝑛𝑑 𝑎𝑓𝑡𝑒𝑟 100 𝑝𝑜𝑖𝑛𝑡𝑠 𝑦𝑜𝑢 𝑤𝑖𝑙𝑙 𝑔𝑒𝑡 1 𝑚𝑜𝑛𝑡ℎ 𝑝𝑟𝑒𝑚𝑖𝑢𝑚 𝑠𝑢𝑏𝑠𝑐𝑟𝑖𝑝𝑡𝑖𝑜𝑛.\n\n',
         reply_markup=reply_markup,
         parse_mode=enums.ParseMode.HTML
         )
