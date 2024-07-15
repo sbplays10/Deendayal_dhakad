@@ -304,6 +304,7 @@ async def next_page(bot, query):
             pass
     await query.answer()
 
+
 @Client.on_callback_query(filters.regex(r"^spol"))
 async def advantage_spoll_choker(bot, query):
     _, user, movie_ = query.data.split('#')
