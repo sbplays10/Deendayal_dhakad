@@ -2628,7 +2628,6 @@ async def auto_filter(client, msg, spoll=False):
             await message.delete()
 
 
-
 async def advantage_spell_chok(client, msg):
     mv_id = msg.id
     mv_rqst = msg.text
@@ -2790,7 +2789,7 @@ async def advantage_spell_chok(client, msg):
                 if settings['auto_delete']:
                     await asyncio.sleep(600)
                     await spell_check_del.delete()
-
+                
 
 
 
