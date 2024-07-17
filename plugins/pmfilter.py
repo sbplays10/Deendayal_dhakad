@@ -87,8 +87,6 @@ async def give_filter(client, message):
                 if settings['auto_ffilter']:
                     ai_search = True
                     reply_msg = await message.reply_text(f"<b><i>Searching For {message.text} 🔎</i></b>")
-                    await asyncio.sleep(2)  
-                    await reply_msg.delete()
                     await auto_filter(client, message.text, message, reply_msg, ai_search)
                     await mdb.update_top_messages(message.from_user.id, message.text)
             except KeyError:
@@ -98,8 +96,6 @@ async def give_filter(client, message):
                 if settings['auto_ffilter']:
                     ai_search = True
                     reply_msg = await message.reply_text(f"<b><i>Searching For {message.text} 🔎</i></b>")
-                    await asyncio.sleep(2)  
-                    await reply_msg.delete()
                     await auto_filter(client, message.text, message, reply_msg, ai_search)
     else: #a better logic to avoid repeated lines of code in auto_filter function
         search = message.text
@@ -347,8 +343,6 @@ async def advantage_spoll_choker(bot, query):
                 k = (movie, files, offset, total_results)
                 ai_search = True
                 reply_msg = await query.message.edit_text(f"<b><i>Searching For {movie} 🔍</i></b>")
-                await asyncio.sleep(2)  
-                await reply_msg.delete()
                 await auto_filter(bot, movie, query, reply_msg, ai_search, k)
             else:
                 reqstr1 = query.from_user.id if query.from_user else 0
