@@ -124,10 +124,7 @@ async def pm_text(bot, message):
         text=f"<b>#𝐏𝐌_𝐌𝐒𝐆\n\nNᴀᴍᴇ : {user}\n\nID : {user_id}\n\nMᴇssᴀɢᴇ : {content}</b>"
         )
             
-    except Exception as e:
-        # Log the error
-        print(f"An error occurred: {str(e)}")
-        
+
 
 @Client.on_callback_query(filters.regex(r"^reffff"))
 async def refercall(bot, query):
