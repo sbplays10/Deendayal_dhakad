@@ -2708,7 +2708,7 @@ async def advantage_spell_chok(client, name, msg, reply_msg, ai_search):
         SPELL_CHECK[mv_id] = movielist
         if AI_SPELL_CHECK and ai_search:  # simplified condition
             ai_search_new = False
-            ai_msg = await reply_msg.edit_text("<b><i>Advanced AI is trying to find your movie with your input.</i></b>")
+            ai_msg = await reply_msg.edit_text("<b>⚡𝘼𝘾𝙏𝙄𝙑𝙀 𝘼𝘿𝙑𝘼𝙉𝘾𝙀 𝙎𝙋𝙀𝙇𝙇 𝘾𝙃𝙀𝘾𝙆⚡</b>")
             movienamelist = [movie.get('title') for movie in imdb_s]  # this assumes imdb_s is defined earlier
             for techai in movienamelist:
                 try:
