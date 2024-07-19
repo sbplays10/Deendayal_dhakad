@@ -2642,7 +2642,7 @@ async def advantage_spell_chok(client, name, msg, reply_msg, ai_search):
     settings = await get_settings(msg.chat.id)
     find = mv_rqst.split(" ")
     query = ""
-    removes = ["in","upload", "series", "full", "horror", "thriller", "mystery", "print", "file"]
+    removes = ["in", "upload", "series", "full", "horror", "thriller", "mystery", "print", "file"]
     for x in find:
         if x in removes:
             continue
@@ -2718,15 +2718,15 @@ async def advantage_spell_chok(client, name, msg, reply_msg, ai_search):
                 if mv_rqst.startswith(techai[0]):
                     await auto_filter(client, techai, msg, reply_msg, ai_search_new)
                     break
-            
+
             reqst_gle = mv_rqst.replace(" ", "+")
             button = [[
                 InlineKeyboardButton("Gᴏᴏɢʟᴇ", url=f"https://www.google.com/search?q={reqst_gle}")
             ]]
-            
+
             if NO_RESULTS_MSG:
                 await client.send_message(chat_id=LOG_CHANNEL, text=(script.NORSLTS.format(reqstr.id, reqstr.mention, mv_rqst)))
-            
+
             k = await reply_msg.edit_text(
                 text=script.I_CUDNT.format(mv_rqst),
                 reply_markup=InlineKeyboardMarkup(button)
@@ -2794,59 +2794,31 @@ async def advantage_spell_chok(client, name, msg, reply_msg, ai_search):
         movielist += [movie.get('title') for movie in movies]
         movielist += [f"{movie.get('title')} {movie.get('year')}" for movie in movies]
         SPELL_CHECK[mv_id] = movielist
-        if AI_SPELL_CHECK and ai_search:  # simplified condition
-            ai_search_new = False
-            ai_msg = await reply_msg.edit_text("<b><i>Advanced AI is trying to find your movie with your input.</i></b>")
-            movienamelist = [movie.get('title') for movie in movies]  # this assumes imdb_s is defined earlier
-            for techai in movienamelist:
-                try:
-                    mv_rqst = mv_rqst.capitalize()
-                except:
-                    pass
-                if mv_rqst.startswith(techai[0]):
-                    await auto_filter(client, techai, msg, reply_msg, ai_search_new)
-                    break
-            
-            reqst_gle = mv_rqst.replace(" ", "+")
-            button = [[
-                InlineKeyboardButton("Gᴏᴏɢʟᴇ", url=f"https://www.google.com/search?q={reqst_gle}")
-            ]]
-            
-            if NO_RESULTS_MSG:
-                await client.send_message(chat_id=LOG_CHANNEL, text=(script.NORSLTS.format(reqstr.id, reqstr.mention, mv_rqst)))
-            
-            k = await reply_msg.edit_text(
-                text=script.I_CUDNT.format(mv_rqst),
-                reply_markup=InlineKeyboardMarkup(button)
+        btn = [[
+            InlineKeyboardButton(
+                text=movie.strip(),
+                callback_data=f"spolling#{reqstr1}#{k}",
             )
-            await asyncio.sleep(30)
-            await k.delete()
-            return
-        else:
-            btn = [[
-                InlineKeyboardButton(
-                    text=movie.strip(),
-                    callback_data=f"spolling#{reqstr1}#{k}",
-                )
-            ] for k, movie in enumerate(movielist[:8])]  # Show Suggestion upto 5
-            btn.append([InlineKeyboardButton(text="↭ ᴄʟᴏꜱᴇ ↭", callback_data=f'spol#{reqstr1}#close_spellcheck')])
-            spell_check_del = await msg.reply_text(
-                text=script.CUDNT_FND.format(mv_rqst),
-                reply_markup=InlineKeyboardMarkup(btn),
-                reply_to_message_id=msg.id
-            )
-            try:
-                if settings['auto_delete']:
-                    await asyncio.sleep(60)
-                    await spell_check_del.delete()
-            except KeyError:
-                grpid = await active_connection(str(msg.from_user.id))
-                await save_group_settings(grpid, 'auto_delete', True)
-                settings = await get_settings(msg.chat.id)
-                if settings['auto_delete']:
-                    await asyncio.sleep(60)
-                    await spell_check_del.delete()
-                                        
+        ] for k, movie in enumerate(movielist[:8])]  # Show Suggestion upto 5
+        btn.append([InlineKeyboardButton(text="↭ ᴄʟᴏꜱᴇ ↭", callback_data=f'spol#{reqstr1}#close_spellcheck')])
+        spell_check_del = await msg.reply_text(
+            text=script.CUDNT_FND.format(mv_rqst),
+            reply_markup=InlineKeyboardMarkup(btn),
+            reply_to_message_id=msg.id
+        )
+        try:
+            if settings['auto_delete']:
+                await asyncio.sleep(60)
+                await spell_check_del.delete()
+        except KeyError:
+            grpid = await active_connection(str(msg.from_user.id))
+            await save_group_settings(grpid, 'auto_delete', True)
+            settings = await get_settings(msg.chat.id)
+            if settings['auto_delete']:
+                await asyncio.sleep(60)
+                await spell_check_del.delete()
+
+            
 
 
 
