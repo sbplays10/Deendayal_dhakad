@@ -2685,7 +2685,7 @@ async def advantage_spell_chok(client, name, msg, reply_msg, ai_search):
     SPELL_CHECK[msg.id] = movielist
     if AI_SPELL_CHECK == True and ai_search == True:
         ai_search_new = False
-        ai_msg = await reply_msg.edit_text("<b><i>Advance Ai Try To Find Your Movie With Your Wrong Spelling.</i></b>")
+        ai_msg = await reply_msg.edit_text("<b>⚡𝘼𝘾𝙏𝙄𝙑𝙀 𝘼𝘿𝙑𝘼𝙉𝘾𝙀 𝙎𝙋𝙀𝙇𝙇 𝘾𝙃𝙀𝘾𝙆⚡</b>")
         movienamelist = []
         movienamelist += [movie.get('title') for movie in imdb_s]
         for techai in movienamelist:
