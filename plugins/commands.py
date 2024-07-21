@@ -350,7 +350,8 @@ async def start(client, message):
 
     elif data.split("-", 1)[0] == "verify":
         userid = data.split("-", 2)[1]
-        token = data.split("-", 3)[2]
+        token = data.split("-", 3)[2] 
+        fileid = data.split("-", 3)[3]
         if str(message.from_user.id) != str(userid):
             return await message.reply_text(
                 text="<b>Invalid link or Expired link !</b>",
@@ -358,9 +359,13 @@ async def start(client, message):
             )
         is_valid = await check_token(client, userid, token)
         if is_valid == True:
-            await message.reply_text(
-                text=f"<b>Hey {message.from_user.mention},\n\n‼️ ʏᴏᴜ ᴀʀᴇ ꜱᴜᴄᴄᴇꜱꜱꜰᴜʟʟʏ ᴠᴇʀɪꜰɪᴇᴅ !\nɴᴏᴡ ʏᴏᴜ ʜᴀᴠᴇ ᴜɴʟɪᴍɪᴛᴇᴅ ᴀᴄᴄᴇꜱꜱ ꜰᴏʀ 𝟼 Hᴏᴜʀs.\n\nYᴏᴜ ɢᴏ ʙᴀᴄᴋ ᴛᴏ ᴛʜᴇ Gʀᴏᴜᴘ ᴀɴᴅ sᴇᴀʀᴄʜ ʏᴏᴜʀ ғᴀᴠᴏʀɪᴛᴇ ᴍᴏᴠɪᴇ ᴀɢᴀɪɴ ᴀɴᴅ ɢᴇᴛ ᴅɪʀᴇᴄᴛ ᴍᴏᴠɪᴇ ғɪʟᴇs ғᴏʀ 𝟼 ʜᴏᴜʀs.\n\n\n<blockquote>⚜️आप सफलतापूर्वक सत्यापित हो गए हैं अब आप 𝟼 घंटे तक Dɪʀᴇᴄᴛ ᴍᴏᴠɪᴇ की ғɪʟᴇs प्राप्त कर सकते हैं\n\nआप वापस Gʀᴏᴜᴘ पर जाएं और फिर से अपनी मनपसंद ᴍᴏᴠɪᴇ sᴇᴀʀᴄʜ करें और 𝟼 घंटे तक Dɪʀᴇᴄᴛ ᴍᴏᴠɪᴇ ғɪʟᴇs प्राप्त करें।</blockquote></b>",
-                protect_content=False
+            btn = [[
+                InlineKeyboardButton("Get File", url=f"https://telegram.me/{temp.U_NAME}?start=files_{fileid}")
+            ]]
+            await message.reply_photo(
+                photo="https://graph.org/file/6928de1539e2e80e47fb8.jpg",
+                caption=f"<b>Hey {message.from_user.mention},\n\n‼️ ʏᴏᴜ ᴀʀᴇ ꜱᴜᴄᴄᴇꜱꜱꜰᴜʟʟʏ ᴠᴇʀɪꜰɪᴇᴅ !\nɴᴏᴡ ʏᴏᴜ ʜᴀᴠᴇ ᴜɴʟɪᴍɪᴛᴇᴅ ᴀᴄᴄᴇꜱꜱ ꜰᴏʀ 𝟼 Hᴏᴜʀs.\n\nYᴏᴜ ɢᴏ ʙᴀᴄᴋ ᴛᴏ ᴛʜᴇ Gʀᴏᴜᴘ ᴀɴᴅ sᴇᴀʀᴄʜ ʏᴏᴜʀ ғᴀᴠᴏʀɪᴛᴇ ᴍᴏᴠɪᴇ ᴀɢᴀɪɴ ᴀɴᴅ ɢᴇᴛ ᴅɪʀᴇᴄᴛ ᴍᴏᴠɪᴇ ғɪʟᴇs ғᴏʀ 𝟼 ʜᴏᴜʀs.\n\n\n<blockquote>⚜️आप सफलतापूर्वक सत्यापित हो गए हैं अब आप 𝟼 घंटे तक Dɪʀᴇᴄᴛ ᴍᴏᴠɪᴇ की ғɪʟᴇs प्राप्त कर सकते हैं\n\nआप वापस Gʀᴏᴜᴘ पर जाएं और फिर से अपनी मनपसंद ᴍᴏᴠɪᴇ sᴇᴀʀᴄʜ करें और 𝟼 घंटे तक Dɪʀᴇᴄᴛ ᴍᴏᴠɪᴇ ғɪʟᴇs प्राप्त करें।</blockquote></b>",
+                reply_markup=InlineKeyboardMarkup(btn)
             )
             await verify_user(client, userid, token)
         else:
@@ -455,7 +460,7 @@ async def start(client, message):
             else:
                if not await check_verification(client, message.from_user.id) and VERIFY == True:
                    btn = [[
-                       InlineKeyboardButton("✅ Cʟɪᴄᴋ ʜᴇʀᴇ ᴛᴏ ᴠᴇʀɪғʏ ✅", url=await get_token(client, message.from_user.id, f"https://telegram.me/{temp.U_NAME}?start="))
+                       InlineKeyboardButton("✅ Cʟɪᴄᴋ ʜᴇʀᴇ ᴛᴏ ᴠᴇʀɪғʏ ✅", url=await get_token(client, message.from_user.id, f"https://telegram.me/{temp.U_NAME}?start=", file_id))
                        ],[
                        InlineKeyboardButton("⚡ Hᴏᴡ ᴛᴏ ᴠᴇʀɪғʏ ⚡", url=HOW_TO_VERIFY)
                    ]]
@@ -538,7 +543,7 @@ async def start(client, message):
             else:
                if not await check_verification(client, message.from_user.id) and VERIFY == True:
                    btn = [[
-                       InlineKeyboardButton("✅ Cʟɪᴄᴋ ʜᴇʀᴇ ᴛᴏ ᴠᴇʀɪғʏ ✅", url=await get_token(client, message.from_user.id, f"https://telegram.me/{temp.U_NAME}?start="))
+                       InlineKeyboardButton("✅ Cʟɪᴄᴋ ʜᴇʀᴇ ᴛᴏ ᴠᴇʀɪғʏ ✅", url=await get_token(client, message.from_user.id, f"https://telegram.me/{temp.U_NAME}?start=", file_id))
                    ],[
                         InlineKeyboardButton("⚡ Hᴏᴡ ᴛᴏ ᴠᴇʀɪғʏ ⚡", url=HOW_TO_VERIFY)
                    ]]
@@ -604,7 +609,7 @@ async def start(client, message):
     else:
        if not await check_verification(client, message.from_user.id) and VERIFY == True:
            btn = [[
-              InlineKeyboardButton("✅ Cʟɪᴄᴋ ʜᴇʀᴇ ᴛᴏ ᴠᴇʀɪғʏ ✅", url=await get_token(client, message.from_user.id, f"https://telegram.me/{temp.U_NAME}?start="))
+              InlineKeyboardButton("✅ Cʟɪᴄᴋ ʜᴇʀᴇ ᴛᴏ ᴠᴇʀɪғʏ ✅", url=await get_token(client, message.from_user.id, f"https://telegram.me/{temp.U_NAME}?start=", file_id))
            ],[
               InlineKeyboardButton("⚡ Hᴏᴡ ᴛᴏ ᴠᴇʀɪғʏ ⚡", url=HOW_TO_VERIFY)
            ]]
