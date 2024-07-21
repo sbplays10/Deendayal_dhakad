@@ -13,6 +13,8 @@ from database.users_chats_db import add_name
 from .Imdbposter import get_movie_details, fetch_image
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 
+SEND_MSG = True 
+
 channel = -1002230888535
 
 logger = logging.getLogger(__name__)
@@ -140,7 +142,8 @@ async def save_file(bot, media):
             return False, 0
         else:
             logger.info(f'{getattr(media, "file_name", "NO_FILE")} is saved to database')
-            await send_msg(bot, file.file_name, file.caption)
+            if SEND_MSG:
+                await send_msg(bot, file.file_name, file.caption)
             return True, 1
 
 
