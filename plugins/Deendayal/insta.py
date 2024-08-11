@@ -54,15 +54,15 @@ async def link_handler(Mbot, message):
                       return await message.reply("oops something went wrong")
                try:
                    if ddinsta:
-                      dump_file=await message.reply_video(content_value,caption="ᴅᴏᴡɴʟᴏᴀᴅᴇᴅ ʙʏ @Deendayal_dhakad")
+                      dump_file=await message.reply_video(content_value,caption="{file_name}")
                    else:
-                       dump_file=await message.reply_video(content_value, caption="ᴅᴏᴡɴʟᴏᴀᴅᴇᴅ ʙʏ @Deendayal_dhakad")
+                       dump_file=await message.reply_video(content_value, caption="{file_name}")
                except:
                    downfile=f"{os.getcwd()}/{random.randint(1,10000000)}"
                    with open(downfile,'wb') as x:
                        headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'}
                        x.write(requests.get(content_value,headers=headers).content)
-                   dump_file=await message.reply_video(downfile,caption="ᴅᴏᴡɴʟᴏᴀᴅᴇᴅ ʙʏ @Deendayal_dhakad") 
+                   dump_file=await message.reply_video(downfile,caption="{file_name}") 
             elif "/p/" in url:
                   meta_tag = requests.post("https://saveig.app/api/ajaxSearch", data={"q": link, "t": "media", "lang": "en"}, headers=headers)
                   if meta_tag.ok:
@@ -75,7 +75,7 @@ async def link_handler(Mbot, message):
                      com=await message.reply_text(meta[i])
                      await asyncio.sleep(1)
                      try:
-                        dump_file=await message.reply_video(com.text,caption="ᴅᴏᴡɴʟᴏᴀᴅᴇᴅ ʙʏ @Deendayal_dhakad")
+                        dump_file=await message.reply_video(com.text,caption="{file_name}")
                         await com.delete()
                      except:
                          pass 
