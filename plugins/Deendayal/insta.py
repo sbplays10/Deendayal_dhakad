@@ -54,9 +54,9 @@ async def link_handler(Mbot, message):
                       return await message.reply("oops something went wrong")
                try:
                    if ddinsta:
-                      dump_file=await message.reply_video(content_value,caption="{file_name}")
+                      dump_file=await message.reply_video(content_value,caption="𝐷𝑜𝑤𝑛𝑙𝑜𝑎𝑑 𝐵𝑦 👉 @Deendayal_dhakad")
                    else:
-                       dump_file=await message.reply_video(content_value, caption="{file_name}")
+                       dump_file=await message.reply_video(content_value, caption="𝐷𝑜𝑤𝑛𝑙𝑜𝑎𝑑 𝐵𝑦 👉 @Deendayal_dhakad")
                except:
                    downfile=f"{os.getcwd()}/{random.randint(1,10000000)}"
                    with open(downfile,'wb') as x:
@@ -75,7 +75,7 @@ async def link_handler(Mbot, message):
                      com=await message.reply_text(meta[i])
                      await asyncio.sleep(1)
                      try:
-                        dump_file=await message.reply_video(com.text,caption="{file_name}")
+                        dump_file=await message.reply_video(com.text,caption="𝐷𝑜𝑤𝑛𝑙𝑜𝑎𝑑 𝐵𝑦 👉 @Deendayal_dhakad")
                         await com.delete()
                      except:
                          pass 
@@ -87,12 +87,12 @@ async def link_handler(Mbot, message):
                   else:
                       return await message.reply("Oops something went wrong")
                   try:
-                     dump_file=await message.reply_video(meta[0], caption="{file_name}")
+                     dump_file=await message.reply_video(meta[0], caption="𝐷𝑜𝑤𝑛𝑙𝑜𝑎𝑑 𝐵𝑦 👉 @Deendayal_dhakad")
                   except:
                       com=await message.reply(meta[0])
                       await asyncio.sleep(1)
                       try:
-                          dump_file=await message.reply_video(com.text,caption="{file_name}")
+                          dump_file=await message.reply_video(com.text,caption="𝐷𝑜𝑤𝑛𝑙𝑜𝑎𝑑 𝐵𝑦 👉 @Deendayal_dhakad")
                           await com.delete()
                       except:
                           pass
