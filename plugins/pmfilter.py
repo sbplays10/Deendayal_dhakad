@@ -329,14 +329,12 @@ async def advantage_spoll_choker(bot, query):
             else:
                 reqstr1 = query.from_user.id if query.from_user else 0
                 reqstr = await bot.get_users(reqstr1)
-                button = [[
-                    InlineKeyboardButton("🩸Cʟɪᴄᴋ ʜᴇʀᴇ & ʀᴇǫᴜᴇsᴛ ᴛᴏ ᴀᴅᴍɪɴ", url="https://t.me/Deendayal_dhakad_Group")
-                ]]
                 if NO_RESULTS_MSG:
-                   await bot.send_message(chat_id=LOG_CHANNEL, text=(script.NORSLTS.format(reqstr.id, reqstr.mention, movie)))
-                k = await query.message.edit(text=script.MVE_NT_FND, reply_markup=InlineKeyboardMarkup(button))
-                await asyncio.sleep(4)
+                    await bot.send_message(chat_id=LOG_CHANNEL, text=(script.NORSLTS.format(reqstr.id, reqstr.mention, movie)))
+                k = await query.message.edit(script.MVE_NT_FND)
+                await asyncio.sleep(8)
                 await k.delete()
+            
 #Qualities 
 @Client.on_callback_query(filters.regex(r"^qualities#"))
 async def qualities_cb_handler(client: Client, query: CallbackQuery):
@@ -2704,7 +2702,7 @@ async def advantage_spell_chok(client, msg):
                 text=movie.strip(),
                 callback_data=f"spolling#{reqstr1}#{k}",
             )
-        ] for k, movie in enumerate(movielist)]
+        ] for k, movie in enumerate(movielist[:6])]
         btn.append([InlineKeyboardButton(text="Close", callback_data=f'spol#{reqstr1}#close_spellcheck')])
         spell_check_del = await msg.reply_photo(
             photo=(SPELL_IMG),
