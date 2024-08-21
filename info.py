@@ -67,8 +67,8 @@ DEENDAYAL_VERIFY_EXPIRE = int(environ.get('DEENDAYAL_VERIFY_EXPIRE', 12)) # Add 
 HOW_TO_VERIFY = environ.get('HOW_TO_VERIFY', 'https://t.me/Deenu_dhakad') # How to open tutorial link for verification
 
 # Others
-SHORTLINK_URL = environ.get('SHORTLINK_URL', 'Earn4link.in')
-SHORTLINK_API = environ.get('SHORTLINK_API', 'aa0fbf67f976df5d984c979e38431c2925aac308')
+SHORTLINK_URL = environ.get('SHORTLINK_URL', 'Vipurl.in')
+SHORTLINK_API = environ.get('SHORTLINK_API', 'e39828e54d485000b6dcbe32fa0d31b7daba098f')
 IS_SHORTLINK = bool(environ.get('IS_SHORTLINK', False))
 DELETE_CHANNELS = [int(dch) if id_pattern.search(dch) else dch for dch in environ.get('DELETE_CHANNELS', '0').split()]
 MAX_B_TN = environ.get("MAX_B_TN", "5")
