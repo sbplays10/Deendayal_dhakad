@@ -62,13 +62,13 @@ DEENDAYAL_MOVIE_UPDATE_NOTIFICATION = bool(environ.get('DEENDAYAL_MOVIE_UPDATE_N
 
 
 # Verify
-VERIFY = bool(environ.get('VERIFY', False)) # Verification On ( True ) / Off ( False )
+VERIFY = bool(environ.get('VERIFY', True)) # Verification On ( True ) / Off ( False )
 DEENDAYAL_VERIFY_EXPIRE = int(environ.get('DEENDAYAL_VERIFY_EXPIRE', 12)) # Add time in hours
 HOW_TO_VERIFY = environ.get('HOW_TO_VERIFY', 'https://t.me/Deenu_dhakad') # How to open tutorial link for verification
 
 # Others
-SHORTLINK_URL = environ.get('SHORTLINK_URL', 'zipshort.net')
-SHORTLINK_API = environ.get('SHORTLINK_API', '31e2a210a887b5f9e823e1f66a3b97ad488722ae')
+SHORTLINK_URL = environ.get('SHORTLINK_URL', 'runurl.in')
+SHORTLINK_API = environ.get('SHORTLINK_API', 'dd6177c72f9f8b83a04903471f221488351f21f3')
 IS_SHORTLINK = bool(environ.get('IS_SHORTLINK', False))
 DELETE_CHANNELS = [int(dch) if id_pattern.search(dch) else dch for dch in environ.get('DELETE_CHANNELS', '0').split()]
 MAX_B_TN = environ.get("MAX_B_TN", "5")
