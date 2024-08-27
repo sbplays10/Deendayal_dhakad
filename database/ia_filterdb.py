@@ -13,7 +13,9 @@ from database.users_chats_db import add_name
 from .Imdbposter import get_movie_details, fetch_image
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 
-channel = -1002230888535
+SEND_MSG = DEENDAYAL_MOVIE_UPDATE_NOTIFICATION 
+
+channel = DEENDAYAL_MOVIE_UPDATE_CHANNEL
 
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.INFO)
@@ -77,7 +79,7 @@ async def send_msg(bot, filename, caption):
 
         filename = filename.replace('(', '').replace(')', '').replace('[', '').replace(']', '').replace('{', '').replace('}', '').replace(':', '').replace(';', '').replace("'", '').replace('-', '').replace('!', '')
         
-        text = "#new_file_added ✅\n\n📍Name: `{}`\n\n🌳Quality: {}\n\n🦧Audio: {}"
+        text = "#𝑵𝒆𝒘_𝑭𝒊𝒍𝒆_𝑨𝒅𝒅𝒆𝒅 ✅\n\n👷𝑵𝒂𝒎𝒆: `{}`\n\n🌳𝑸𝒖𝒂𝒍𝒊𝒕𝒚: {}\n\n🍁𝑨𝒖𝒅𝒊𝒐: {}"
         text = text.format(filename, quality, language)
         if await add_name(905710386, filename):
           imdb_task = get_movie_details(filename)
