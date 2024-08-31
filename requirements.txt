@@ -50,6 +50,11 @@ youtube-dl
 requests 
 ytthumb
 
+#Deendayal403
+instaloader==4.9.5
+ fuzzywuzzy
+ python-Levenshtein
+
 #---Other----#
 googletrans==3.1.0a0 
 telegraph==2.2.0 
