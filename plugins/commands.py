@@ -466,7 +466,8 @@ async def start(client, message):
                        ],[
                        InlineKeyboardButton("⚡ Hᴏᴡ ᴛᴏ ᴠᴇʀɪғʏ ⚡", url=HOW_TO_VERIFY)
                    ]]
-                   l = await message.reply_text(
+                   l = await message.reply_photo(
+                   photo="https://envs.sh/q2W.jpg",
                    text="<b>♨️ YOU ARE NOT VERIFIED !\nKINDLY VERIFY TO CONTINUE & YOU CAN GET UNLIMITED ACCESS FOR 12 HOURS ✅\n\n<blockquote>⚜️ इस BOT से MOVIE प्राप्त करने के लिए आपको VERIFY करना आवश्यक है VERIFY करने के बाद आप 12 घंटे तक UNLIMITED MOVIES प्राप्त कर सकते हो।</blockquote>\n\n🎯 IF YOU ARE HAVING ANY PROBLEM WITH VERIFICATION SEND SCREENSHOT SCREEN RECORDING SHOWING THE PROBLEM TO @Contact_Deendayal_bot AND ASK FOR HELP.\n\n<blockquote>🔥 अगर आप VERIFY नहीं करना चाहते तो आप PREMIUM ले सकते हो, PRIMIUM लेने के बाद आप UNLIMITED MOVIES प्राप्त कर पाओगे और आपको VERIFY करने कोई जरूरत नहीं है\n\nPLAN DETAILS के लिए CLICK करें /plan</blockquote></b>",
                    protect_content=False,
                    reply_markup=InlineKeyboardMarkup(btn)
@@ -549,7 +550,8 @@ async def start(client, message):
                    ],[
                         InlineKeyboardButton("⚡ Hᴏᴡ ᴛᴏ ᴠᴇʀɪғʏ ⚡", url=HOW_TO_VERIFY)
                    ]]
-                   l = await message.reply_text(
+                   l = await message.reply_photo(
+                       photo="https://envs.sh/q2W.jpg",
                        text="<b>♨️ YOU ARE NOT VERIFIED !\nKINDLY VERIFY TO CONTINUE & YOU CAN GET UNLIMITED ACCESS FOR 12 HOURS ✅\n\n<blockquote>⚜️ इस BOT से MOVIE प्राप्त करने के लिए आपको VERIFY करना आवश्यक है VERIFY करने के बाद आप 12 घंटे तक UNLIMITED MOVIES प्राप्त कर सकते हो।</blockquote>\n\n🎯 IF YOU ARE HAVING ANY PROBLEM WITH VERIFICATION SEND SCREENSHOT SCREEN RECORDING SHOWING THE PROBLEM TO @Contact_Deendayal_bot AND ASK FOR HELP.\n\n<blockquote>🔥 अगर आप VERIFY नहीं करना चाहते तो आप PREMIUM ले सकते हो, PRIMIUM लेने के बाद आप UNLIMITED MOVIES प्राप्त कर पाओगे और आपको VERIFY करने कोई जरूरत नही है\n\nPLAN DETAILS के लिए CLICK करें /plan</blockquote></b>",
                        protect_content=False,
                        reply_markup=InlineKeyboardMarkup(btn)
@@ -615,7 +617,8 @@ async def start(client, message):
            ],[
               InlineKeyboardButton("⚡ Hᴏᴡ ᴛᴏ ᴠᴇʀɪғʏ ⚡", url=HOW_TO_VERIFY)
            ]]
-           l = await message.reply_text(
+           l = await message.reply_photo(
+            photo="https://envs.sh/q2W.jpg",
             text="<b>♨️ YOU ARE NOT VERIFIED !\nKINDLY VERIFY TO CONTINUE & YOU CAN GET UNLIMITED ACCESS FOR 12 HOURS ✅\n\n<blockquote>⚜️ इस BOT से MOVIE प्राप्त करने के लिए आपको VERIFY करना आवश्यक है VERIFY करने के बाद आप 12 घंटे तक UNLIMITED MOVIES प्राप्त कर सकते हो।</blockquote>\n\n🎯 IF YOU ARE HAVING ANY PROBLEM WITH VERIFICATION SEND SCREENSHOT SCREEN RECORDING SHOWING THE PROBLEM TO @Contact_Deendayal_bot AND ASK FOR HELP.\n\n<blockquote>🔥 अगर आप VERIFY नहीं करना चाहते तो आप PREMIUM ले सकते हो, PRIMIUM लेने के बाद आप UNLIMITED MOVIES प्राप्त कर पाओगे और आपको VERIFY करने कोई जरूरत नहीं है\n\nPLAN DETAILS के लिए CLICK करें /plan</blockquote></b>",
             protect_content=False,
             reply_markup=InlineKeyboardMarkup(btn)
