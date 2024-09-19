@@ -14,7 +14,7 @@ def list_to_str(lst):
         return ", ".join(map(str, lst))
     return ""
 
-async def fetch_image(url, size=(720, 720)):
+async def fetch_image(url, size=(720, 400)):
     try:
         async with aiohttp.ClientSession() as session:
             async with session.get(url) as response:
