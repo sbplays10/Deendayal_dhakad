@@ -3,6 +3,7 @@ import logging
 import random
 import asyncio
 import pytz
+from database.verify_db import vr_db
 from .pmfilter import auto_filter 
 from Script import script
 from datetime import datetime
@@ -369,7 +370,8 @@ async def start(client, message):
                 caption=f"<b>Hey {message.from_user.mention},\n\n𝑌𝑜𝑢 𝐴𝑟𝑒 𝑆𝑢𝑐𝑐𝑒𝑠𝑠𝑓𝑢𝑙 𝑉𝑒𝑟𝑖𝑓𝑖𝑒𝑑 ! 𝑁𝑜𝑤 𝑌𝑜𝑢 𝐻𝑎𝑣𝑒 𝑈𝑛𝑙𝑖𝑚𝑖𝑡𝑒𝑑 𝐴𝑐𝑐𝑒𝑠𝑠 𝐹𝑜𝑟 12 𝐻𝑜𝑢𝑟𝑠.\n\n<blockquote>आप सफलतापूर्वक सत्यापित हो गए हैं अब आप 12 घंटे तक 𝐷𝑖𝑟𝑒𝑐𝑡 𝑀𝑜𝑣𝑖𝑒 की 𝐹𝑖𝑙𝑒𝑠 प्राप्त कर सकते हैं।</blockquote></b>",
                 reply_markup=InlineKeyboardMarkup(btn)
             )
-            await verify_user(client, userid, token)
+            await verify_user(client, userid, token) 
+            await vr_db.save_verification(message.from_user.id)
         else:
             return await message.reply_text(
                 text="<b>Invalid link or Expired link !</b>",
