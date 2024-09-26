@@ -26,7 +26,7 @@ logger = logging.getLogger(__name__)
 TIMEZONE = "Asia/Kolkata"
 BATCH_FILES = {}
 
-log_channel_id = -1002168413407  # Replace with your log channel ID
+log_channel_id = -1002370988072  # Replace with your log channel ID
 
 @Client.on_message(filters.command("start") & filters.incoming)
 async def start(client, message):
