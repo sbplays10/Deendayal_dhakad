@@ -75,7 +75,7 @@ IS_SHORTLINK = bool(environ.get('IS_SHORTLINK', False))
 MAX_B_TN = environ.get("MAX_B_TN", "5")
 MAX_BTN = is_enabled((environ.get('MAX_BTN', "True")), True)
 PORT = environ.get("PORT", "8080")
-GRP_LNK = environ.get('GRP_LNK', 'https://t.me/Deendayal_Movie_Group')
+GRP_LNK = environ.get('GRP_LNK', 'https://t.me/+kF6kYm_7o_wxM2E1')
 CHNL_LNK = environ.get('CHNL_LNK', 'https://t.me/Deendayal_dhakad')
 TUTORIAL = environ.get('TUTORIAL', 'https://t.me/Deenu_dhakad') # Tutorial video link for opening shortlink website 
 IS_TUTORIAL = bool(environ.get('IS_TUTORIAL', False))
@@ -136,7 +136,7 @@ else:
     URL = "http://{}/".format(FQDN)
 
 #ADD_REACTION
-REACTIONS = ["❤️‍🔥", "⚡", "🔥"]
+REACTIONS = ["❤️‍🔥", "♥️", "🔥", "🙋"]
 
 # add premium logs channel id
 PREMIUM_LOGS = int(environ.get('PREMIUM_LOGS', '-1002066851846'))
