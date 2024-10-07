@@ -257,12 +257,8 @@ Mᴇꜱꜱᴀɢᴇ : <b>{}</b>"""
 📆 Year: <a href={url}/releaseinfo>{year}</a>
 🌟 Rating: <a href={url}/ratings>{rating}</a> / 10 (based on {votes} user ratings.)
 📀 RunTime: {runtime} Minutes
-📆 Release Info : {release_date}
-🎛 Countries : <code>{countries}</code>
-
 
 ⏰Result Shown in: {remaining_seconds} <i>seconds</i> 🔥
-
 Requested by : {message.from_user.mention}</b>"""
     
 
