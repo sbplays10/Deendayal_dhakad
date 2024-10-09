@@ -82,7 +82,7 @@ async def start(client, message):
         await m.edit_text("<b><i>ꜱᴛᴀʀᴛɪɴɢ...</i></b>")
         await asyncio.sleep(0.4)
         await m.delete()        
-        m=await message.reply_sticker("CAACAgEAAxkBAAJ59Waifb3IY_0tjvDY5RXzJLda3-HyAAIDBwAC0gG5RQG_d6AESDArHgQ") 
+        m=await message.reply_sticker("CAACAgUAAxkBAAEDzJFnBqclUTn2znZSO93vlbiApfQlmwACXhIAArTOiFXJ8jrRBfDoSx4E") 
         await asyncio.sleep(1)
         await m.delete()
         await message.reply_photo(
