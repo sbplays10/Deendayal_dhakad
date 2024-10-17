@@ -72,8 +72,8 @@ DEENDAYAL_VERIFIED_LOG = int(environ.get('DEENDAYAL_VERIFIED_LOG', '-10023709880
 HOW_TO_VERIFY = environ.get('HOW_TO_VERIFY', 'https://t.me/Deenu_dhakad') # How to open tutorial link for verification
 
 # Others
-SHORTLINK_URL = environ.get('SHORTLINK_URL', 'publicearn.com')
-SHORTLINK_API = environ.get('SHORTLINK_API', '1598370fcdb0e69c65a7b42d296784d9cb051503')
+SHORTLINK_URL = environ.get('SHORTLINK_URL', 'Shortxlinks.com')
+SHORTLINK_API = environ.get('SHORTLINK_API', '820b18ededb2ed6cf4de90d828e900add9a1a60d')
 IS_SHORTLINK = bool(environ.get('IS_SHORTLINK', False))
 
 MAX_B_TN = environ.get("MAX_B_TN", "5")
