@@ -3,6 +3,7 @@ import aiohttp
 import asyncio
 from io import BytesIO
 from PIL import Image
+from info import Deendayal_IMAGE_FETCH
 from imdb import Cinemagoer
 
 # Initialize IMDb instance using Cinemagoer
@@ -14,7 +15,11 @@ def list_to_str(lst):
         return ", ".join(map(str, lst))
     return ""
 
-async def fetch_image(url, size=(720, 400)):
+async def fetch_image(url, size=(720p, 400)):
+    if not Deendayal_IMAGE_FETCH:
+        print("Image fetching is disabled.")
+        return None
+
     try:
         async with aiohttp.ClientSession() as session:
             async with session.get(url) as response:
