@@ -93,7 +93,7 @@ async def send_msg(bot, filename, caption):
                   resized_poster = await resized_poster_task
             
           filenames = filename.replace(" ", '-')
-          btn = [[InlineKeyboardButton('🌲 𝑮𝒆𝒕 𝑭𝒊𝒍𝒆𝒔 🌲', url=f"url =f"https://t.me/joinchat/{-1002149727413}?start=getfile-{filenames}")]]
+          btn = [[InlineKeyboardButton('🌲 𝑮𝒆𝒕 𝑭𝒊𝒍𝒆𝒔 🌲', url=f"https://t.me/joinchat/{-1002149727413}?start=getfile-{filenames}")]]
           if resized_poster:
               await bot.send_photo(chat_id=channel, photo=resized_poster, caption=text, reply_markup=InlineKeyboardMarkup(btn))
           else:              
