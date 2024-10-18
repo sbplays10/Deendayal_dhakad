@@ -68,6 +68,8 @@ DEENDAYAL_IMAGE_FETCH = bool(environ.get('DEENDAYAL_IMAGE_FETCH', True))  #  On 
 
 # Verify
 VERIFY = bool(environ.get('VERIFY', True)) # Verification On ( True ) / Off ( False )
+DEENDAYAL_VERIFY_URL = environ.get('DEENDAYAL_VERIFY_URL', 'shortxlinks.com')
+DEENDAYAL_VERIFY_API = environ.get('DEENDAYAL_VERIFY_API', '820b18ededb2ed6cf4de90d828e900add9a1a60d')
 DEENDAYAL_VERIFY_EXPIRE = int(environ.get('DEENDAYAL_VERIFY_EXPIRE', 20)) # Add time in hours
 DEENDAYAL_VERIFIED_LOG = int(environ.get('DEENDAYAL_VERIFIED_LOG', '-1002370988072')) #Log channel id ( make sure bot is admin )
 HOW_TO_VERIFY = environ.get('HOW_TO_VERIFY', 'https://t.me/Deenu_dhakad') # How to open tutorial link for verification
