@@ -539,8 +539,8 @@ async def get_tutorial(chat_id):
     return TUTORIAL_URL
         
 async def get_verify_shorted_link(link):
-    API = SHORTLINK_API
-    URL = SHORTLINK_URL
+    API = DEENDAYAL_VERIFY_API
+    URL = DEENDAYAL_VERIFY_URL
     https = link.split(":")[0]
     if "http" == https:
         https = "https"
