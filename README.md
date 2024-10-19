@@ -9,7 +9,7 @@
 </p>
 
 ## Repo Owner 
-* [![Contact Developer](https://img.shields.io/static/v1?label=Contact+Developer&message=On+Telegram&color=critical)](https://telegram.me/Deendayal_dhakad)
+* [![Contact Developer](https://img.shields.io/static/v1?label=Contact+Developer&message=On+Telegram&color=critical)](https://telegram.me/Sorry_Sorry_Galti_Ho_Gai)
 
 ## 𝐶𝑜𝑚𝑚𝑎𝑛𝑑𝑠
 ```
