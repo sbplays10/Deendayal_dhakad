@@ -24,7 +24,7 @@ For more information of the project, please refer to the [FEATURES PAGE](https:/
 
 ## Features
 
-### Click [Here To See All Features](https://github.com/biisal/biisal-filter-bot/blob/main/readme/FEATURES.md) of the bot.
+### Click [Here To See All Features](https://github.com/Deendayal403/Deendayal_dhakad/blob/Deendayal_dhakad/DEENDAYAL_DHAKAD.py/FEATURES.dd) of the bot.
 
 ## Special Thanks To
 
