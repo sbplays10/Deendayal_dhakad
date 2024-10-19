@@ -11,7 +11,7 @@
 
 First Check our **Demo** bot -
 
-* [![DEMo](https://img.shields.io/static/v1?label=Contact+Developer&message=On+Telegram&color=critical)](https://t.me/Dhakad_files_bot)
+[![Click Here](https://img.shields.io/badge/Demo%20Bot-Click%20Here-blue?style=flat&logo=telegram&labelColor=white&link=http://t.me/Dhakad_files_Bot)]()
 
 ### Need Deployment Support?
 
