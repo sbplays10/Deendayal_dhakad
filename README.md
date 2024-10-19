@@ -8,6 +8,9 @@
 ![Typing SVG](https://readme-typing-svg.herokuapp.com/?lines=WELCOME+TO+THE-Deendayal-Dhakad-BOT;A+SIMPLE+AND+POWERFUL+BOT!;A+BOT+WITH+CUSTOM+URL+SHORTNER;AND+CUSTOM+TUTORIAL!;ALSO+HAVE+STREAM+ONLINE;AND+FAST+DOWNLOAD+FEATURE!;AND+MANY+MORE+FEATURES!)
 </p>
 
+## Repo Owner 
+Deendayal Dhakad.(https://telegram.me/Sorry_Sorry_Galti_Ho_Gai)
+
 ## 𝐶𝑜𝑚𝑚𝑎𝑛𝑑𝑠
 ```
 verification - ᴄʜᴇᴄᴋ ʏᴏᴜʀ ᴛᴏᴛᴀʟ ᴠᴇʀɪғɪᴇᴅ ᴜsᴇʀ
