@@ -13,7 +13,7 @@ from database.users_chats_db import add_name
 from .Imdbposter import get_movie_details, fetch_image
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 
-SEND_MSG = DEENDAYAL_MOVIE_UPDATE_NOTIFICATION 
+send_msg = DEENDAYAL_MOVIE_UPDATE_NOTIFICATION 
 
 channel = DEENDAYAL_MOVIE_UPDATE_CHANNEL
 
