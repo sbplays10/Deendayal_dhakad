@@ -124,10 +124,10 @@ python3 bot.py
 
 
 ## Thanks to 
- - Thanks To [DD](https://t.me/Deendayal_dhakad) for customising this amazing [Repo](https://github.com/Deendayal423/Super-Filter-bot).
+ - Thanks To [Deendayal dhakad](https://t.me/Sorry_Sorry_Galti_Ho_Gai) for customising this amazing [Repo](https://github.com/Deendayal403/Deendayal_dhakad).
  - Thanks To Dan For His Awesome [Library](https://github.com/pyrogram/pyrogram)
  - Thanks To [EvamariaTG](https://raw.githubusercontent.com/EvamariaTG) for their awesome [EvaMaria Bot](https://raw.githubusercontent.com/EvamariaTG/EvaMaria)
- - Thanks To [Joelkb](https://github.com/Joelkb) for their awesome repo [DqFileDonor](https://github.com/Joelkb/DQ-the-file-donor)
+ - Thanks To [HarshalPurohitEdits](https://github.com/HarshalPurohitEdits) for their awesome repo [HarshalPurohitEdits](https://github.com/HarshalPurohitEdits/TheMovieProviderBot.git)
 
 ## Note 🏷️
 
