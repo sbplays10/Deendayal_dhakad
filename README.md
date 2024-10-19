@@ -7,7 +7,7 @@
 
 First Check our **Demo** bot -
 
-[![Click Here](https://img.shields.io/badge/Demo%20Bot-Click%20Here-blue?style=flat&logo=telegram&labelColor=white&link=http://t.me/Dhakad_files_Bot)](https://t.me/directfilee_bot)
+[![Click Here](https://img.shields.io/badge/Demo%20Bot-Click%20Here-blue?style=flat&logo=telegram&labelColor=white&link=http://t.me/Dhakad_files_Bot)](https://t.me/Dhakad_files_bot)
 
 ### Need Deployment Support?
 
@@ -19,7 +19,7 @@ If you encounter any issues **Deploying** the bot, feel free to seek assistance 
 
 The bot repository is designed to filter and manage files on Telegram. It allows you to add files either automatically or manually. The bot can respond to users in groups or private chats by providing the files they search for, using shortened links set by the group admin or bot admin.
 <br>
-For more information of the project, please refer to the [FEATURES PAGE](https://github.com/biisal/biisal-filter-bot/blob/main/readme/FEATURES.md)
+For more information of the project, please refer to the [FEATURES PAGE](https://github.com/Deendayal403/Deendayal_dhakad/blob/Deendayal_dhakad/DEENDAYAL_DHAKAD.py/FEATURES.dd)
 
 
 ## Features
@@ -46,4 +46,4 @@ This repository is provided for educational purposes only. It is not intended fo
 
 This project is licensed under the [MIT License](https://github.com/biisal/biisal-filter-bot/blob/main/LICENSE)
 
-### Jai Shree Krishna !😉
+### Deendayal Dhakad  !😉
