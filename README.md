@@ -13,6 +13,18 @@ First Check our **Demo** bot -
 
 [![Click Here](https://img.shields.io/badge/Demo%20Bot-Click%20Here-blue?style=flat&logo=telegram&labelColor=white&link=http://t.me/Dhakad_files_Bot)]()
 
+## Special Thanks To
+
+
+## 🌴 [Sahid malik](https://github.com/Sahidmalik001)
+
+### 🌴 [MrRaazz](https://github.com/MrRaazz)
+
+
+### 🌴 [HarshalPurohitEdits](https://github.com/HarshalPurohitEdits)
+
+### 🌴 [Support Group](https://t.me/Deendayal_Support_Group)
+
 ### Need Deployment Support?
 
 If you encounter any issues **Deploying** the bot, feel free to seek assistance in our **support group**:
@@ -75,28 +87,6 @@ If you encounter any issues **Deploying** the bot, feel free to seek assistance 
 
 <b>𝑇𝑜 𝑘𝑛𝑜𝑤 𝑎𝑏𝑜𝑢𝑡 𝑎𝑙𝑙 𝑓𝑒𝑎𝑡𝑢𝑟𝑒𝑠, 𝐽𝑜𝑖𝑛 𝑜𝑢𝑟 <a href='https://t.me/Deendayal_dhakad'>𝑢𝑝𝑑𝑎𝑡𝑒𝑠 𝑐ℎ𝑎𝑛𝑛𝑒𝑙</a>.</b>
 
-# About This Repository :
-
-The bot repository is designed to filter and manage files on Telegram. It allows you to add files either automatically or manually. The bot can respond to users in groups or private chats by providing the files they search for, using shortened links set by the group admin or bot admin.
-<br>
-For more information of the project, please refer to the [FEATURES PAGE](https://github.com/Deendayal403/Deendayal_dhakad/blob/Deendayal_dhakad/DEENDAYAL_DHAKAD.py/FEATURES.dd)
-
-
-## Features
-
-### Click [Here To See All Features](https://github.com/Deendayal403/Deendayal_dhakad/blob/Deendayal_dhakad/DEENDAYAL_DHAKAD.py/FEATURES.dd) of the bot.
-
-## Special Thanks To
-
-
-## 🌴 [Sahid malik](https://github.com/Sahidmalik001)
-
-### 🔧 [MrRaazz](https://github.com/MrRaazz)
-
-
-### 🔧 [HarshalPurohitEdits](https://github.com/HarshalPurohitEdits)
-
-### 🔧 [Support Group](https://t.me/Deendayal_Support_Group)
 
 ## Disclaimer
 
