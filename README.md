@@ -9,7 +9,7 @@
 </p>
 
 ## Repo Owner 
-Deendayal Dhakad.(https://telegram.me/Sorry_Sorry_Galti_Ho_Gai)
+* [![Contact Developer](https://img.shields.io/static/v1?label=Contact+Developer&message=On+Telegram&color=critical)](https://telegram.me/Deendayal_dhakad)
 
 ## 𝐶𝑜𝑚𝑚𝑎𝑛𝑑𝑠
 ```
@@ -134,8 +134,6 @@ python3 bot.py
  - Thanks To [Joelkb](https://github.com/Joelkb) for their awesome repo [DqFileDonor](https://github.com/Joelkb/DQ-the-file-donor)
 
 ## Note 🏷️
- 
-* [![Contact Developer](https://img.shields.io/static/v1?label=Contact+Developer&message=On+Telegram&color=critical)](https://telegram.me/Deendayal_dhakad)
 
 [Note To A So Called Dev](https://telegram.dog/subin_works/203): 
 
