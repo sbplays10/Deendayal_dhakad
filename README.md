@@ -11,13 +11,13 @@
 
 First Check our **Demo** bot -
 
-* [![DEMo](https://img.shields.io/static/v1?label=Contact+Developer&message=On+Telegram&color=critical)](https://telegram.me/Sorry_Sorry_Galti_Ho_Gai)
+* [![DEMo](https://img.shields.io/static/v1?label=Contact+Developer&message=On+Telegram&color=critical)](https://t.me/Dhakad_files_bot)
 
 ### Need Deployment Support?
 
 If you encounter any issues **Deploying** the bot, feel free to seek assistance in our **support group**:
 
-[![Join Support Group    ](https://img.shields.io/badge/Join%20Support%20Group-Click%20Here-blue?style=flat&logo=telegram&labelColor=white&link=https://t.me/Bisal_Files_Talk)](https://t.me/Deendayal_Support_Group)
+[![Join Support Group    ](https://img.shields.io/badge/Join%20Support%20Group-Click%20Here-blue?style=flat&logo=telegram&labelColor=white&link=https://t.me/Deendayal_dhakad)](https://t.me/Deendayal_Support_Group)
 
 # About This Repository :
 
