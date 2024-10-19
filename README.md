@@ -5,6 +5,10 @@
   𝑫𝒆𝒆𝒏𝒅𝒂𝒚𝒂𝒍_𝒅𝒉𝒂𝒌𝒂𝒅
 </h1>
 
+##Repo Owner 
+
+* [![Contact Developer](https://img.shields.io/static/v1?label=Contact+Developer&message=On+Telegram&color=critical)](https://telegram.me/Sorry_Sorry_Galti_Ho_Gai)
+
 First Check our **Demo** bot -
 
 [![Click Here](https://img.shields.io/badge/Demo%20Bot-Click%20Here-blue?style=flat&logo=telegram&labelColor=white&link=http://t.me/Dhakad_files_Bot)](https://t.me/Dhakad_files_bot)
