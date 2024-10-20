@@ -31,7 +31,7 @@ If you encounter any issues **Deploying** the bot, feel free to seek assistance 
 
 [![Join Support Group    ](https://img.shields.io/badge/Join%20Support%20Group-Click%20Here-blue?style=flat&logo=telegram&labelColor=white&link=https://t.me/Deendayal_dhakad)](https://t.me/Deendayal_Support_Group)
 
-##𝐹𝑒𝑎𝑡𝑢𝑟𝑒s
+  **features**
 
 - [x] 𝑽𝒆𝒓𝒊𝒇𝒊𝒆𝒅 𝑼𝒔𝒆𝒓 𝒄𝒐𝒖𝒏𝒕𝒆𝒓
 - [x] 𝑼𝒑𝒅𝒂𝒕𝒆 𝒎𝒐𝒗𝒊𝒆 𝒊𝒏𝒇𝒐𝒓𝒎𝒂𝒕𝒊𝒐𝒏
