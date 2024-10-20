@@ -15,7 +15,6 @@ from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 
 #send_msg = DEENDAYAL_MOVIE_UPDATE_NOTIFICATION 
 
-channel = DEENDAYAL_MOVIE_UPDATE_CHANNEL
 
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.INFO)
@@ -95,9 +94,9 @@ async def send_msg(bot, filename, caption):
           filenames = filename.replace(" ", '-')
           btn = [[InlineKeyboardButton('🌲 Get Files 🌲', url=f"https://telegram.me/{temp.U_NAME}?start=getfile-{filenames}")]]
           if resized_poster:
-              await bot.send_photo(chat_id=channel, photo=resized_poster, caption=text, reply_markup=InlineKeyboardMarkup(btn))
+              await bot.send_photo(chat_id=DEENDAYAL_MOVIE_UPDATE_CHANNEL, photo=resized_poster, caption=text, reply_markup=InlineKeyboardMarkup(btn))
           else:              
-              await bot.send_message(chat_id=channel, text=text, reply_markup=InlineKeyboardMarkup(btn))
+              await bot.send_message(chat_id=DEENDAYAL_MOVIE_UPDATE_CHANNEL, text=text, reply_markup=InlineKeyboardMarkup(btn))
 
     except:
         pass
