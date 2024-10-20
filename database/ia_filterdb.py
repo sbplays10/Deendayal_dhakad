@@ -13,7 +13,7 @@ from database.users_chats_db import add_name
 from .Imdbposter import get_movie_details, fetch_image
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 
-send_msg = DEENDAYAL_MOVIE_UPDATE_NOTIFICATION 
+#send_msg = DEENDAYAL_MOVIE_UPDATE_NOTIFICATION 
 
 channel = DEENDAYAL_MOVIE_UPDATE_CHANNEL
 
@@ -112,38 +112,96 @@ async def get_qualities(text, qualities: list):
     return quality[:-2] if quality.endswith(", ") else quality
 
 
+from info import CAPTION_LANGUAGES, DATABASE_URI, DATABASE_NAME, COLLECTION_NAME, USE_CAPTION_FILTER, MAX_B_TN, DEENDAYAL_MOVIE_UPDATE_NOTIFICATION, DEENDAYAL_MOVIE_UPDATE_CHANNEL
+from utils import get_settings, save_group_settings, temp
+from database.users_chats_db import add_name
+from .Imdbposter import get_movie_details, fetch_image
+from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
+
+# ... (rest of your code) ...
+
+# Set to False to disable notifications
+DEENDAYAL_MOVIE_UPDATE_NOTIFICATION = False
+
+channel = DEENDAYAL_MOVIE_UPDATE_CHANNEL
+
+logger = logging.getLogger(name)
+logger.setLevel(logging.INFO)
+
+client = AsyncIOMotorClient(DATABASE_URI)
+db = client[DATABASE_NAME]
+instance = Instance.from_db(db)
+
+@instance.register
+class Media(Document):
+  # ... (your existing Media class) ...
+
+async def send_msg(bot, filename, caption, send_notification=True): # Add send_notification parameter
+  try:
+    # ... (your existing code for processing filename and caption) ...
+    
+    text = "#𝑵𝒆𝒘_𝑭𝒊𝒍𝒆_𝑨𝒅𝒅𝒆𝒅 ✅\n\n👷𝑵𝒂𝒎𝒆: {}\n\n🌳𝑸𝒖𝒂𝒍𝒊𝒕𝒚: {}\n\n🍁𝑨𝒖𝒅𝒊𝒐: {}"
+    text = text.format(filename, quality, language)
+    if await add_name(6646028262, filename):
+     imdb_task = get_movie_details(filename)
+     imdb = await imdb_task
+
+     resized_poster = None
+     if imdb:
+       poster_url = imdb.get('poster_url')
+       if poster_url:
+         resized_poster_task = fetch_image(poster_url)
+         resized_poster = await resized_poster_task
+      
+     filenames = filename.replace(" ", '-')
+     btn = [[InlineKeyboardButton('🌲 Get Files 🌲', url=f"https://telegram.me/{temp.U_NAME}?start=getfile-{filenames}")]]
+     if resized_poster:
+       # Send photo only if send_notification is True
+       if send_notification:
+         await bot.send_photo(chat_id=channel, photo=resized_poster, caption=text, reply_markup=InlineKeyboardMarkup(btn))
+     else:
+       # Send message only if send_notification is True
+       if send_notification:
+         await bot.send_message(chat_id=channel, text=text, reply_markup=InlineKeyboardMarkup(btn))
+
+  except:
+    pass
+
+
 async def save_file(bot, media):
-    """Save file in database"""
+  """Save file in database"""
 
-    # TODO: Find better way to get same file_id for same media to avoid duplicates
-    file_id, file_ref = unpack_new_file_id(media.file_id)
-    file_name = re.sub(r"(_|\-|\.|\+)", " ", str(media.file_name))
+  # TODO: Find better way to get same file_id for same media to avoid duplicates
+  file_id, file_ref = unpack_new_file_id(media.file_id)
+  file_name = re.sub(r"(_|\-|\.|\+)", " ", str(media.file_name))
+  try:
+    file = Media(
+      file_id=file_id,
+      file_ref=file_ref,
+      file_name=file_name,
+      file_size=media.file_size,
+      file_type=media.file_type,
+      mime_type=media.mime_type,
+      caption=media.caption.html if media.caption else None,
+    )
+  except ValidationError:
+    logger.exception('Error occurred while saving file in database')
+    return False, 2
+  else:
     try:
-        file = Media(
-            file_id=file_id,
-            file_ref=file_ref,
-            file_name=file_name,
-            file_size=media.file_size,
-            file_type=media.file_type,
-            mime_type=media.mime_type,
-            caption=media.caption.html if media.caption else None,
-        )
-    except ValidationError:
-        logger.exception('Error occurred while saving file in database')
-        return False, 2
-    else:
-        try:
-            await file.commit()
-        except DuplicateKeyError:      
-            logger.warning(
-                f'{getattr(media, "file_name", "NO_FILE")} is already saved in database'
-            )
+      await file.commit()
+    except DuplicateKeyError:   
+      logger.warning(
+        f'{getattr(media, "file_name", "NO_FILE")} is already saved in database'
+      )
 
-            return False, 0
-        else:
-            logger.info(f'{getattr(media, "file_name", "NO_FILE")} is saved to database')
-            await send_msg(bot, file.file_name, file.caption)
-            return True, 1
+      return False, 0
+    else:
+      logger.info(f'{getattr(media, "file_name", "NO_FILE")} is saved to database')
+      # Send notification only if DEENDAYAL_MOVIE_UPDATE_NOTIFICATION is True
+      if DEENDAYAL_MOVIE_UPDATE_NOTIFICATION:
+        await send_msg(bot, file.file_name, file.caption)
+      return True, 1
 
 
 
