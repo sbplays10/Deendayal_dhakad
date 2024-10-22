@@ -11,7 +11,7 @@
 
 First Check our **Demo** bot -
 
-[![Click Here](https://img.shields.io/badge/Demo%20Bot-Click%20Here-blue?style=flat&logo=telegram&labelColor=white&link=https://t.me/Deendayal_files_bot)](https://t.me/Deendayal_files_bot)
+[![Click Here](https://img.shields.io/badge/Demo%20Bot-Click%20Here-blue?style=flat&logo=telegram&labelColor=white&link=https://t.me/Deendayal_files_bot)](https://t.me/Dhakad_files_bot)
 
 ## Special Thanks To
 
