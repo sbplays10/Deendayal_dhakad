@@ -392,8 +392,7 @@ async def qualities_cb_handler(client: Client, query: CallbackQuery):
     btn.append([InlineKeyboardButton(text="↭ ʙᴀᴄᴋ ᴛᴏ ꜰɪʟᴇs ↭", callback_data=f"fq#homepage#{key}")])
 
     await query.edit_message_reply_markup(InlineKeyboardMarkup(btn))
- # https://t.me/JISSHU_BOTS
-# https://t.me/Jisshu_support
+ 
 
 @Client.on_callback_query(filters.regex(r"^fq#"))
 async def filter_qualities_cb_handler(client: Client, query: CallbackQuery):
@@ -1985,11 +1984,11 @@ async def cb_handler(client: Client, query: CallbackQuery):
     
     elif query.data == "channels":
         buttons = [[           
-            InlineKeyboardButton('⚜️ Movie Group ⚜️', url="https://t.me/Deendayal_Movie_Group"),
-            InlineKeyboardButton('☔ Contact ☔', url="https://t.me/Contact_Deendayal_bot")
+            InlineKeyboardButton('⚜️ Movie Group ⚜️', url=GRP_LNK),
+            InlineKeyboardButton('☔ Contact ☔', url=OWNER_LNK)
         ],[
-            InlineKeyboardButton('🔥 Movie Update Notification 🔥', url="https://t.me/Deendayal_files_Update"),
-            InlineKeyboardButton('👮 Update Channel 👮', url="https://t.me/Deendayal_dhakad")
+            InlineKeyboardButton('🔥 Movie Update Notification 🔥', url=DEENDAYAL_MOVIE_UPDATE_CHANNEL_LNK),
+            InlineKeyboardButton('👮 Update Channel 👮', url=CHNL_LNK)
         ],[
             InlineKeyboardButton('⇍ ʙᴀᴄᴋ ⇏', callback_data='start')
         ]] 
