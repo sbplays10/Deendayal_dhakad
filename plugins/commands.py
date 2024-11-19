@@ -1476,5 +1476,5 @@ async def stop_button(bot, message):
 async def del_msg(client, message):
     user_id = message.from_user.id
     await delete_all_msg(user_id)
-    await message.reply_text('deleted')
+    await message.reply_text('ᴜᴘᴅᴀᴛᴇꜱ ᴄʜᴀɴɴᴇʟ ʟɪsᴛ ʜᴀs ʙᴇᴇɴ ᴄʟᴇᴀʀᴇᴅ sᴜᴄᴄᴇssғᴜʟʟʏ ✅')
 
