@@ -141,7 +141,7 @@ else:
     URL = "http://{}/".format(FQDN)
 
 #ADD_REACTION
-REACTIONS = ["❤️‍🔥", "♥️", "🔥", "🙋"]
+REACTIONS = ["❤️‍🔥", "❤️", "🔥", "🙋","😢", "🎉", "🤩", "🙏", "👌", "🕊"]
 
 
 LOG_STR = "Current Cusomized Configurations are:-\n"
