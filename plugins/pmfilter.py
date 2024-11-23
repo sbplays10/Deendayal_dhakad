@@ -112,7 +112,6 @@ async def pm_text(bot, message):
     user_id = message.from_user.id
     await message.react(emoji=random.choice(REACTIONS), big=True)
     if content.startswith("/") or content.startswith("#"): return  # ignore commands and hashtags
-    #if user_id in ADMINS: return # ignore admins
     if PM_SEARCH:
         await auto_filter(bot, message)
     else:    
