@@ -72,9 +72,6 @@ CHNL_LNK = environ.get('CHNL_LNK', 'https://t.me/Deendayal_dhakad')
 OWNER_LNK = environ.get('OWNER_LNK', 'https://t.me/Sorry_Sorry_Galti_Ho_Gai')
 DEENDAYAL_MOVIE_UPDATE_CHANNEL_LNK = environ.get('DEENDAYAL_MOVIE_UPDATE_CHANNEL_LNK', 'https://t.me/Sorry_Sorry_Galti_Ho_Gai')
 
-PM_SEARCH = bool(environ.get('PM_SEARCH', False)) #If you keep it True then it will show movies on both Bot & Group, if you keep it False then it will show movies only within the Group, it will not show movies when searched on bot
-
-
 auth_users = [int(user) if id_pattern.search(user) else user for user in environ.get('AUTH_USERS', '').split()]
 AUTH_USERS = (auth_users + ADMINS) if auth_users else []
 PREMIUM_USER = [int(user) if id_pattern.search(user) else user for user in environ.get('PREMIUM_USER', '').split()]
