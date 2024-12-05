@@ -155,24 +155,15 @@ async def re_enable_chat(bot, message):
 
 @Client.on_message(filters.command('stats') & filters.incoming)
 async def get_ststs(bot, message):
-    if message.from_user.id not in ADMINS:  # You need to define ADMINS
-        m=await message.reply_sticker("CAACAgUAAxkBAAECCUlmUw0D3fo3zav79KLASGhruhZHqwACcwAD_lPRFGwDdnXy1J3vHgQ") 
-        await asyncio.sleep(2)
-        await m.delete()
-        sticker_file_id = "CAACAgUAAxkBAAECCU9mUw1TwWwtSeWwRXjhzse2Yc4QBAACCwYAAlEqeVVU5eFtZaqT2h4E"  # Replace with your sticker file ID
-        d = await message.reply_sticker(sticker=sticker_file_id)
-        await asyncio.sleep(15)
-        await d.delete()
-    else:
-        rju = await message.reply('Fetching stats..')
-        total_users = await db.total_users_count()
-        totl_chats = await db.total_chat_count()
-        files = await Media.count_documents()
-        size = await db.get_db_size()
-        free = 536870912 - size
-        size = get_size(size)
-        free = get_size(free)
-        await rju.edit(script.STATUS_TXT.format(files, total_users, totl_chats, size, free))
+    rju = await message.reply('ᴀᴄᴄᴇꜱꜱɪɴɢ ꜱᴛᴀᴛᴜꜱ ᴅᴇᴛᴀɪʟꜱ.....')
+    total_users = await db.total_users_count()
+    totl_chats = await db.total_chat_count()
+    files = await Media.count_documents()
+    size = await db.get_db_size()
+    free = 536870912 - size
+    size = get_size(size)
+    free = get_size(free)
+    await rju.edit(script.STATUS_TXT.format(files, total_users, totl_chats, size, free))
 
 
 @Client.on_message(filters.command('invite') & filters.user(ADMINS))
