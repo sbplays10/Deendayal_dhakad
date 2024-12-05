@@ -27,7 +27,7 @@ class script(object):
 ▫ 𝟸𝟺x𝟽 sᴇʀᴠɪᴄᴇs ᴀᴠᴀɪʟᴀʙʟᴇ.</b>"""
 
     
-    STATUS_TXT = """<b>╭────[ Sᴛᴀᴛᴜs ]────⍟
+    STATUS_TXT = """<b>╭────[ <blockquote>Sᴛᴀᴛᴜs</blockquote> ]────⍟
 ├⍟ Tᴏᴛᴀʟ Fɪʟᴇs : <code>{}</code>
 ├⍟ Tᴏᴛᴀʟ Usᴇʀs : <code>{}</code>
 ├⍟ Tᴏᴛᴀʟ Cʜᴀᴛs : <code>{}</code>
