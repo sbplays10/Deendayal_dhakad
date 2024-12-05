@@ -85,14 +85,14 @@ async def give_premium_cmd_handler(client, message):
     if len(message.command) == 4:
         time_zone = datetime.datetime.now(pytz.timezone("Asia/Kolkata"))
         current_time = time_zone.strftime("%d-%m-%Y\n⏱️ ᴊᴏɪɴɪɴɢ ᴛɪᴍᴇ : %I:%M:%S %p") 
-        user_id = int(message.command[1])  # Convert the user_id to integer
+        user_id = int(message.command[1])  
         user = await client.get_users(user_id)
         time = message.command[2]+" "+message.command[3]
         seconds = await get_seconds(time)
         if seconds > 0:
             expiry_time = datetime.datetime.now() + datetime.timedelta(seconds=seconds)
-            user_data = {"id": user_id, "expiry_time": expiry_time}  # Using "id" instead of "user_id"  
-            await db.update_user(user_data)  # Use the update_user method to update or insert user data
+            user_data = {"id": user_id, "expiry_time": expiry_time}  
+            await db.update_user(user_data) 
             data = await db.get_user(user_id)
             expiry = data.get("expiry_time")   
             expiry_str_in_ist = expiry.astimezone(pytz.timezone("Asia/Kolkata")).strftime("%d-%m-%Y\n⏱️ ᴇxᴘɪʀʏ ᴛɪᴍᴇ : %I:%M:%S %p")         
