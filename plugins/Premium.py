@@ -144,16 +144,17 @@ async def plan(client, message):
     user_id = message.from_user.id 
     users = message.from_user.mention 
     btn = [[
-	    InlineKeyboardButton('🔥 ꜰʀᴇᴇ ᴛʀɪᴀʟ 🔥', callback_data='free')
+            InlineKeyboardButton('🤝🏻 Rᴇғᴇʀ & Gᴇᴛ Pʀᴇᴍɪᴜᴍ ', callback_data='reffff'),
+            InlineKeyboardButton('🔥 ꜰʀᴇᴇ ᴛʀɪᴀʟ ', callback_data='free')
         ],[
-            InlineKeyboardButton('❤️ ʙʀᴏɴᴢᴇ', callback_data='broze'),
-            InlineKeyboardButton('☔ ꜱɪʟᴠᴇʀ', callback_data='silver')
+            InlineKeyboardButton('🥉 ʙʀᴏɴᴢᴇ ', callback_data='broze'),
+            InlineKeyboardButton('🥈 ꜱɪʟᴠᴇʀ ', callback_data='silver')
         ],[
-            InlineKeyboardButton('👮 ɢᴏʟᴅ', callback_data='gold'),
-            InlineKeyboardButton('💘 ᴘʟᴀᴛɪɴᴜᴍ', callback_data='platinum')
+            InlineKeyboardButton('🥇 ɢᴏʟᴅ ', callback_data='gold'),
+            InlineKeyboardButton('💘 ᴘʟᴀᴛɪɴᴜᴍ ', callback_data='platinum')
         ],[
-            InlineKeyboardButton('💎 ᴅɪᴀᴍᴏɴᴅ', callback_data='diamond'),
-            InlineKeyboardButton('🤦 ᴏᴛʜᴇʀ', callback_data='other')
+            InlineKeyboardButton('💎 ᴅɪᴀᴍᴏɴᴅ ', callback_data='diamond'),
+            InlineKeyboardButton('🤦 ᴏᴛʜᴇʀ ', callback_data='other')
         ],[            
             InlineKeyboardButton('⇋ ʙᴀᴄᴋ ᴛᴏ ʜᴏᴍᴇ ⇋', callback_data='start')
     ]]

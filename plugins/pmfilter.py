@@ -1784,12 +1784,13 @@ async def cb_handler(client: Client, query: CallbackQuery):
 
     elif query.data == "seeplans":
         btn = [[
-            InlineKeyboardButton('🔥 ꜰʀᴇᴇ ᴛʀɪᴀʟ 🔥', callback_data='free')
+            InlineKeyboardButton('🤝🏻 Rᴇғᴇʀ & Gᴇᴛ Pʀᴇᴍɪᴜᴍ ', callback_data='reffff'),
+            InlineKeyboardButton('🔥 ꜰʀᴇᴇ ᴛʀɪᴀʟ ', callback_data='free')
         ],[
-            InlineKeyboardButton('❤️ ʙʀᴏɴᴢᴇ ', callback_data='broze'),
-            InlineKeyboardButton('☔ ꜱɪʟᴠᴇʀ ', callback_data='silver')
+            InlineKeyboardButton('🥉 ʙʀᴏɴᴢᴇ ', callback_data='broze'),
+            InlineKeyboardButton('🥈 ꜱɪʟᴠᴇʀ ', callback_data='silver')
         ],[
-            InlineKeyboardButton('👮 ɢᴏʟᴅ ', callback_data='gold'),
+            InlineKeyboardButton('🥇 ɢᴏʟᴅ ', callback_data='gold'),
             InlineKeyboardButton('💘 ᴘʟᴀᴛɪɴᴜᴍ ', callback_data='platinum')
         ],[
             InlineKeyboardButton('💎 ᴅɪᴀᴍᴏɴᴅ ', callback_data='diamond'),
