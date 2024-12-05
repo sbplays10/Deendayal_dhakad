@@ -140,7 +140,6 @@ async def save_file(bot, media):
       return False, 0
     else:
       logger.info(f'{getattr(media, "file_name", "NO_FILE")} is saved to database')
-      # Send notification only if DEENDAYAL_MOVIE_UPDATE_NOTIFICATION is True
       if DEENDAYAL_MOVIE_UPDATE_NOTIFICATION:
         await send_msg(bot, file.file_name, file.caption)
       return True, 1
