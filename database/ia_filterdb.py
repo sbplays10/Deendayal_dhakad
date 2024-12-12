@@ -61,7 +61,7 @@ async def send_msg(bot, filename, caption):
                     
         # Extract language from caption if it exists in the list of possible languages
         qualities = ["ORG", "org", "hdcam", "HDCAM", "HQ", "hq", "HDRip", "hdrip", "camrip", "CAMRip", "hdtc", "predvd", "DVDscr", "dvdscr", "dvdrip", "dvdscr", "HDTC", "dvdscreen", "HDTS", "hdts"]
-        quality = await get_qualities(caption.lower(), qualities) or "HDRip"
+        quality = await get_qualities(caption.lower(), qualities) or "HD Quality"
 
         language = ""
         possible_languages = CAPTION_LANGUAGES
