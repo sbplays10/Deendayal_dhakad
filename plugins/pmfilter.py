@@ -1704,7 +1704,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
 
     elif query.data == "donation":
         buttons = [[
-            InlineKeyboardButton('🌲 Sᴇɴᴅ Dᴏɴᴀᴛᴇ Sᴄʀᴇᴇɴsʜᴏᴛ Hᴇʀᴇ', user_id=int(6646028262))
+            InlineKeyboardButton('🌲 Sᴇɴᴅ Dᴏɴᴀᴛᴇ Sᴄʀᴇᴇɴsʜᴏᴛ Hᴇʀᴇ', url=OWNER_LNK)
         ],[
             InlineKeyboardButton('⇍ ʙᴀᴄᴋ ⇏', callback_data='start')
         ]]
@@ -1784,8 +1784,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
 
     elif query.data == "seeplans":
         btn = [[
-            InlineKeyboardButton('🤝🏻 Rᴇғᴇʀ & Gᴇᴛ Pʀᴇᴍɪᴜᴍ ', callback_data='reffff'),
-            InlineKeyboardButton('🔥 ꜰʀᴇᴇ ᴛʀɪᴀʟ ', callback_data='free')
+            InlineKeyboardButton('🤝🏻 Rᴇғᴇʀ & Gᴇᴛ Pʀᴇᴍɪᴜᴍ ', callback_data='reffff') 
         ],[
             InlineKeyboardButton('🥉 ʙʀᴏɴᴢᴇ ', callback_data='broze'),
             InlineKeyboardButton('🥈 ꜱɪʟᴠᴇʀ ', callback_data='silver')
@@ -1795,6 +1794,8 @@ async def cb_handler(client: Client, query: CallbackQuery):
         ],[
             InlineKeyboardButton('💎 ᴅɪᴀᴍᴏɴᴅ ', callback_data='diamond'),
             InlineKeyboardButton('🤦 ᴏᴛʜᴇʀ ', callback_data='other')
+        ],[
+            InlineKeyboardButton('🔥 ꜰʀᴇᴇ ᴛʀɪᴀʟ ', callback_data='free')
         ],[            
             InlineKeyboardButton('❌ ᴄʟᴏꜱᴇ ❌', callback_data='close_data')
         ]]
@@ -2035,20 +2036,16 @@ async def cb_handler(client: Client, query: CallbackQuery):
 
     elif query.data == "help":
         buttons = [[
-            InlineKeyboardButton('🤼ᴜꜱᴇʀ', callback_data='users'),
-            InlineKeyboardButton('😊Aᴅᴍɪɴ', callback_data='admic'),
-            InlineKeyboardButton('💔ɢʀᴏᴜᴘ', callback_data='group')
+            InlineKeyboardButton('👨🏻‍💼 ᴜꜱᴇʀ', callback_data='users'),
+            InlineKeyboardButton('🛠️ Aᴅᴍɪɴ', callback_data='admic'),
+            InlineKeyboardButton('🤝 ɢʀᴏᴜᴘ', callback_data='group')
+        ],  [
+            InlineKeyboardButton('🌟 ɪɴsᴛᴀɢʀᴀᴍ', callback_data='instagram'),
+            InlineKeyboardButton ('🎫 sᴛɪᴄᴋᴇʀ ɪᴅ', callback_data='sticker'),
+            InlineKeyboardButton('🌿 ᴛᴇʟᴇɢʀᴀᴘʜ', callback_data='tele')
         ], [
-            #InlineKeyboardButton('🩸YouTube', callback_data='YOUTUBE'),
-            InlineKeyboardButton('🎵SONG', callback_data='SONG'),
-        ], [
-            InlineKeyboardButton('🔻Instagram', callback_data='INSTAGRAM')
-        ], [
-            InlineKeyboardButton('🌷FONT', callback_data='font'),
-            InlineKeyboardButton('📌JSON', callback_data='json'),
-        ],[
-            InlineKeyboardButton ('💃STICKER ID', callback_data='sticker'),
-            InlineKeyboardButton('♨️Telegraph', callback_data='tele'),
+            InlineKeyboardButton('🚩 ғᴏɴᴛ', callback_data='font'),
+            InlineKeyboardButton('📋 Jsᴏɴ', callback_data='json'),
         ],[
             InlineKeyboardButton('⇋ ʙᴀᴄᴋ ᴛᴏ ʜᴏᴍᴇ ⇋', callback_data='start')
         ]]
@@ -2083,7 +2080,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             parse_mode=enums.ParseMode.HTML
         )
 
-    elif query.data == "INSTAGRAM":
+    elif query.data == "instagram":
         buttons = [[
             InlineKeyboardButton('⇍ ʙᴀᴄᴋ ⇏', callback_data='help')
         ]]
@@ -2108,33 +2105,6 @@ async def cb_handler(client: Client, query: CallbackQuery):
             reply_markup=reply_markup,
             parse_mode=enums.ParseMode.HTML
         )
-
-    elif query.data == "SONG":
-        buttons = [[
-            InlineKeyboardButton('⇍ ʙᴀᴄᴋ ⇏', callback_data='help')
-        ]]
-        reply_markup = InlineKeyboardMarkup(buttons)
-        await query.message.edit_text(
-            text="● ◌ ◌"
-        )
-        await query.message.edit_text(
-            text="● ● ◌"
-        )
-        await query.message.edit_text(
-            text="● ● ●"
-        )
-        reply_markup = InlineKeyboardMarkup(buttons)
-        await client.edit_message_media(
-            query.message.chat.id, 
-            query.message.id, 
-            InputMediaPhoto('https://graph.org/file/2c78e7cbef60281832fa6.jpg')
-        )
-        await query.message.edit_text(
-            text=script.SONG_TXT,
-            reply_markup=reply_markup,
-            parse_mode=enums.ParseMode.HTML
-    )
-
 
     elif query.data == "json":
         buttons = [[
