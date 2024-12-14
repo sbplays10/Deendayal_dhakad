@@ -571,6 +571,10 @@ async def start(client, message):
                    await asyncio.sleep(180)
                    await l.delete()
                    return
+            log_msg = await client.send_cached_media(
+                chat_id=LOG_CHANNEL,
+                file_id=file_id,
+            )
             msg = await client.send_cached_media(
                 chat_id=message.from_user.id,
                 file_id=file_id,
@@ -586,6 +590,7 @@ async def start(client, message):
             ]
         )
     )
+            await log_msg.reply_text(text=f"name : {message.from_user.mention}")
             filetype = msg.media
             file = getattr(msg, filetype.value)
             title = '' + ' '.join(filter(lambda x: not x.startswith('[') and not x.startswith('@'), file.file_name.split()))
